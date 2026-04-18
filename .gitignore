@@ -1,0 +1,20 @@
+# user's own anchor / reference images — don't commit
+anchor.png
+anchor.jpg
+face.png
+face.jpg
+setting_shore.png
+*.local.png
+# generated outputs per-project (when someone runs a YAML next to the repo)
+song.mp3
+song_v*.mp3
+song_meta.json
+song_slices/
+scenes/
+stitch_check/
+final*.mp4
+run*.log
+vram.jsonl
+# uv / python
+__pycache__/
+.venv/

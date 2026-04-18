@@ -1,0 +1,364 @@
+title: Belly of the Whale
+style: 'shoegaze, indie rock, dreampop, 85 BPM hypnotic half-time feel, washed-out distorted guitars drenched
+  in spring reverb and tape delay, slow driving bass in minor, soft fuzzy kick, shimmer of cymbal brushes,
+  sparse breathy male vocals buried deep in reverb so the words just hint at themselves, atmospheric pads,
+  melancholic, submerged cathedral acoustics, My Bloody Valentine meets Slowdive meets Have a Nice Life.
+  A hypnotic nocturnal track that never lifts above a murmur but steadily builds mass; ends on a long
+  droning feedback wash.
+
+  '
+lyrics: '[Intro]
+
+  (droning guitars swell from silence, heavy reverb, slow tape delay)
+
+
+  [Verse]
+
+  Saw you standing on the shore,
+
+  where the water met the sky.
+
+  You said come and see me,
+
+  there is nothing left to try.
+
+
+  [Chorus]
+
+  Belly of the whale,
+
+  swallow me whole.
+
+  Take me to the dark,
+
+  show me the hole.
+
+
+  [Verse 2]
+
+  (whispered, almost spoken)
+
+  Down I go into the deep,
+
+  where the oldest secrets sleep.
+
+
+  [Chorus]
+
+  Belly of the whale,
+
+  make me small.
+
+  Take me to the silence,
+
+  answer to the call.
+
+
+  [Outro]
+
+  (guitar feedback washes out over a deep bass drone)
+
+  '
+video:
+  fps: 24
+  resolution:
+  - 576
+  - 1024
+  negative: cartoon, cgi, plastic face, text, watermark, ugly, distorted face, blurry face, deformed,
+    bright daylight, colorful, cheerful
+  crossfade: 0
+  camera_lora_strength: 0.7
+anchor_image: anchor.png
+scenes:
+- label: portrait_shore
+  start_sec: 0
+  duration_sec: 12
+  camera_lora: static
+  anchor:
+    type: angles
+    reference: anchor.png
+    prompt: cinematic 9:16 portrait at dusk on a cold grey beach, shoegaze cover aesthetic
+    angle_prompts:
+    - front-on close portrait of the bearded bald man at dusk on a cold grey beach, grey-violet fog, heavy
+      film grain, shoegaze album cover, cold bruise-purple palette
+    - three-quarter view close portrait of the bearded bald man turning slightly, dusk light, fog, cold
+      palette, shoegaze album cover
+    - side profile close portrait of the bearded bald man looking toward the sea, fog, dusk, shoegaze
+      album cover, cold palette
+    steps: 6
+  prompt: 'A static portrait shot, vertical 9:16 framing, of the bearded bald man facing camera on a cold
+    grey beach at dusk, fog behind him, cold violet light. He barely moves — just slow breathing, a blink,
+    the wind shifting the collar of his jacket. Shoegaze nocturne atmosphere, ambient distant waves and
+    low droning guitar wash.
+
+    '
+- label: distant_whale
+  start_sec: 12
+  duration_sec: 12
+  camera_lora: dolly-in
+  anchor:
+    type: t2i
+    prompt: 'A cinematic 9:16 vertical photograph of an immense dark whale silhouette rising out of a
+      slate-grey ocean at dusk, its back breaking the surface far from shore, fog blurring the horizon,
+      violet and blue-grey palette, moody shoegaze album-cover feel, heavy film grain, no people, sense
+      of vast scale.
+
+      '
+  prompt: 'A slow cinematic push forward across the surface of a cold grey ocean at dusk toward the immense
+    dark silhouette of a whale breaking the far horizon, fog curling off the water, violet light fading
+    behind. The camera glides over the black swells, shoegaze nocturne, droning guitar wash and distant
+    low whale song.
+
+    '
+- label: wading_in
+  start_sec: 24
+  duration_sec: 12
+  camera_lora: dolly-in
+  anchor:
+    type: i2i2
+    references:
+    - anchor.png
+    - setting_shore.png
+    prompt: 'A vertical 9:16 cinematic photograph from behind the bearded bald man in his dark jacket
+      wading chest-deep into the cold grey-black ocean at dusk, small ripples breaking around him, grey-violet
+      fog rolling low on the water, the back of his head and shoulders in sharp focus against the blurred
+      foggy sea beyond. Shoegaze atmosphere, cold bruise-blue palette, heavy grain.
+
+      '
+    steps: 6
+  prompt: 'A slow cinematic dolly-in from behind the bearded man wading chest deep into the cold grey-black
+    ocean at dusk, small waves lapping against him, his shoulders visible against the foggy sea, the camera
+    inches closer with each step. Shoegaze, droning wash of guitars, the sound of water breaking.
+
+    '
+- label: descent
+  start_sec: 36
+  duration_sec: 12
+  camera_lora: jib-down
+  anchor:
+    type: t2i
+    prompt: 'A cinematic vertical 9:16 photograph looking down through cold dark water from just beneath
+      the surface, beams of pale green- blue light fracturing down into increasing darkness below, particles
+      and bubbles drifting, a distant silhouette barely visible deep below. Painterly underwater atmosphere,
+      Caspar David Friedrich meets Bill Viola, shoegaze album aesthetic, heavy grain, moody cold palette.
+
+      '
+  prompt: 'The camera descends slowly, straight down, through cold dark water. Pale green-blue shafts
+    of light fracture from above and fade into darkness. Particles and bubbles drift past. A vast silhouette
+    grows larger below — the whale waiting in the deep. Shoegaze wash thickens into a dense wall of reverb.
+
+    '
+- label: swim_toward
+  start_sec: 48
+  duration_sec: 12
+  camera_lora: dolly-in
+  anchor:
+    type: i2i
+    reference: anchor.png
+    prompt: 'A vertical 9:16 cinematic underwater photograph from the side of the bearded bald man swimming
+      horizontally through deep cold water toward an enormous dark whale whose mouth is barely visible
+      at the edge of frame, pale green-blue god-rays lancing down through the black water, particles suspended,
+      his jacket trailing behind him, his expression focused and unafraid. Shoegaze album cover, cold
+      palette, heavy grain, painterly.
+
+      '
+    steps: 6
+  prompt: 'The camera tracks alongside the man swimming horizontally through deep cold water toward the
+    immense dark silhouette of the whale ahead. Pale green-blue god-rays lance from above, particles drift,
+    his jacket trails behind him. Shoegaze wall of sound, muffled underwater pulse.
+
+    '
+- label: mouth_threshold
+  start_sec: 60
+  duration_sec: 12
+  camera_lora: dolly-in
+  anchor:
+    type: t2i
+    prompt: 'A cinematic vertical 9:16 photograph of the colossal open mouth of a whale seen from directly
+      in front underwater, huge baleen curtains of bone barely visible in the dim light, the interior
+      receding into absolute darkness, scale so vast it fills almost the entire frame, rim of the mouth
+      lit by a single remaining shaft of green-blue light from above, a tiny human silhouette at the threshold
+      suggesting scale. Mythic, biblical, Caspar David Friedrich, shoegaze cover aesthetic, heavy grain.
+
+      '
+  prompt: 'The camera glides slowly forward toward the colossal open mouth of the whale, filling the frame
+    with darkness and curtains of baleen, a single rim of pale light around the edge. A tiny human silhouette
+    crosses the threshold. The sound collapses inward to a muffled low roar of reverb.
+
+    '
+- label: inside_cathedral
+  start_sec: 72
+  duration_sec: 12
+  camera_lora: dolly-right
+  anchor:
+    type: t2i
+    prompt: 'A cinematic vertical 9:16 photograph of the interior of an enormous whale, vast ribbed cathedral-like
+      chamber of bone and wet pink flesh arching upward, soft bioluminescent green-blue glow from hanging
+      clusters of tiny organic lights, a mist of floating particles, water pooled on the curved floor.
+      Painterly, dreamlike, mythic, Odilon Redon meets Aleksandra Waliszewska meets Bill Viola, shoegaze
+      album aesthetic, cold glowing palette.
+
+      '
+  prompt: 'A slow tracking shot sliding to the right through the vast ribbed cathedral of the whale''s
+    interior, bone arches rising above, soft bioluminescent clusters glowing green-blue against the dark
+    pink flesh, mist drifting, water pooled on the curved floor. Shoegaze wall of reverb, muffled and
+    cavernous.
+
+    '
+- label: confrontation
+  start_sec: 84
+  duration_sec: 12
+  camera_lora: static
+  anchor:
+    type: i2i
+    reference: anchor.png
+    prompt: 'A cinematic vertical 9:16 close portrait of the bearded bald man standing knee-deep in shallow
+      water inside the vast ribbed cathedral of a whale''s interior, soft bioluminescent green-blue light
+      from above casting him in cold gemlike rim-light, his face wet, eyes reflecting a small point of
+      gold light in front of him suggesting a pearl or eye, expression of awe and recognition. Mythic,
+      shoegaze album cover, cold palette with a single warm accent, heavy grain, painterly.
+
+      '
+    steps: 6
+  prompt: 'The camera holds completely still on the bearded man standing knee-deep inside the whale, a
+    small gold point of light floating before him at eye level. He barely moves — blinks slowly, his lips
+    part, his shoulders rise with breath. Shoegaze wash in sustained feedback, a single high ringing note.
+
+    '
+- label: ascent
+  start_sec: 96
+  duration_sec: 12
+  camera_lora: jib-up
+  anchor:
+    type: t2i
+    prompt: 'A cinematic vertical 9:16 photograph looking up from deep dark water toward the distant bright
+      surface above, shafts of warm pale light cutting down through the green-blue water, particles and
+      bubbles streaming upward in trails, the silhouette of a swimmer rising into the light from below.
+      Painterly underwater atmosphere, Bill Viola aesthetic, shoegaze cover, heavy grain.
+
+      '
+  prompt: 'The camera rises slowly straight up through deep water toward the distant bright surface. Warm
+    pale shafts of light cut down through green-blue water, bubbles and particles stream upward. A swimmer''s
+    silhouette rises below the camera toward the shimmering light above. Shoegaze builds toward a final
+    release.
+
+    '
+- label: emergence
+  start_sec: 108
+  duration_sec: 12
+  camera_lora: dolly-out
+  anchor:
+    type: i2i
+    reference: anchor.png
+    prompt: 'A cinematic vertical 9:16 photograph of the bearded bald man standing on a cold grey beach
+      at dawn, water still dripping from his hair and jacket, his expression quietly changed — calmer,
+      older, absent of weight. A pale apricot sunrise behind him over a calm sea, fog lifting, the silhouette
+      of the distant whale sinking back into the water far away. Shoegaze album cover aesthetic, warming
+      palette of grey-blue bleeding into soft amber, heavy film grain, painterly.
+
+      '
+    steps: 6
+  prompt: 'A slow cinematic pull-back from the bearded man standing on the cold grey beach at dawn, water
+    still dripping from him, a pale apricot sunrise spreading over calm sea, the distant whale''s silhouette
+    sinking back into the water as the camera retreats. Shoegaze feedback washes out into wind, tape hiss,
+    and one last muted whale call.
+
+    '
+- label: walking_shore
+  start_sec: 120
+  duration_sec: 12
+  camera_lora: dolly-right
+  anchor:
+    type: i2i
+    reference: anchor.png
+    prompt: 'A cinematic vertical 9:16 photograph of the bearded bald man walking slowly along a cold
+      grey shore at dawn, wet sand under his boots, small waves washing over his feet, his dark jacket
+      damp and heavy, pale apricot sunrise breaking on the horizon ahead of him. Shoegaze album cover
+      aesthetic, warming muted palette, heavy film grain, shallow depth of field.
+
+      '
+    steps: 6
+  prompt: 'The camera tracks alongside the bearded man walking slowly along the cold shore at dawn, small
+    waves washing around his boots, his dark jacket heavy with seawater, breath faint in the cold air.
+    Pale apricot sunrise breaking ahead. Shoegaze wash thins to a single held chord, wind across wet sand.
+
+    '
+- label: sky_opens
+  start_sec: 132
+  duration_sec: 12
+  camera_lora: jib-up
+  anchor:
+    type: t2i
+    prompt: 'A cinematic vertical 9:16 photograph looking straight up at a vast dawn sky as the low clouds
+      begin to part, warm golden light breaking through in radiating shafts against pale bruise-blue cloud
+      layers, a single gull gliding high. Painterly, Caspar David Friedrich aesthetic, shoegaze album
+      cover, heavy grain, sublime atmospheric scale.
+
+      '
+  prompt: 'The camera tilts slowly upward from sea level to the vast dawn sky as the last low clouds part,
+    warm golden shafts breaking through in radiating beams against pale bruise-blue, a single gull gliding
+    high. Shoegaze finds a long resolving chord, reverb opens wide.
+
+    '
+- label: farewell_whale
+  start_sec: 144
+  duration_sec: 12
+  camera_lora: static
+  anchor:
+    type: i2i
+    reference: anchor.png
+    prompt: 'A cinematic vertical 9:16 photograph of the bearded bald man standing on the dawn shore looking
+      out to sea, his back to camera in left-of-frame foreground, in the middle distance the huge dark
+      silhouette of a whale breaching gracefully against a pale apricot-gold horizon, water cascading
+      off its back in a shimmering arc. Shoegaze album cover, warming muted palette, cinematic grain,
+      mythic scale.
+
+      '
+    steps: 6
+  prompt: 'The camera holds completely still on the bearded man standing on the dawn shore with his back
+    to camera, the dark silhouette of the whale breaching in slow graceful motion against the apricot-gold
+    horizon, water cascading off its back. He raises a hand slightly — a small farewell. Shoegaze chord
+    sustains over distant whalesong.
+
+    '
+- label: turning_inland
+  start_sec: 156
+  duration_sec: 12
+  camera_lora: dolly-left
+  anchor:
+    type: i2i
+    reference: anchor.png
+    prompt: 'A cinematic vertical 9:16 photograph of the bearded bald man seen from the side turning away
+      from the sea toward a narrow dew-wet path leading inland between low gorse and grey weathered fence
+      posts, dawn light behind him warming the back of his jacket, the calm sea receding out of focus
+      behind. Shoegaze album cover, warming muted palette, cinematic grain.
+
+      '
+    steps: 6
+  prompt: 'A slow tracking shot moving leftward alongside the bearded man as he turns inland away from
+    the sea, his boots on a dew-wet path between low gorse and weathered fence posts, dawn light warming
+    the back of his jacket. The sea slides out of frame behind him. Shoegaze reverb fades to wind and
+    distant gull-cry.
+
+    '
+- label: final_portrait
+  start_sec: 168
+  duration_sec: 12
+  camera_lora: dolly-in
+  anchor:
+    type: i2i
+    reference: anchor.png
+    prompt: 'A cinematic vertical 9:16 close portrait of the bearded bald man after his return, face lit
+      softly by warm dawn light from screen right, eyes closed, expression at peace, a faint almost-smile,
+      his damp jacket still clinging to him. Out of focus behind him a pale blue-gold morning, soft bokeh
+      of distant waves. Shoegaze album cover aesthetic, warming palette of grey-blue and amber, heavy
+      film grain, intimate.
+
+      '
+    steps: 6
+  prompt: 'The camera pushes in very slowly to a close portrait of the bearded man, face warmed by dawn
+    light from screen right, eyes closed, expression at peace with a faint almost-smile, damp jacket still
+    clinging to him. Soft bokeh of distant waves behind. Only his breath moves. Shoegaze feedback fades
+    to complete silence, then a single last held note, then wind.
+
+    '

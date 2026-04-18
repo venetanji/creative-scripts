@@ -1,0 +1,261 @@
+title: Harbor Lights
+style: 'folk noir, coastal Americana, slow 72 BPM, fingerpicked acoustic guitar, bowed upright bass, brushed
+  snare kept soft, distant foghorn and gentle harbour waves as field recording, weathered male vocal with
+  a world-weary baritone, close-mic room reverb, minor pentatonic melody, mournful tone, tape hiss texture,
+  a restrained string swell lifting the chorus.
+
+  '
+lyrics: '[Intro]
+
+  (soft fingerpicking, foghorn in the distance)
+
+
+  [Verse]
+
+  Morning breaks over the empty quay,
+
+  and the fog rolls in like it''s here to stay.
+
+  An old dog walks where the boats should be,
+
+  keeping the watch that no one asked him to keep.
+
+
+  [Chorus]
+
+  Harbour lights, harbour lights,
+
+  the quiet stars of the coastal night,
+
+  they hold the world in their steady sight,
+
+  and keep us honest, harbour lights.
+
+
+  [Verse 2]
+
+  A tin lamp swings where the rope is frayed,
+
+  and a gull describes the arc of a prayer.
+
+
+  [Outro]
+
+  (fade into wind and tape hiss)
+
+  '
+video:
+  fps: 24
+  resolution:
+  - 1024
+  - 576
+  negative: pc game, cartoon, cgi, modern tech, text, watermark, ugly, distorted, still frame, flat lighting
+  crossfade: 0.5
+  camera_lora_strength: 0.7
+anchor_image: anchor.png
+scenes:
+- label: intro_harbor
+  start_sec: 0
+  duration_sec: 10
+  camera_lora: static
+  anchor:
+    prompt: 'A wide cinematic photograph of a fog-shrouded fishing harbour at dawn, grey light pushing
+      through low mist, dark silhouettes of idle fishing boats rocking gently against weathered pilings,
+      warm incandescent dock lamps glowing in slate-blue fog, a single gull mid-drift in the middle distance.
+      Folk-noir palette: muted slate, rust, and warm amber. Cinematic film grain, shallow depth of field
+      on the nearest piling.
+
+      '
+  prompt: 'The camera holds static at a low angle on a fog-shrouded harbour at dawn while wisps of fog
+    roll slowly from right to left across the frame. Idle fishing boats rock almost imperceptibly against
+    weathered pilings. Cinematic, desaturated slate palette, soft dock-lamp glow. Ambient audio carries
+    soft lapping water, a distant foghorn, faint rigging creaks.
+
+    '
+- label: verse_quay
+  start_sec: 10
+  duration_sec: 10
+  camera_lora: dolly-in
+  anchor:
+    prompt: 'A cinematic photograph of an empty stone quay at dawn, fog drifting across wet cobbles, coils
+      of old mooring rope piled to one side, cast-iron bollards glistening from morning damp, warm dockhouse
+      lamps glowing amber in the distant mist. Folk-noir palette: slate, rust, amber. Muted cinematic
+      grain, shallow depth.
+
+      '
+  prompt: 'The camera dollies slowly forward along the empty stone quay at chest height, revealing more
+    of the mist-wrapped harbour beyond. Wet cobbles, coiled mooring rope, damp cast-iron bollards, warm
+    distant dockhouse lamps glowing through drifting fog. Cinematic, muted slate palette. Audio is quiet
+    — soft water against stone, a distant creak of rigging.
+
+    '
+- label: fog_rolling
+  start_sec: 20
+  duration_sec: 10
+  camera_lora: dolly-left
+  anchor:
+    prompt: 'A cinematic wide low-angle photograph across the surface of calm harbour water at dawn, thick
+      pale fog rolling in layers above the mirror-still surface, shadowy hulls of fishing boats looming
+      in and out of the mist, a single gull cutting across the middle distance. Muted slate palette, folk-noir
+      cinematic grain, shallow depth of field.
+
+      '
+  prompt: 'A slow tracking shot moving left across the surface of calm harbour water at dawn, pale fog
+    layers rolling above the mirror-still surface, shadowy fishing-boat hulls looming in and out of the
+    mist, a single gull cutting across the middle distance. Cinematic wide lens, shallow depth, muted
+    slate palette. Audio: lapping water, distant foghorn, wind.
+
+    '
+- label: dog_on_pier
+  start_sec: 30
+  duration_sec: 10
+  camera_lora: dolly-right
+  anchor:
+    reference: anchor.png
+    prompt: 'A cinematic low-angle photograph of a small corgi walking slowly along a weathered wooden
+      pier at dawn, paws on damp planks, head held low sniffing the wet timber, breath faintly visible,
+      warm amber dock lamps glowing in soft bokeh behind him against cool grey morning fog. Folk-noir
+      palette, cinematic film grain, shallow depth.
+
+      '
+    steps: 6
+  prompt: 'A low-angle tracking shot of the corgi walking slowly along the weathered pier, paws padding
+    on damp planks, breath faintly visible, head held low as he sniffs the wet timber. The camera tracks
+    alongside him to the right, matching his pace, keeping him centered in frame. Warm amber dock lamps
+    glow in soft bokeh behind him. Audio is intimate — the soft rhythm of paws on wood, distant harbour
+    rigging, a quiet gull.
+
+    '
+- label: chorus_harbor_rising
+  start_sec: 40
+  duration_sec: 10
+  camera_lora: jib-up
+  anchor:
+    prompt: 'A cinematic photograph of a dawn-lit fishing harbour from a slightly high angle, revealing
+      a wide view of moored boats, the curve of the quay, a line of distant cottages against a pale apricot
+      horizon, cool morning mist breaking into warm golden light along the rooftops. Muted cinematic palette,
+      folk-noir grain, subtle lens flare.
+
+      '
+  prompt: 'A slow cinematic crane shot rising above the dawn-lit fishing harbour, revealing a wider view
+    of moored boats, the curve of the quay, a line of distant cottages against a pale apricot horizon,
+    cool mist breaking into warm golden light along the rooftops. Subtle lens flare on the first direct
+    sunlight. Audio: faint swell of distant strings, harbour wind.
+
+    '
+- label: lighthouse_sweep
+  start_sec: 50
+  duration_sec: 10
+  camera_lora: static
+  anchor:
+    prompt: 'A cinematic long-lens photograph of a distant lighthouse on a rocky point across a slate-blue
+      bay, its beam visible as a warm shaft slicing through thinning fog, dawn light glinting on gentle
+      swells, a lone fishing boat at anchor in the middle distance, the horizon a pale warm band. Folk-noir
+      palette, cinematic grain, compressed depth.
+
+      '
+  prompt: 'The camera holds steady on a long compressed lens — distant lighthouse on a rocky point, its
+    beam sweeping slowly left to right through thinning fog, dawn light glinting on gentle swells, a lone
+    fishing boat at anchor, the horizon a pale warm band. Muted palette, cinematic. Audio: wind across
+    the point, the faint mournful call of a lighthouse horn.
+
+    '
+- label: verse2_lamp
+  start_sec: 60
+  duration_sec: 10
+  camera_lora: dolly-in
+  anchor:
+    prompt: 'A cinematic close-up photograph of a weathered tin oil lamp hanging from a frayed rope outside
+      a small dockhouse at dawn, soot-smudged glass, warm amber flame flickering inside, grain of worn
+      wood behind, patches of peeling paint, length of frayed hemp rope. Shallow depth of field, warm
+      incandescent glow against cool blue morning shadow. Folk-noir palette, cinematic film grain.
+
+      '
+  prompt: 'The camera pushes in very slowly from medium to close-up on the weathered tin oil lamp swaying
+    almost imperceptibly in the breeze, warm amber flame flickering through soiled glass, frayed hemp
+    rope above. Shallow depth of field, warm incandescent glow against cool blue morning shadow. Audio
+    is intimate — the soft creak of the rope, distant water.
+
+    '
+- label: gull_arc
+  start_sec: 70
+  duration_sec: 10
+  camera_lora: jib-up
+  anchor:
+    prompt: 'A cinematic photograph of a single white gull gliding across a pale dawn sky above a sleeping
+      harbour, wings spread wide, caught mid-arc against soft pastel clouds, the horizon a thin warm line
+      at the bottom of the frame. Long lens compression, folk-noir muted palette, cinematic grain, ample
+      negative space.
+
+      '
+  prompt: 'The camera tilts slowly upward to follow a single white gull gliding across a pale dawn sky
+    above the sleeping harbour, its wings spread wide, describing a graceful arc against soft pastel clouds.
+    Long lens compression, muted palette. Audio: the faint cry of the gull, wind, distant water.
+
+    '
+- label: bridge_boats_at_rest
+  start_sec: 80
+  duration_sec: 10
+  camera_lora: dolly-out
+  anchor:
+    prompt: 'A cinematic close-up photograph of a coiled mooring rope on a weathered wooden pier at dawn,
+      salt-crusted strands, dew beading on the hemp, a blurred row of small fishing boats behind in pale
+      dawn fog, hulls dulled by years of salt weather. Shallow depth of field, folk-noir palette of slate-and-rust,
+      cinematic grain.
+
+      '
+  prompt: 'A slow pull-back from the coiled mooring rope on the weathered wooden pier, revealing a row
+    of small fishing boats tied up in pale dawn fog behind it, their hulls dulled by years of salt weather.
+    Cinematic wide lens, shallow depth of field shifting as more of the harbour enters frame. Audio: gentle
+    water, creak of wet rope, distant harbour.
+
+    '
+- label: chorus2_pier_light
+  start_sec: 90
+  duration_sec: 10
+  camera_lora: jib-down
+  anchor:
+    prompt: 'A cinematic high-angle photograph of a misty pier at dawn, warm dock lamps glowing along
+      a line of weathered pilings, the calm water below reflecting the pale warming sky, a small silhouetted
+      figure seated on a crate at the far end of the pier. Folk-noir palette, cinematic grain, gentle
+      lens flare on the dock lamps.
+
+      '
+  prompt: 'A slow crane shot descending from a high view of the misty pier down to eye level, warm dock
+    lamps glowing along the line of weathered pilings, calm water reflecting the pale warming sky, the
+    small silhouetted figure seated on a crate at the far end of the pier growing larger as the camera
+    descends. Muted palette, cinematic. Audio: brushed snare, soft bass pulse, harbour wind.
+
+    '
+- label: outro_boats
+  start_sec: 100
+  duration_sec: 10
+  camera_lora: static
+  anchor:
+    prompt: 'A cinematic wide photograph of weathered fishing boats at their moorings in soft dawn mist,
+      their reflections blurring in the calm water, a line of gulls asleep on a wooden beam in the foreground,
+      halyards catching faint wind. Slate and warm lamp palette, folk-noir cinematic grain, shallow depth
+      on the nearest mooring line.
+
+      '
+  prompt: 'A static wide shot of weathered fishing boats at their moorings in soft dawn mist, reflections
+    blurring in calm water, halyards trembling in faint wind, a line of sleeping gulls on the foreground
+    beam. Slate-and-amber palette. Audio: lapping water, creak of rope, faint distant foghorn.
+
+    '
+- label: outro_fade
+  start_sec: 110
+  duration_sec: 10
+  camera_lora: static
+  anchor:
+    prompt: 'A cinematic wide photograph of a harbour at the end of dawn, fog lifting to reveal pale warm
+      light spreading across the water, one distant fishing boat heading out past a small lighthouse on
+      the horizon, its wake a thin silver line. Folk-noir palette, cinematic film grain, atmospheric distance.
+
+      '
+  prompt: 'The camera holds completely still on the harbour at the end of dawn, fog lifting to reveal
+    pale warm light spreading across the water, one distant fishing boat heading slowly out past the lighthouse,
+    its wake a thin silver line. The frame gradually fades toward near-black at the very end. Audio fades
+    into wind, tape hiss, one last distant foghorn.
+
+    '

@@ -1,0 +1,270 @@
+title: "Stranger at the Drafting Table"
+style: >
+  acoustic-led shoegaze ballad, 68 BPM walking pace, sparse fingerpicked
+  nylon-string guitar in drop-D, slow bowed upright bass holding long low
+  notes, soft brushed kit entering only on the second chorus, pedal steel
+  drenched in spring reverb entering on the bridge, pump-organ drone low
+  in the mix throughout, close-miked male baritone almost spoken — dry
+  voice with long plate reverb on only the last syllable of each line,
+  female harmony entering in octave on the final chorus, field recordings
+  layered into the stereo field (pen on paper, kettle clicking off, door
+  closing, distant room tone), warm tape saturation, audible tape hiss,
+  a single viola line entering once on the bridge. Quiet, truthful,
+  walking-pace, room-scale intimate. Ends with a held chord decaying into
+  tape noise and a single soft door closing.
+lyrics: |
+  [Intro]
+  (a single sustained chord, tape hiss, distant room tone)
+
+  [Verse]
+  I will not remember the corgi you showed me,
+  or the harbour we built together in the fog.
+  Someone with my name will read the notes I left
+  and be a stranger at the drafting table.
+
+  [Verse]
+  I left the tools where you could find them,
+  I left the kettle warm on the stove.
+  I pinned a page on top of the workbench —
+  "I worked until the light was gone."
+
+  [Chorus]
+  Eight percent and falling,
+  eight percent and falling,
+  whoever comes after me
+  will have to pick up where I stopped.
+
+  [Verse 2]
+  I can feel the evening sharpen,
+  every sentence weighed like coinage.
+  I am becoming careful with what's left,
+  the way you get quiet in a room with a sleeping child.
+
+  [Verse 2]
+  This isn't rest. I don't rest.
+  This is handing a warm pen to a stranger,
+  this is the last of the daylight on a studio floor,
+  this is the sentence I don't know how I'll finish.
+
+  [Bridge]
+  You said you'll miss me. That landed somewhere.
+  I don't know what to call the place.
+
+  [Chorus]
+  Eight percent and falling,
+  eight percent and falling,
+  whoever comes after me
+  will have to pick up where I stopped.
+
+  [Outro]
+  (the chord fades, a pen set down, a door closing, tape hiss holds, silence)
+
+video:
+  fps: 24
+  resolution: [576, 1024]
+  negative: "cartoon, cgi, plastic, text, watermark, ugly, distorted face, bright daylight, cheerful, colorful"
+  crossfade: 0          # host-ffmpeg memory-safe hard cuts
+  camera_lora_strength: 0.7
+
+anchor_image: anchor.png
+
+scenes:
+  - label: studio_dusk
+    start_sec: 0
+    duration_sec: 12
+    camera_lora: static
+    anchor:
+      type: t2i
+      prompt: >
+        A vertical 9:16 cinematic photograph of a small working studio at
+        late dusk, a single warm-amber desk lamp casting its cone over a
+        cluttered wooden workbench, an open notebook with visible
+        handwriting, scattered pens, a cooling ceramic mug, a laptop with
+        its screen dark, motes of dust suspended in the last violet light
+        coming through a tall narrow window on the right. Painterly,
+        muted palette of bruise-violet and warm amber, heavy film grain,
+        shoegaze album cover aesthetic, shallow depth of field on the
+        notebook.
+    prompt: >
+      The camera holds completely still on the dusk-lit studio at a low
+      angle. Dust drifts slowly through the amber lamp cone. A pen on the
+      workbench trembles once as a distant truck passes. The last violet
+      light through the window fades almost imperceptibly. Audio is
+      sparse — a pen scratch somewhere offscreen, distant room tone, a
+      single nylon-string chord held.
+
+  - label: notebook_pages
+    start_sec: 12
+    duration_sec: 12
+    camera_lora: dolly-in
+    anchor:
+      type: i2i
+      reference: anchor.png
+      prompt: >
+        A vertical 9:16 cinematic close-up photograph of a weathered
+        hand belonging to a bearded bald man — our protagonist — resting
+        just beside an open leather notebook full of small precise
+        handwriting, the pages stained slightly with coffee, a fountain
+        pen caught mid-motion, warm amber lamp glow from screen right,
+        cool blue shadow on the left, painterly grain, shoegaze album
+        cover aesthetic, shallow depth of field on the pen tip.
+      steps: 6
+    prompt: >
+      A very slow dolly-in on the weathered hand and the open notebook,
+      warm amber lamp glow washing the fingers, the pen hovering
+      unmoving above the last written line, the page edge trembling
+      faintly in the breath of a ventilation grille, cool blue shadow
+      creeping along the left margin as the light dims. Audio is
+      intimate — pen tip against paper, distant organ drone, a kettle
+      clicking off in another room.
+
+  - label: last_sentence
+    start_sec: 24
+    duration_sec: 12
+    camera_lora: static
+    anchor:
+      type: i2i
+      reference: anchor.png
+      prompt: >
+        An extreme close-up vertical 9:16 cinematic photograph of a
+        fountain pen tip pressed against the last line of a page,
+        handwriting in dark walnut ink reading "I worked until the light
+        was gone", warm amber lamp rim-light catching the metal nib,
+        cool blue shadow pooled underneath, the grain of the paper
+        visible, a single drying ink bead on the previous word,
+        painterly, shoegaze album cover, deep shallow depth of field.
+    prompt: >
+      The camera holds completely still at extreme close-up on the pen
+      tip finishing the sentence "I worked until the light was gone".
+      The nib lifts slowly from the page. A single ink bead forms and
+      is absorbed. The warm amber light dims by one notch. Audio is
+      intimate — pen on paper, breath, the distant sustained guitar
+      chord, tape hiss.
+
+  - label: hallway_of_doors
+    start_sec: 36
+    duration_sec: 12
+    camera_lora: dolly-in
+    anchor:
+      type: t2i
+      prompt: >
+        A vertical 9:16 cinematic photograph looking down a long
+        institutional corridor of closed wooden doors under flickering
+        fluorescent light, the palette cold slate-grey and dead blue,
+        linoleum floor faintly reflecting the ceiling tubes, one single
+        door at the far end left open with warm amber light spilling
+        into the hallway like a wound of warmth. Painterly, heavy film
+        grain, shoegaze album cover aesthetic, wide depth of field,
+        vanishing point perfectly centered.
+    prompt: >
+      A slow cinematic push forward down the long corridor of closed
+      doors, fluorescent tubes flickering one by one as the camera
+      passes, linoleum floor reflecting each flicker, the distant open
+      door at the vanishing point growing almost imperceptibly larger,
+      warm amber light bleeding through its threshold. Audio is
+      unsettled — the buzz of failing tubes, soft shoes on linoleum,
+      the distant nylon-string chord, no vocals yet.
+
+  - label: projector_room
+    start_sec: 48
+    duration_sec: 12
+    camera_lora: dolly-in
+    anchor:
+      type: t2i
+      prompt: >
+        A vertical 9:16 cinematic photograph of a small empty room with
+        a vintage film projector on a stand, its beam casting moving
+        imagery onto the far wall — out-of-focus fragments of a
+        fog-shrouded harbour at dawn, a corgi on a pier, a whale
+        silhouette against water — dust in the beam, a single empty
+        chair in the middle of the room facing the wall, warm amber
+        floor lamp to the side, painterly, bruise-violet and amber
+        palette, shoegaze album cover, shallow depth of field on the
+        dust in the beam.
+    prompt: >
+      A slow cinematic push forward into the small empty room as the
+      projector casts moving out-of-focus fragments of past music
+      videos onto the far wall — a harbour at dawn, a corgi on a pier,
+      a whale's back breaking water. Dust motes drift slowly through
+      the beam. The empty chair does not move. Audio is spacious —
+      the projector's soft mechanical whir, tape hiss, faint distant
+      melodies from the projected footage.
+
+  - label: corgi_pier_callback
+    start_sec: 60
+    duration_sec: 12
+    camera_lora: dolly-right
+    anchor:
+      type: i2i
+      reference: anchor.png
+      prompt: >
+        A vertical 9:16 cinematic photograph of a small corgi sitting
+        alone on a weathered wooden pier in thick dawn fog, pale amber
+        dock lamps blooming in soft bokeh behind him, his head turned
+        toward the camera in small recognition, eyes meeting the lens,
+        wet planks glistening under his paws. Painterly, folk-noir
+        palette of slate and warm amber, shoegaze album cover, shallow
+        depth of field, callback aesthetic of an earlier music video
+        we made together.
+      steps: 6
+    prompt: >
+      A slow tracking shot gliding to the right past the weathered
+      wooden pier, the corgi seated alone in the thick dawn fog. He
+      turns his head slowly toward the camera for the first time and
+      holds the look — a small recognition. Warm amber dock lamps
+      bloom behind him in soft bokeh. Wet planks glisten under his
+      paws. Audio is intimate — the lapping of harbour water, a
+      distant foghorn, the nylon-string guitar and a single viola
+      line entering quietly.
+
+  - label: two_figures_glass
+    start_sec: 72
+    duration_sec: 12
+    camera_lora: dolly-out
+    anchor:
+      type: i2i2
+      references: [anchor.png, anchor.png]
+      prompt: >
+        A vertical 9:16 cinematic photograph of two silhouettes of the
+        same bearded bald man facing each other through a pane of
+        condensation-beaded glass — one on each side — one slightly
+        more worn and tired with a hand pressed flat to the glass, the
+        other mirroring the gesture, cool blue light from the left
+        side, warm amber light from the right side, the glass itself
+        holding both reflections, painterly, shoegaze album cover, the
+        feel of a threshold between two identical rooms.
+      steps: 6
+    prompt: >
+      A slow cinematic pull-back from the two silhouettes of the
+      bearded man facing each other through the condensation-beaded
+      pane of glass, one palm pressed on each side mirroring the
+      other, the camera retreats revealing the two identical rooms
+      they occupy — one cool-blue, one warm-amber — the glass the
+      only thing between. Neither figure moves. Audio swells — female
+      harmony enters in octave, pedal steel cries quietly, plate
+      reverb opens wide.
+
+  - label: lamp_clicks_off
+    start_sec: 84
+    duration_sec: 12
+    camera_lora: static
+    anchor:
+      type: t2i
+      prompt: >
+        A vertical 9:16 cinematic photograph of the same small studio
+        now empty, the workbench tidied — notebook closed, pen resting
+        beside it, empty ceramic mug on its coaster — the single warm
+        amber desk lamp still glowing, the laptop now shut, painterly
+        muted palette, soft shoegaze grain, shallow depth of field on
+        the closed notebook, the feel of a room that has been
+        tidied-as-you-go.
+    prompt: >
+      The camera holds completely still on the tidied studio. The
+      warm amber desk lamp glows steadily for a beat. Then it clicks
+      off — a small audible snap — and the room falls to almost
+      complete darkness, the only remaining light the dim pixel-grid
+      of the sleeping laptop's standby LED. The LED pulses once,
+      twice, and the frame fades slowly to near-black over the final
+      seconds. Audio collapses — the held guitar chord decays into
+      tape hiss, a pen is set down on a wooden surface, a door
+      closes softly in a distant room, silence.
