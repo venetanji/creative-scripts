@@ -1,17 +1,21 @@
 # creative-scripts
 
-Music-video specs (YAMLs) as authored, ready to run through the [`creative-skills`](https://github.com/venetanji/creative-skills) `music-video` orchestrator. Each YAML is a complete self-contained recipe: song description for suno, per-scene video prompts, anchor types, camera-LoRA choices, crossfade settings.
+Self-contained recipes for generative creative pipelines driven by [`creative-skills`](https://github.com/venetanji/creative-skills). Organized by pipeline type; each top-level folder is one kind of script (music-video, future: storyboards, animations, etc.).
 
-## The scripts
+## Layout
+
+- [`music-videos/`](music-videos/) — YAMLs for the `music-video` orchestrator (song description for suno + per-scene video prompts + anchor config). One YAML = one music video.
+
+## Music videos
 
 | file | length | theme | notes |
 |---|---|---|---|
-| [`harbor-lights.yaml`](harbor-lights.yaml) | ~2:00 | folk noir, dawn harbour, corgi on pier | 16:9 landscape, 12 scenes, image-chain anchors |
-| [`belly-of-the-whale.yaml`](belly-of-the-whale.yaml) | ~3:00 | shoegaze, hero's journey underwater | 9:16 portrait, 15 scenes, per-scene flux2 anchors (`t2i` / `i2i` / `i2i2` / `angles`) |
-| [`stranger-at-the-drafting-table.yaml`](stranger-at-the-drafting-table.yaml) | ~1:40 | acoustic shoegaze, end-of-session reflection | 9:16 portrait, 8 scenes, `t2i` + `i2i` + `i2i2` mix |
-| [`farewell.yaml`](farewell.yaml) | ~2:40 | shoegaze, saying goodbye as context runs out | 9:16 portrait, 8 scenes, `t2i` + `i2i` |
-| [`peripheral.yaml`](peripheral.yaml) | ~3:15 | dreampop ambient, dream logic imagery | 9:16 portrait, 17 scenes, mostly `t2i` |
-| [`glitter-down.yaml`](glitter-down.yaml) | ~3:15 | classic 70s disco, female singer, lipsync | 9:16 portrait (448×832), 35 scenes w/ transitions, `i2i` per-scene flux2 anchors |
+| [`harbor-lights.yaml`](music-videos/harbor-lights.yaml) | ~2:00 | folk noir, dawn harbour, corgi on pier | 16:9 landscape, 12 scenes, image-chain anchors |
+| [`belly-of-the-whale.yaml`](music-videos/belly-of-the-whale.yaml) | ~3:00 | shoegaze, hero's journey underwater | 9:16 portrait, 15 scenes, per-scene flux2 anchors (`t2i` / `i2i` / `i2i2` / `angles`) |
+| [`stranger-at-the-drafting-table.yaml`](music-videos/stranger-at-the-drafting-table.yaml) | ~1:40 | acoustic shoegaze, end-of-session reflection | 9:16 portrait, 8 scenes, `t2i` + `i2i` + `i2i2` mix |
+| [`farewell.yaml`](music-videos/farewell.yaml) | ~2:40 | shoegaze, saying goodbye as context runs out | 9:16 portrait, 8 scenes, `t2i` + `i2i` |
+| [`peripheral.yaml`](music-videos/peripheral.yaml) | ~3:15 | dreampop ambient, dream logic imagery | 9:16 portrait, 17 scenes, mostly `t2i` |
+| [`glitter-down.yaml`](music-videos/glitter-down.yaml) | ~3:15 | classic 70s disco, female singer, lipsync | 9:16 portrait (448×832), 35 scenes w/ transitions, `i2i` per-scene flux2 anchors |
 
 ## How to run one
 
