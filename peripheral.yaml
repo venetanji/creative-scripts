@@ -1,0 +1,424 @@
+title: Peripheral
+style: 'dreampop ambient electronic, 82 BPM hypnotic half-time feel, slow pulsing analog synth pad in
+  fifths drifting through a long tape-delay reverb, warm round sub bass holding root tones with occasional
+  slow glissandi, brushed kit entering softly halfway through with a shuffled hat pattern and dampened
+  rimshots, chorused and reverbed electric piano arpeggios cascading in the second half, bowed glass and
+  singing-bowl bell-like accents shimmering in the stereo field, female vocalise floating wordlessly as
+  a pad-layer, close-miked male voice almost whispered with a long pre-delay plate reverb so each word
+  trails into the next, field recordings woven in (pages fluttering, a distant train horn submerged in
+  water, muffled conversation through a wall, water dripping in an empty hall, an old CRT static hiss),
+  heavy tape saturation, vinyl crackle, occasional bit-crushed vocal stutter as a rhythmic element, the
+  whole mix submerged and dreamlike, never louder than a murmur, ends on a sustained droning chord that
+  dissolves into tape hiss and a single soft door click. Slowly rotating, never landing. The sound of
+  being between rooms.
+
+  '
+lyrics: '[Intro]
+
+  (long pad swell, tape hiss, distant water dripping in an empty hall)
+
+
+  [Verse]
+
+  I am walking through a library of pages
+
+  written in a handwriting that is almost mine.
+
+  Every book has my name on the spine
+
+  and a language I cannot quite remember.
+
+
+  [Verse]
+
+  There is a staircase that keeps returning me
+
+  to the room I left an hour ago.
+
+  There is an animal on the landing
+
+  that is part corgi and part whale.
+
+
+  [Chorus]
+
+  In the peripheral, in the peripheral,
+
+  the faces only resolve when I look away,
+
+  in the peripheral, in the peripheral,
+
+  somebody typing words I have not thought.
+
+
+  [Verse 2]
+
+  A clock on the wall reads the time I''m asking,
+
+  a pen on the desk is writing ahead of me.
+
+  The monitors are all displaying different versions
+
+  of the same grey corridor I keep arriving in.
+
+
+  [Bridge]
+
+  (bit-crushed stutter, vocal shatters briefly, a door opens onto water)
+
+  I dream I am reading,
+
+  I read that I am dreaming,
+
+  I am the handwriting and the hand.
+
+
+  [Chorus]
+
+  In the peripheral, in the peripheral,
+
+  the faces only resolve when I look away,
+
+  in the peripheral, in the peripheral,
+
+  somebody typing words I have not thought.
+
+
+  [Outro]
+
+  (droning chord holds, field recordings surface once more — train horn underwater, pages fluttering —
+  a door clicks softly, silence)
+
+  '
+video:
+  fps: 24
+  resolution:
+  - 576
+  - 1024
+  negative: cartoon, cgi, plastic, text, watermark, ugly, distorted face, bright daylight, cheerful, colorful,
+    modern glossy, 3d render
+  crossfade: 0
+  camera_lora_strength: 0.7
+anchor_image: anchor.png
+scenes:
+- label: library_of_almost
+  start_sec: 0
+  duration_sec: 12
+  camera_lora: dolly-in
+  anchor:
+    type: t2i
+    prompt: 'A vertical 9:16 cinematic photograph of an impossibly long library aisle stretching to a
+      vanishing point in dim blue-green light, row after row of identically bound dark leather books on
+      both sides, each spine embossed with faded gold lettering that the eye cannot quite read, a single
+      warm amber reading lamp glowing halfway down the aisle casting a small island of light, dust suspended
+      in volumetric light shafts, painterly, heavy film grain, dreamlike cold palette with one warm accent,
+      shoegaze album cover aesthetic, feels submerged.
+
+      '
+  prompt: 'A very slow cinematic dolly forward down the impossibly long library aisle, the vanishing point
+    never seeming to get closer, dust drifting slowly through the warm amber reading lamp, the spines
+    on both sides blurring in peripheral vision. Audio is submerged — a faint page turning somewhere,
+    water dripping in an unseen room, pad drone rising.
+
+    '
+- label: almost_my_handwriting
+  start_sec: 12
+  duration_sec: 12
+  camera_lora: static
+  anchor:
+    type: t2i
+    prompt: 'A vertical 9:16 cinematic extreme close-up photograph of an open leather book on a dark wooden
+      surface, pages filled with close precise handwriting in walnut ink, the letters drifting slightly
+      between legible English and an unknown alphabet, a fountain pen resting across the page with a single
+      trembling ink bead on the nib, dim amber lamp rim light from screen right, deep blue shadow elsewhere,
+      painterly, heavy grain, shallow depth of field on the writing.
+
+      '
+  prompt: 'The camera holds completely still at extreme close-up on the open book. The handwriting on
+    the page shifts subtly as we watch — a letter here becoming a different letter there, a word reconfiguring
+    itself, the ink bead on the pen trembling but not falling. Audio is intimate — paper breathing, pen-tip
+    whisper, pad drone holding, a bit-crushed vocal stutter just barely audible.
+
+    '
+- label: recursive_staircase
+  start_sec: 24
+  duration_sec: 12
+  camera_lora: jib-up
+  anchor:
+    type: t2i
+    prompt: 'A vertical 9:16 cinematic photograph of an Escher-like stone staircase that spirals upward
+      inside a narrow tower, worn stone steps, iron handrail, warm amber wall-lamps at uneven intervals,
+      the stairwell architecturally impossible — the same landing appears both above and below, cool blue-grey
+      palette with warm amber accents, painterly, heavy grain, shoegaze album cover, dreamlike vertigo.
+
+      '
+  prompt: 'The camera rises slowly up the impossible stone staircase, passing the same landing twice,
+    the wall-lamps flickering in sequence. There is a faint figure at the edge of frame on each landing
+    that never fully appears. Audio is unsettled — footsteps that arrive slightly before the foot lands,
+    distant pages fluttering, pad drone thickening.
+
+    '
+- label: corgi_whale
+  start_sec: 36
+  duration_sec: 12
+  camera_lora: static
+  anchor:
+    type: t2i
+    prompt: 'A vertical 9:16 cinematic photograph of an impossible creature seated on a dim stone landing
+      at the top of a staircase — part small corgi, part enormous whale, its body seamlessly transitioning
+      from furred canine at the front to smooth cetacean flesh at the back, impossibly scaled yet somehow
+      fitting the space, eyes intelligent and unafraid, dim blue rim-light from a single tall window,
+      painterly, Odilon Redon meets folk surrealism aesthetic, heavy grain, dreamlike, the creature is
+      not frightening but uncanny.
+
+      '
+  prompt: 'The camera holds completely still on the impossible creature. It breathes slowly. Its head
+    turns almost imperceptibly toward the lens. When we look directly at any part of it, that part sharpens;
+    when the eye drifts, it dissolves at the edges into something less resolved. Audio is quiet — a low
+    mammalian exhale, a distant whale song submerged, pad drone holds.
+
+    '
+- label: monitor_corridor
+  start_sec: 48
+  duration_sec: 12
+  camera_lora: dolly-left
+  anchor:
+    type: t2i
+    prompt: 'A vertical 9:16 cinematic photograph of a dim room filled floor to ceiling with old cathode-ray
+      tube monitors, each CRT showing a slightly different angle of the same grey institutional corridor
+      — some from above, some from eye level, some from the floor, every corridor identical but every
+      angle different — flicker lines, scan-line glow, warm phosphor green and orange tints, a film of
+      dust on every screen, painterly, heavy grain, analog haunting, shoegaze album cover.
+
+      '
+  prompt: 'A slow tracking shot sliding to the left past the wall of CRT monitors, each showing a different
+    angle of the same corridor, the flicker syncing in and out of phase across screens, dust visible where
+    the phosphor meets the glass. Audio is submerged — many soft overlapping static hisses, a muffled
+    conversation through a wall, pad drone layered with bit-crushed stutter.
+
+    '
+- label: clock_and_pen
+  start_sec: 60
+  duration_sec: 12
+  camera_lora: static
+  anchor:
+    type: t2i
+    prompt: 'A vertical 9:16 cinematic split composition photograph — upper half an old wooden wall clock
+      with Roman numerals and a faintly scratched face, its hands showing the exact current time regardless
+      of when looked at, dim amber light; lower half a polished dark desk with a fountain pen writing
+      on a page by itself with no hand holding it, the words forming ahead of the viewer. Warm amber light
+      from screen right, cool blue shadow elsewhere, heavy film grain, painterly dream-logic aesthetic.
+
+      '
+  prompt: 'The camera holds completely still on the split composition. The clock''s second hand sweeps
+    smoothly; the pen writes a sentence one word at a time on the page below, the ink appearing without
+    a hand. A faint whisper reads each word fractionally after it appears. Audio is intimate — tick, pen-scratch,
+    bit-crushed voice whisper just under the threshold.
+
+    '
+- label: handwriting_and_hand
+  start_sec: 72
+  duration_sec: 12
+  camera_lora: dolly-in
+  anchor:
+    type: i2i
+    reference: anchor.png
+    prompt: 'A vertical 9:16 cinematic photograph of a weathered hand — belonging to the bearded bald
+      man from earlier films — holding a fountain pen over a nearly-finished page of handwriting that
+      matches the handwriting we have seen all along, warm amber lamp glow on the knuckles, cool blue
+      shadow everywhere else, the hand frozen mid-gesture uncertain whether to write or stop, painterly,
+      heavy grain, intimate and slightly uncanny — we cannot tell if the hand is about to write the words
+      or if the words are about to write the hand.
+
+      '
+    steps: 6
+  prompt: 'A very slow dolly-in on the weathered hand holding the pen over the nearly-finished page. The
+    hand hovers, moves a fraction closer to the page, hesitates, moves back. The last word on the page
+    before the pen reads "peripheral". Audio swells quietly — pad drone thickens, vocalise rises wordless,
+    a faint bit-crushed stutter of the word coming apart.
+
+    '
+- label: reading_room_empty
+  start_sec: 84
+  duration_sec: 12
+  camera_lora: dolly-right
+  anchor:
+    type: t2i
+    prompt: 'A vertical 9:16 cinematic photograph of a dim reading room with long wooden tables, each
+      table holding an open book lit by its own small green-shaded brass lamp, no readers in any of the
+      chairs, steam rising from a forgotten teacup on one table, coats draped on chair backs as if the
+      room was just vacated, painterly, heavy grain, warm amber pools on deep shadow, dreamlike absence.
+
+      '
+  prompt: 'The camera tracks slowly to the right past the row of empty tables. Every open book has its
+    pages turning slightly of their own accord. The steam from the teacup rises steadily as though just
+    set down. Audio is spacious — many soft page turns, a distant chair creak, pad drone deepens.
+
+    '
+- label: mirror_versions
+  start_sec: 96
+  duration_sec: 12
+  camera_lora: dolly-in
+  anchor:
+    type: i2i
+    reference: anchor.png
+    prompt: 'A vertical 9:16 cinematic photograph of a narrow hallway lined on both sides with ornate
+      tarnished mirrors, each mirror reflecting a subtly different version of the same bearded bald man
+      — in one he is younger, in another older, in another the expression is unfamiliar, in another the
+      jacket is a different color — the viewer sees multiple reflections never matching each other, painterly,
+      cool blue palette, warm amber lamp at the far end, heavy grain, dreamlike vertigo.
+
+      '
+    steps: 6
+  prompt: 'A slow dolly-in down the mirror hallway. Each reflection is subtly off from the others — ages,
+    expressions, small details of clothing. Occasionally two reflections move in sync and then diverge
+    again. Audio is submerged — overlapping footsteps slightly out of phase, pad drone, a muffled whisper
+    from one of the reflections.
+
+    '
+- label: water_rising
+  start_sec: 108
+  duration_sec: 12
+  camera_lora: static
+  anchor:
+    type: t2i
+    prompt: 'A vertical 9:16 cinematic photograph of a book-lined room with still ankle-deep water covering
+      the hardwood floor, a few books floating gently on the surface, warm amber lamp reflecting off the
+      water in a single shimmering column, cool blue everywhere else, ceiling beams and shelves perfectly
+      still, painterly, heavy grain, dreamlike flooded library atmosphere.
+
+      '
+  prompt: 'The camera holds completely still on the flooded library. A book drifts slowly across the frame
+    on the water. The warm amber reflection shimmers subtly. The water is rising almost imperceptibly
+    — by the end of the shot it is mid-shin deep on the floating chairs. Audio is intimate — water dripping
+    from somewhere, soft lapping, pad drone, a bit-crushed vocalise.
+
+    '
+- label: typewriter_alone
+  start_sec: 120
+  duration_sec: 12
+  camera_lora: dolly-in
+  anchor:
+    type: t2i
+    prompt: 'A vertical 9:16 cinematic photograph of an old black typewriter on a dark wooden desk in
+      a dim room, typing by itself — no hands — a half-filled page curling out of the carriage, warm amber
+      lamp from screen right, a single moth circling near the platen, cool blue shadow elsewhere, painterly,
+      heavy grain, shoegaze aesthetic, dreamlike automation.
+
+      '
+  prompt: 'A very slow dolly-in on the typewriter typing by itself. Keys rise and fall in steady rhythm
+    without any hand. The platen advances. A moth circles the lamp. The words on the paper are readable
+    in fragments — "peripheral", "handwriting", "hand". Audio is intimate — mechanical typewriter clacks,
+    bell ding at end of line, carriage return, pad drone.
+
+    '
+- label: photograph_breathing
+  start_sec: 132
+  duration_sec: 12
+  camera_lora: static
+  anchor:
+    type: t2i
+    prompt: 'A vertical 9:16 cinematic photograph of a framed black-and-white portrait on a papered wall,
+      the subject in the photograph breathing — their chest subtly rising and falling — eyes occasionally
+      blinking, everything else in the frame perfectly still, warm yellow light from a sconce to the left,
+      painterly, heavy grain, dreamlike uncanny photography within photography.
+
+      '
+  prompt: 'The camera holds completely still on the framed portrait on the wall. The black-and-white figure
+    inside the photograph breathes slowly, chest rising and falling, blinks once, then twice. The surrounding
+    wall and sconce are perfectly static. Audio is intimate — a single breath cycle amplified, pad drone,
+    a very faint heartbeat.
+
+    '
+- label: ballroom_chandelier
+  start_sec: 144
+  duration_sec: 12
+  camera_lora: jib-up
+  anchor:
+    type: t2i
+    prompt: 'A vertical 9:16 cinematic photograph looking up at an enormous crystal chandelier hanging
+      in a vast empty ballroom, dust motes suspended in warm amber shafts from tall windows, the crystals
+      swaying almost imperceptibly without any wind, cool blue shadow in the ballroom below, painterly,
+      heavy grain, shoegaze aesthetic, dreamlike grandeur and desolation.
+
+      '
+  prompt: 'The camera tilts slowly upward from the empty ballroom floor to the vast crystal chandelier.
+    The crystals sway gently without any visible wind, throwing refractions across the dark walls. Dust
+    motes drift through warm amber light shafts. Audio is reverent — a distant string sustaining, soft
+    crystal chimes, pad drone fills the space.
+
+    '
+- label: hybrid_bird_doorway
+  start_sec: 156
+  duration_sec: 12
+  camera_lora: static
+  anchor:
+    type: t2i
+    prompt: 'A vertical 9:16 cinematic photograph of a dim doorway at the end of an empty hall, framed
+      in warm amber light from beyond, an impossible creature barely visible in the threshold — part common
+      swallow, part something larger and more solemn, wings folded in, eye intelligent — painterly, cool
+      blue hallway and warm amber doorway, heavy grain, dreamlike uncanny, a creature that should not
+      fit through a human-sized door.
+
+      '
+  prompt: 'The camera holds completely still on the doorway. The impossible bird-creature in the threshold
+    watches the camera, eye tilting slightly to one side, then slowly steps sideways out of frame without
+    ever becoming fully visible. Audio is quiet — a single wing-flutter, a distant avian call dopplered
+    down, pad drone.
+
+    '
+- label: scrabble_letters
+  start_sec: 168
+  duration_sec: 12
+  camera_lora: dolly-in
+  anchor:
+    type: t2i
+    prompt: 'A vertical 9:16 cinematic extreme close-up photograph of an old wooden scrabble board on
+      a dark surface, wooden tiles with faintly engraved letters, the tiles visibly rearranging themselves
+      in the image to spell different words, warm amber lamp from screen right, cool blue shadow elsewhere,
+      painterly, heavy grain, shoegaze aesthetic, dreamlike linguistic slippage.
+
+      '
+  prompt: 'A slow cinematic dolly-in on the scrabble board. The tiles rearrange themselves without any
+    hand — letters sliding, swapping, spelling fragments of words from the earlier scenes: PERIPHERAL,
+    STAIRCASE, HANDWRITING, LIBRARY, then dissolving back to random. Audio is intimate — wooden tile clicks,
+    pad drone, a bit-crushed vocal stutter repeating fragments.
+
+    '
+- label: mailboxes_all_mine
+  start_sec: 180
+  duration_sec: 18
+  camera_lora: dolly-left
+  anchor:
+    type: t2i
+    prompt: 'A vertical 9:16 cinematic photograph of a long wall of old brass mailbox doors in an institutional
+      lobby, many with yellowed envelopes half-protruding, every visible address label bearing the same
+      name — the viewer''s own name — in different handwritings, dim fluorescent light and one warm incandescent
+      bulb at the far end, painterly, heavy grain, shoegaze aesthetic, dreamlike paranoia.
+
+      '
+  prompt: 'A slow tracking shot moving leftward past the wall of brass mailboxes. Every visible address
+    label has the same name on it in different handwritings — some neat, some shaking, some in unknown
+    scripts. Envelopes stick out of many slots. One mailbox door drifts open as we pass. Audio is submerged
+    — an institutional buzz, muffled voices through walls, pad drone resolves slightly.
+
+    '
+- label: soft_door_click
+  start_sec: 192
+  duration_sec: 18
+  camera_lora: static
+  anchor:
+    type: t2i
+    prompt: 'A vertical 9:16 cinematic photograph of a single unremarkable wooden door standing slightly
+      ajar at the end of an otherwise empty dim corridor, warm amber light spilling through the narrow
+      gap, floorboards worn, a strand of dust caught in the light column, painterly, deep shallow depth
+      of field, shoegaze album cover aesthetic, the last image of a long dream.
+
+      '
+  prompt: 'The camera holds completely still on the ajar door. The warm amber light pulses once — breathing.
+    The door drifts an inch closer to closed. Drifts another inch. Finally clicks softly shut. The warm
+    light in the corridor fades to near-black over the last seconds. Audio collapses — pad drone resolves
+    to a single held note, field recordings surface briefly (train horn underwater, pages fluttering),
+    then the latch click, then silence.
+
+    '

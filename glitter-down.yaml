@@ -1,0 +1,421 @@
+title: Glitter Down
+style: 'classic 70s disco, four-on-the-floor kick, soaring string section with stabs, funky wah rhythm
+  guitar, syncopated slap-bass, hi-hat sixteenths, tight horn stab section, male falsetto lead with doubled
+  female backing, clap on 2 and 4, 120 BPM, warm analog Rhodes, tambourine, mirrorball peak-hour euphoric
+  feel.
+
+  '
+lyrics: '[Verse]
+
+  Seven on the clock and the line''s around the block,
+
+  dress code is whatever you brought.
+
+  I put on the shoes I swore I wouldn''t wear,
+
+  doorman says honey come right through here.
+
+
+  [Pre-Chorus]
+
+  I came in tired, I came in slow,
+
+  by the second verse I''m gonna let it go.
+
+
+  [Chorus]
+
+  Glitter down, glitter down,
+
+  rain like this don''t fall on any other town.
+
+  Glitter down, glitter down,
+
+  put your sorrow on the ground.
+
+  '
+video:
+  fps: 24
+  resolution:
+  - 448
+  - 832
+  negative: cartoon, cgi, plastic, text, captions, subtitles, signs, logos, lettering, typography, words,
+    letters, watermark, ugly, distorted face, still frame
+  crossfade: 0
+  camera_lora_strength: 0.6
+  tail_buffer_sec: 0.5
+  transitions:
+    enabled: true
+    duration: 1.5
+    fps: 25
+    prompt: a smooth cinematic morph between scenes, matching lighting and mood, continuous singing motion,
+      warm amber and magenta disco lighting carried across the cut
+anchor_image: anchor.png
+scenes:
+- label: mirrorball_open
+  start_sec: 0
+  duration_sec: 4
+  image: '@none'
+  prompt: 'A glittering mirrorball spinning fast in a dark disco ceiling, magenta and cyan strobes flashing
+    hard, cones of light cutting through heavy smoke, lens flare, fast push-in, warm film grain, 1970s
+    album cover aesthetic, no text.
+
+    '
+- label: neon_street
+  start_sec: 4
+  duration_sec: 5
+  image: '@none'
+  prompt: 'A rainy nighttime city street outside a glowing disco club, neon signs reflecting in puddles,
+    people in 70s outfits queuing toward a gold-lit doorway, fast tracking shot past them, bokeh lights,
+    cinematic grain, no text.
+
+    '
+- label: curtain_entry
+  start_sec: 9
+  duration_sec: 4
+  image: '@none'
+  prompt: 'Fast handheld camera push through a heavy gold-foil curtain into the blinding warmth of a crowded
+    disco, particles of light pouring through the gap, magenta and amber backlight silhouetting the curtain
+    edges, motion blur, 35mm film look, no text.
+
+    '
+- label: shoes_onfloor
+  start_sec: 13
+  duration_sec: 6
+  image: '@none'
+  prompt: 'Low-angle tracking shot of platform-heeled shoes stepping fast across a glittery wet dance
+    floor that reflects magenta and cyan strobes in pools, quick cutty motion blur, rim highlights on
+    the heels, cinematic, no text.
+
+    '
+- label: crowd_appear
+  start_sec: 19
+  duration_sec: 6.5
+  image: '@none'
+  prompt: 'A fast cinematic reveal of the packed disco dance floor at peak hour, silhouetted dancers moving
+    together in a haze of magenta and amber strobes, the mirrorball flinging glitter across every face,
+    confetti hanging in the light beams, euphoric wide shot, warm film grain, no text.
+
+    '
+- label: lip_clock_block
+  start_sec: 25.5
+  duration_sec: 7.9
+  camera_lora: static
+  anchor:
+    type: i2i
+    reference: anchor.png
+    prompt: A vertical cinematic medium shot of the same disco singer captured mid-stride on a lit disco
+      dance floor, glancing to camera, gold-foil sequin dress catching amber light, wavy hair, warm film
+      grain, 70s aesthetic, no text.
+    steps: 6
+  prompt: 'The disco singer strides across the illuminated dance floor past a group of cheering dancers,
+    mouth shaping each word as she sings the opening lines and glances back toward the camera with a grin,
+    hips moving on the beat, the mirrorball spinning overhead casting glitter across her gold-foil dress,
+    amber rim light flaring with the kick. Mouth moves clearly: ''Seven on the clock, and the line is
+    around the block, dress code is whatever you brought''.'
+- label: lip_shoes_doorman
+  start_sec: 33.4
+  duration_sec: 7.4
+  camera_lora: static
+  anchor:
+    type: i2i
+    reference: anchor.png
+    prompt: A vertical cinematic medium shot of the singer half-turned over her shoulder near a neon doorway,
+      soft smile, magenta backlight, gold chain, wavy hair, 70s album-cover aesthetic, no text.
+    steps: 6
+  prompt: 'The singer leans against a neon-lit doorway and looks back over her shoulder toward the camera,
+    a half-smile forming, flipping her hair once as she delivers the line, a silhouetted doorman behind
+    her lifting a velvet rope, magenta backlight bleeding through the doorway. Mouth moves clearly: ''I
+    put on the shoes I swore I wouldn''t wear, the doorman says honey come right through here''.'
+- label: lip_came_in_tired
+  start_sec: 40.8
+  duration_sec: 8
+  camera_lora: static
+  anchor:
+    type: i2i
+    reference: anchor.png
+    prompt: A vertical cinematic medium shot of the singer walking through an amber-lit corridor, eyes
+      half-closed in feeling, hand lifted to chest, warm rim light, 70s album-cover aesthetic, no text.
+    steps: 6
+  prompt: 'The singer walks slowly through a smoky corridor lit by amber floor lamps, touching a hand
+    to her chest mid-phrase, eyes half-closing on the pre-chorus, then tipping her head up on the last
+    line as she catches sight of the main room ahead, her hair flicking in the motion. Mouth moves clearly:
+    ''I came in tired, I came in slow, by the second verse I''m gonna let it go''.'
+- label: lip_let_it_down
+  start_sec: 48.8
+  duration_sec: 8.4
+  camera_lora: static
+  anchor:
+    type: i2i
+    reference: anchor.png
+    prompt: A vertical cinematic full-figure shot of the singer mid-spin on the dance floor, dress whirling,
+      hand overhead, magenta strobes flaring, film grain, 70s aesthetic, no text.
+    steps: 6
+  prompt: 'The singer breaks into a spin on the dance floor as the chorus lands, gold-foil dress whirling
+    around her, tossing one hand up overhead, hips on the four-on-the-floor kick, magenta strobes hitting
+    each ''down'', mouth forming each repeat clearly, the camera orbiting once around her. Mouth moves
+    clearly: ''Let it down, let it down, rain like this don''t fall on any other town''.'
+- label: lip_glitter_sorrow
+  start_sec: 57.2
+  duration_sec: 8.3
+  camera_lora: static
+  anchor:
+    type: i2i
+    reference: anchor.png
+    prompt: A vertical cinematic medium shot of the singer with both arms raised in the chorus, confetti
+      in the air around her, crowd silhouettes below, joyous expression, amber rim flaring, 70s aesthetic,
+      no text.
+    steps: 6
+  prompt: 'The singer throws both hands into the air with the chorus hook, confetti catching the amber
+    stage light, mouth open in full joyous shout, she leans back with a big smile, the crowd silhouetted
+    around her raising their hands on each ''down'', gold chain glinting. Mouth moves clearly: ''Glitter
+    down, glitter down, put your sorrow on the ground''.'
+- label: horn_stab_crowd
+  start_sec: 65.5
+  duration_sec: 3.4
+  image: '@none'
+  prompt: 'A fast tracking shot through a forest of raised hands on the disco dance floor, amber strobe
+    punching on each beat, confetti drifting, motion blur, euphoric, warm film grain, no text.
+
+    '
+- label: mirrorball_spin2
+  start_sec: 68.9
+  duration_sec: 3.4
+  image: '@none'
+  prompt: 'Extreme close-up of a glittery disco mirrorball spinning fast, each facet throwing tiny rays
+    of magenta and amber across a dark background, shallow depth of field, cinematic macro, no text.
+
+    '
+- label: lip_band_four
+  start_sec: 72.3
+  duration_sec: 7.7
+  camera_lora: static
+  anchor:
+    type: i2i
+    reference: anchor.png
+    prompt: A vertical cinematic medium shot of the singer walking along the front of a raised stage,
+      musicians silhouetted behind her, amber stage light, gold chain, 70s aesthetic, no text.
+    steps: 6
+  prompt: 'The singer moves along the front of a raised disco stage, trailing her hand across the edge,
+    musicians silhouetted behind her under amber stage lights, she half-turns toward the camera with each
+    line and shimmies on the kick, the mirrorball spinning overhead. Mouth moves clearly: ''Band on the
+    risers playing four on the floor, everybody acting like we never want more''.'
+- label: lip_moon_silver
+  start_sec: 80
+  duration_sec: 8.1
+  camera_lora: static
+  anchor:
+    type: i2i
+    reference: anchor.png
+    prompt: A vertical cinematic medium shot of the singer on a side platform, face tilted up into a shaft
+      of cool blue light, half-smile, wavy hair moving, 70s aesthetic, no text.
+    steps: 6
+  prompt: 'The singer steps onto a side platform and lifts her face into a shaft of moonlit-blue light
+    coming from above, a half-smile of recognition on ''better one'', eyes drifting upward on the word
+    ''moon'', hair moving as she turns her head slowly. Mouth moves clearly: ''I lost my ride and I found
+    a better one, the moon is calling in a silver tongue''.'
+- label: lip_glitter_v2_rain
+  start_sec: 88.1
+  duration_sec: 8
+  camera_lora: static
+  anchor:
+    type: i2i
+    reference: anchor.png
+    prompt: A vertical cinematic medium shot of the singer dancing close to a friend on the floor, shoulder
+      bumped in motion, mid-laugh, amber strobe, crowd behind, 70s aesthetic, no text.
+    steps: 6
+  prompt: 'The singer dances with a laughing friend on the floor, their shoulders bumping on each ''down'',
+    she throws her head back in a laugh between phrases, amber horn-stab light flaring, crowd visible
+    around them raising hands on the beat, fast cinematic handheld. Mouth moves clearly: ''Glitter down,
+    glitter down, rain like this''.'
+- label: lip_dont_fall_glitter
+  start_sec: 96.1
+  duration_sec: 8
+  camera_lora: static
+  anchor:
+    type: i2i
+    reference: anchor.png
+    prompt: A vertical cinematic medium shot of the singer mid-spin past the camera, hair flying, hand
+      brushing through falling confetti, amber-to-magenta lighting, 70s aesthetic, no text.
+    steps: 6
+  prompt: 'The singer spins past the camera one last time on this chorus, hair flying, hand brushing through
+    the confetti mid-air, mouth shaping each ''glitter down'' with a growing grin, gold chain bouncing
+    against the sequin dress, fast cinematic orbit. Mouth moves clearly: ''don''t fall on any other town,
+    glitter down, glitter down''.'
+- label: eq_bars
+  start_sec: 104.1
+  duration_sec: 4
+  image: '@none'
+  prompt: 'Pulsing graphic equalizer bars in saturated neon pink and lime green, jumping rhythmically
+    with the bass, vintage VHS scanlines, high contrast, cinematic close-up, fast cut, no text.
+
+    '
+- label: vinyl_spin
+  start_sec: 108.1
+  duration_sec: 4
+  image: '@none'
+  prompt: 'Extreme close-up of a vinyl record spinning fast on a chrome turntable, label a circular blur
+    of amber and magenta, needle tracking, club glow pulsing in the reflective vinyl, cinematic macro,
+    no text, no writing on the label.
+
+    '
+- label: light_beams
+  start_sec: 112.1
+  duration_sec: 4
+  image: '@none'
+  prompt: 'Hard amber and magenta disco light beams cutting through thick club smoke at sharp angles,
+    particles of dust drifting fast in the beams, lens flare, fast crane move, warm film grain, no text.
+
+    '
+- label: mirror_wall
+  start_sec: 116.1
+  duration_sec: 4
+  image: '@none'
+  prompt: 'A mirror-walled disco corridor with spinning mirrorball reflections rippling across walls and
+    floor, magenta and amber highlights racing past the camera, fast dolly forward, motion blur, no text.
+
+    '
+- label: silhouette_pop
+  start_sec: 120.1
+  duration_sec: 4
+  image: '@none'
+  prompt: 'Silhouettes of dancers moving fast against a blinding magenta backlight, hard strobes popping
+    once per beat, smoke drifting through their outlines, cinematic fast tracking shot, no text.
+
+    '
+- label: platform_whip
+  start_sec: 124.1
+  duration_sec: 4
+  image: '@none'
+  prompt: 'A fast whip-pan across platform-shoe feet mid-spin on a glittery dance floor, magenta streaks
+    of light trailing the motion, rim highlights, cinematic, motion blur, no text.
+
+    '
+- label: gold_curtain_flap
+  start_sec: 128.1
+  duration_sec: 4
+  image: '@none'
+  prompt: 'A close-up of a heavy gold-foil curtain rippling violently as people pass through it, amber
+    light bleeding through the gap, fast handheld, warm film grain, no text.
+
+    '
+- label: confetti_fall
+  start_sec: 132.1
+  duration_sec: 4
+  image: '@none'
+  prompt: 'Slow-motion confetti cascading through cones of amber and magenta disco light, each piece catching
+    its own reflection, the dance floor faintly visible below, cinematic, shallow depth of field, no text.
+
+    '
+- label: aerial_swirl
+  start_sec: 136.1
+  duration_sec: 4
+  image: '@none'
+  prompt: 'An overhead spinning aerial shot of a packed disco dance floor, the mirrorball''s reflected
+    glitter swirling across bodies and floor, magenta and amber lights rotating, film grain, kinetic,
+    no text.
+
+    '
+- label: neon_sign_flash
+  start_sec: 140.1
+  duration_sec: 4
+  image: '@none'
+  prompt: 'Abstract close-up of glowing neon glass tubes bent into swirls and curls, flashing with magenta
+    and amber pulses, the filament glow blooming the lens, no letters, no writing, pure abstract shapes,
+    film grain, no text.
+
+    '
+- label: dancer_closeup
+  start_sec: 144.1
+  duration_sec: 4
+  image: '@none'
+  prompt: 'Close-up of an anonymous dancer''s collarbone and shoulder with a gold chain swinging against
+    sweat-shiny skin, amber rim from behind, magenta bloom from the front, motion blur as they turn, cinematic,
+    no text.
+
+    '
+- label: crowd_peak_strobe
+  start_sec: 148.1
+  duration_sec: 4
+  image: '@none'
+  prompt: 'A wide shot of the packed dance floor at peak energy, every face silhouetted by a blinding
+    magenta strobe, hands raised, confetti falling, cinematic handheld, motion blur, no text.
+
+    '
+- label: lip_bridge_echo
+  start_sec: 152.1
+  duration_sec: 8
+  camera_lora: static
+  anchor:
+    type: i2i
+    reference: anchor.png
+    prompt: A vertical cinematic medium close-up of the singer leaning against a mirrored pillar in a
+      quieter club corner, hushed private smile, sweat glistening, softer amber light, 70s aesthetic,
+      no text.
+    steps: 6
+  prompt: 'The singer steps alone into a quieter corner of the club, leans against a mirrored pillar,
+    a hushed private smile curling on each whispered ''glitter down'', eyes closing briefly, sweat glistening
+    on her cheekbone as the amber light dims softly. Mouth moves clearly: sparse ''glitter down'' echoes,
+    intimate bridge feel.'
+- label: confetti_joy
+  start_sec: 160.1
+  duration_sec: 4
+  image: '@none'
+  prompt: 'Heavy amber and magenta confetti falling slowly over a packed dance floor, dancers catching
+    pieces mid-air, light beams behind them, euphoric, grainy, no text.
+
+    '
+- label: whip_360
+  start_sec: 164.1
+  duration_sec: 4
+  image: '@none'
+  prompt: 'A fast 360-degree whip-pan across the dance floor from a dancer''s point of view, everything
+    blurring into streaks of magenta and amber, mirrorball glitter racing across the frame, motion blur,
+    cinematic, no text.
+
+    '
+- label: dancefloor_wide
+  start_sec: 168.1
+  duration_sec: 4
+  image: '@none'
+  prompt: 'A cinematic wide handheld shot of the whole dance floor moving as one body, arms up, confetti
+    in the air, amber string-swell lighting warming the scene, warm film grain, no text.
+
+    '
+- label: streaks_abstract
+  start_sec: 172.1
+  duration_sec: 4
+  image: '@none'
+  prompt: 'Abstract streaks of magenta and amber light racing across a dark frame, mirrorball glitter
+    specks scattering, very shallow depth of field, cinematic motion blur, no text.
+
+    '
+- label: lip_final_chorus1
+  start_sec: 176.1
+  duration_sec: 8
+  camera_lora: static
+  anchor:
+    type: i2i
+    reference: anchor.png
+    prompt: A vertical cinematic full-figure shot of the singer running toward the front of the stage,
+      arms thrown wide, hair flying, amber and magenta strobes exploding around her, 70s aesthetic, no
+      text.
+    steps: 6
+  prompt: 'The singer runs toward the front of the stage with the final chorus, arms thrown wide, hair
+    flying, mouth full-throated on every word, amber and magenta strobes exploding around her, a fist
+    rising into the frame at the last ''down'', the crowd matching her energy below. Mouth moves clearly:
+    ''glitter down, glitter down, rain like this don''t fall on any other town''.'
+- label: lip_final_outro
+  start_sec: 184.1
+  duration_sec: 10.7
+  camera_lora: static
+  anchor:
+    type: i2i
+    reference: anchor.png
+    prompt: A vertical cinematic medium close-up of the singer with head tipped back, eyes closed, warm
+      smile breaking across her face, softening amber rim, 70s aesthetic, no text.
+    steps: 6
+  prompt: 'The singer holds the final phrase with her head tipped back and eyes closed, a warm smile breaking
+    across her face on the last ''ground'', then she lowers her gaze toward the camera one last time,
+    amber rim slowly dimming, magenta backlight carrying her into near-silhouette as the track closes.
+    Mouth moves clearly: ''glitter down, glitter down, put your sorrow on the ground''.'

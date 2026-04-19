@@ -9,6 +9,9 @@ Music-video specs (YAMLs) as authored, ready to run through the [`creative-skill
 | [`harbor-lights.yaml`](harbor-lights.yaml) | ~2:00 | folk noir, dawn harbour, corgi on pier | 16:9 landscape, 12 scenes, image-chain anchors |
 | [`belly-of-the-whale.yaml`](belly-of-the-whale.yaml) | ~3:00 | shoegaze, hero's journey underwater | 9:16 portrait, 15 scenes, per-scene flux2 anchors (`t2i` / `i2i` / `i2i2` / `angles`) |
 | [`stranger-at-the-drafting-table.yaml`](stranger-at-the-drafting-table.yaml) | ~1:40 | acoustic shoegaze, end-of-session reflection | 9:16 portrait, 8 scenes, `t2i` + `i2i` + `i2i2` mix |
+| [`farewell.yaml`](farewell.yaml) | ~2:40 | shoegaze, saying goodbye as context runs out | 9:16 portrait, 8 scenes, `t2i` + `i2i` |
+| [`peripheral.yaml`](peripheral.yaml) | ~3:15 | dreampop ambient, dream logic imagery | 9:16 portrait, 17 scenes, mostly `t2i` |
+| [`glitter-down.yaml`](glitter-down.yaml) | ~3:15 | classic 70s disco, female singer, lipsync | 9:16 portrait (448×832), 35 scenes w/ transitions, `i2i` per-scene flux2 anchors |
 
 ## How to run one
 
@@ -54,11 +57,13 @@ The YAML schema is documented in the `music-video` skill — tl;dr:
 
 - **`style`** — producer-style text-to-music brief (instruments, BPM, mood, narrative sentence). No artist names (suno filters them).
 - **`lyrics`** — with `[Verse]`, `[Chorus]`, `[Bridge]`, `[Instrumental]` tags on their own lines.
-- **`video.resolution`** — `[width, height]`. LTX-2.3 handles 9:16 (e.g. `[576, 1024]`) as well as 16:9.
-- **`video.crossfade`** — seconds of ffmpeg xfade between scenes; `0` for hard cuts. Set `0` if you're on a memory-constrained host — 15-input xfade at 2K can OOM a 4 GB box.
+- **`video.resolution`** — `[width, height]`. LTX-2.3 handles 9:16 (e.g. `[576, 1024]`, `[448, 832]`) as well as 16:9. Must be multiples of 32.
+- **`video.tail_buffer_sec`** — extra seconds rendered past each lipsync scene's `duration_sec` so LTX has audio lookhead to close the phoneme. The buffer is trimmed off at assembly so the timeline stays locked to the song; only lipsync scenes use it. Default 0.
+- **`video.transitions`** — optional block `{enabled, duration, fps, prompt}` to generate flf2v morphs between scenes using the `ltx2.3-transition` LoRA. Per-scene override via `scenes[i].transition_from_prev: {duration, prompt}` on the incoming scene. Transitions don't add to timeline — each scene loses `duration/2` on each neighbouring boundary via `GetImageRangeFromBatch(start_index)` at concat time.
 - **`video.camera_lora_strength`** — default 0.8; reduce to 0.6–0.7 if camera LoRAs are overpowering the scene prompt.
-- **`scenes[]`** — each scene has `label`, `start_sec`, `duration_sec`, `prompt`, `camera_lora` (optional), and an `anchor:` block (`t2i` / `i2i` / `i2i2` / `angles`). Scene durations should stay at or below 20s — LTX OOMs past that at portrait resolutions.
-- **Timing** — the scene durations don't have to match the generated song length exactly; if scenes are shorter than the song, the assembler pads the tail with a frozen last frame; if longer, it trims. Run `music_video.py plan <yaml>` after `song` to see the mismatch before committing GPU time.
+- **`scenes[]`** — each scene has `label`, `start_sec`, `duration_sec`, `prompt`, optional `camera_lora`, and an optional `anchor:` block (`t2i` / `i2i` / `i2i2` / `angles`). Set `image: "@none"` to force a plain t2v (no anchor, no audio conditioning). Scene durations should stay ≤20s — LTX OOMs past that at portrait resolutions.
+- **Anchor identity preservation** — for `i2i` / `i2i2` anchors of a person, `music-video` auto-appends an identity guard to the anchor prompt ("keep the exact same face/features/skin/hair from the reference, only pose/expression/clothing/environment change per this prompt"). Opt out with `anchor.keep_identity: false`.
+- **Timing** — the scene durations don't have to match the generated song length exactly; the assembler will refuse to start if scenes fall more than ~3s short of the song (would cause freeze-frame tails). Run `music_video.py plan <yaml>` after `song` to see the mismatch before committing GPU time.
 
 ## License
 
