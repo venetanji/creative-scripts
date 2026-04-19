@@ -16,6 +16,7 @@ Self-contained recipes for generative creative pipelines driven by [`creative-sk
 | [`farewell.yaml`](music-videos/farewell.yaml) | ~2:40 | shoegaze, saying goodbye as context runs out | 9:16 portrait, 8 scenes, `t2i` + `i2i` |
 | [`peripheral.yaml`](music-videos/peripheral.yaml) | ~3:15 | dreampop ambient, dream logic imagery | 9:16 portrait, 17 scenes, mostly `t2i` |
 | [`glitter-down.yaml`](music-videos/glitter-down.yaml) | ~3:15 | classic 70s disco, female singer, lipsync | 9:16 portrait (448×832), 35 scenes w/ transitions, `i2i` per-scene flux2 anchors |
+| [`tail-scale.yaml`](music-videos/tail-scale.yaml) | ~3:00 | ambient synth-pop, waiting for a silent server to come back | 9:16 portrait (448×832), 20 scenes w/ transitions, `i2i` per-scene flux2 anchors |
 
 ## How to run one
 

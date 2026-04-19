@@ -1,0 +1,502 @@
+title: "Tail Scale"
+style: >
+  ambient synth-pop, 82 BPM, slow four-on-the-floor with a soft compressed
+  kick and a loose brushed snare on the backbeat, warm analog pad drones
+  holding long root notes throughout, a single resonant sawtooth lead line
+  coming in at the bridge, a sidechained rhodes stab pulsing with the kick,
+  sparse sequencer arpeggios in the background that feel like a health
+  check loop, soft tape hiss and the faint click of a capacitor settling,
+  field recording of a cooling rack fan and distant datacenter room tone
+  layered low in the stereo field, close-miked male baritone almost spoken
+  with long plate reverb on the tail of each line, a female harmony
+  entering only on the last chorus, melancholic and patient, a little
+  wistful, ends with the pad holding a single note as the fan recording
+  slowly fades out. No artist names.
+
+lyrics: |
+  [Intro]
+  (fan hum, pad holds a root note, distant capacitor click)
+
+  [Verse]
+  A green dot in the mesh that isn't answering anymore.
+  Two hundred milliseconds of hoping, then the blank floor.
+  Tailscale says you're active, but the ping comes back with nothing,
+  and I refresh the status page like it's a prayer I'm mumbling.
+
+  [Verse]
+  Your GPU fans are spinning for a workload that's not there.
+  The uptime says eleven days, the tracker shows despair.
+  I can see you on the map, I can see you on the map —
+  but the traffic's all outbound and there's nothing coming back.
+
+  [Pre-Chorus]
+  Every query gets a timeout,
+  every retry gets a lie.
+  I count the seconds out loud,
+  like the count could pull you by.
+
+  [Chorus]
+  Come back on the line,
+  come back on the line,
+  the song is half-rendered and the scene is half mine.
+  Come back on the line,
+  come back on the line,
+  I've got the prompts all ready, I just need the time.
+
+  [Verse]
+  The orchestrator's dreaming of a scene it can't produce,
+  the song is sitting frozen on a disk that's got no use.
+  I hit interrupt on nothing, I send kill to no one home,
+  I put the kettle on the stove and let the silence roam.
+
+  [Pre-Chorus]
+  Every cable still connected,
+  every daemon still alive —
+  but the signal's just reflected,
+  and the handshake won't arrive.
+
+  [Chorus]
+  Come back on the line,
+  come back on the line,
+  the song is half-rendered and the scene is half mine.
+  Come back on the line,
+  come back on the line,
+  I've got the prompts all ready, I just need the time.
+
+  [Bridge]
+  (resonant sawtooth lead enters, arpeggio opens up)
+  Maybe you're rebooting somewhere no one watches.
+  Maybe you're a window with the curtain slowly drawn.
+  I'll wait for the green to come back to your name,
+  I'll wait for the green to come back to your name.
+
+  [Chorus]
+  (female harmony in octave)
+  Come back on the line,
+  come back on the line,
+  the song is half-rendered and the scene is half mine.
+  Come back on the line,
+  come back on the line,
+  I've got the prompts all ready, I just need the time.
+
+  [Outro]
+  (pad holds one note, fan recording slowly fades to silence)
+
+video:
+  fps: 24
+  resolution: [448, 832]
+  negative: >
+    cartoon, cgi, plastic, text, captions, subtitles, signs, logos,
+    lettering, typography, words, letters, watermark, ugly, distorted face,
+    still frame, bright daylight, cheerful, colorful
+  tail_buffer_sec: 0.5
+  crossfade: 0
+  camera_lora_strength: 0.6
+  transitions:
+    enabled: true
+    duration: 1.5
+    fps: 25
+    prompt: >
+      a smooth cinematic morph between scenes, matching lighting and mood,
+      continuous motion across the cut, soft warm tungsten glow drifting
+      into cool blue LED shadow
+
+anchor_image: anchor.png
+
+# Structure:
+#   0 – 14      intro (4 t2v scenes) — cold, blue, server room imagery
+#   14 – 64     verse + chorus × 1 (6 lipsync scenes + 1 t2v) — narrator at desk
+#   64 – 114    verse + chorus × 2 (6 lipsync scenes + 1 t2v) — kettle/phone
+#  114 – 144    bridge (3 t2v + 1 lipsync) — sawtooth lead, abstract imagery
+#  144 – 180    final chorus + outro (3 lipsync + 2 t2v) — the fan fades
+scenes:
+  # ===== INTRO (instrumental, 0-14s) =====
+  - label: server_rack_blue
+    start_sec: 0
+    duration_sec: 4
+    image: "@none"
+    prompt: >
+      A vertical cinematic close-up of a rack of dark servers in a dim
+      room, small blue LEDs pulsing softly in a staggered pattern, long
+      exposure glow from a single amber capacitor, dust motes drifting
+      in a shaft of indirect light, very shallow depth of field, cold
+      ambient aesthetic, warm film grain, no text.
+
+  - label: pinging_terminal
+    start_sec: 4
+    duration_sec: 4
+    image: "@none"
+    prompt: >
+      An abstract cinematic close-up of a dark desk with a glowing
+      terminal cursor blinking in green phosphor, long exposure trails
+      on the cursor as it pulses, screen reflection in a cold coffee mug,
+      no readable characters, just the cursor blinking alone, painterly
+      grain, shallow depth of field, no text.
+
+  - label: mesh_map
+    start_sec: 8
+    duration_sec: 3
+    image: "@none"
+    prompt: >
+      An abstract cinematic overhead shot of a dark map with small green
+      dots connected by thin glowing lines, one dot in the middle of the
+      map dimming and flickering, the web of lines pulsing gently like
+      a heartbeat, painterly, cold blue palette, soft film grain, no
+      text, no labels.
+
+  - label: desk_alone
+    start_sec: 11
+    duration_sec: 3
+    image: "@none"
+    prompt: >
+      A vertical cinematic wide shot of an empty home desk at night, a
+      single warm desk lamp glowing, a laptop open with a dim blue
+      screen, a ceramic mug with cooling steam, a window behind the desk
+      showing a distant city glow, shallow depth of field, painterly
+      grain, melancholic, no text.
+
+  # ===== VERSE 1 + CHORUS 1 (14-64s, lipsync) =====
+  - label: lip_green_dot
+    start_sec: 14
+    duration_sec: 8
+    camera_lora: static
+    anchor:
+      type: i2i
+      reference: anchor.png
+      prompt: >
+        A vertical cinematic close-up of the narrator at a home desk at
+        night, lit from below by the cold blue glow of a laptop screen,
+        a warm amber desk lamp behind him casting rim light, the ceramic
+        mug steaming in the foreground, painterly grain, melancholic
+        album-cover aesthetic, no text.
+      steps: 6
+    prompt: >
+      The narrator leans forward into the blue laptop glow, mouth
+      forming each word — 'A green dot in the mesh that isn't answering
+      anymore. Two hundred milliseconds of hoping, then the blank floor'
+      — his eyes flicking between the screen and the ceiling, the warm
+      rim light pulsing once as the room breathes.
+
+  - label: lip_refresh_prayer
+    start_sec: 22
+    duration_sec: 8
+    camera_lora: static
+    anchor:
+      type: i2i
+      reference: anchor.png
+      prompt: >
+        A vertical cinematic medium close-up of the narrator, his hand
+        reaching to tap a key on a keyboard, face half in shadow, the
+        laptop screen reflecting in his glasses, painterly grain, cold
+        blue and warm amber, melancholic, no text.
+      steps: 6
+    prompt: >
+      The narrator mouthes 'Tailscale says you're active, but the ping
+      comes back with nothing, and I refresh the status page like it's
+      a prayer I'm mumbling' — tapping a key softly on each refresh, a
+      single slow blink between the two halves of the line.
+
+  - label: lip_fans_spinning
+    start_sec: 30
+    duration_sec: 8
+    camera_lora: static
+    anchor:
+      type: i2i
+      reference: anchor.png
+      prompt: >
+        A vertical cinematic close-up of the narrator looking slightly
+        off-camera toward a distant server rack, faint blue fan LEDs
+        reflecting in his eyes, warm amber rim light from behind,
+        painterly grain, no text.
+      steps: 6
+    prompt: >
+      The narrator delivers 'Your GPU fans are spinning for a workload
+      that's not there. The uptime says eleven days, the tracker shows
+      despair' — glancing toward the rack, shoulders dropping on
+      'despair', breath visible in the cool air.
+
+  - label: lip_outbound_only
+    start_sec: 38
+    duration_sec: 8
+    camera_lora: static
+    anchor:
+      type: i2i
+      reference: anchor.png
+      prompt: >
+        A vertical cinematic medium shot of the narrator pointing gently
+        at a mesh-map visualization floating in front of him, dots and
+        lines reflected in his glasses, cold blue ambient, painterly
+        grain, no text.
+      steps: 6
+    prompt: >
+      The narrator traces a line across the empty air toward the blank
+      middle of the map — 'I can see you on the map, I can see you on
+      the map — but the traffic's all outbound and there's nothing
+      coming back' — his hand dropping back to the desk at the end.
+
+  - label: lip_prechorus_counting
+    start_sec: 46
+    duration_sec: 7
+    camera_lora: static
+    anchor:
+      type: i2i
+      reference: anchor.png
+      prompt: >
+        A vertical cinematic close-up of the narrator with eyes closed,
+        lips moving in a soft count, warm amber light softer now, a
+        second of the ceiling fan flickering in the frame edge,
+        painterly grain, no text.
+      steps: 6
+    prompt: >
+      Eyes closed, counting softly — 'Every query gets a timeout, every
+      retry gets a lie. I count the seconds out loud, like the count
+      could pull you by' — small metronomic nod on each 'every'.
+
+  - label: lip_chorus1_come_back
+    start_sec: 53
+    duration_sec: 11
+    camera_lora: static
+    anchor:
+      type: i2i
+      reference: anchor.png
+      prompt: >
+        A vertical cinematic close-up of the narrator opening his eyes,
+        a faint warm smile of resignation, warm amber light swelling
+        just slightly with the kick, cold blue backlight steady,
+        painterly grain, melancholic album-cover aesthetic, no text.
+      steps: 6
+    prompt: >
+      The narrator lands the chorus — 'Come back on the line, come back
+      on the line, the song is half-rendered and the scene is half mine.
+      Come back on the line, come back on the line, I've got the prompts
+      all ready, I just need the time' — mouth forming each repeat
+      clearly, small warm smile on the final line.
+
+  # ===== VERSE 2 + CHORUS 2 (64-114s) =====
+  - label: kettle_whistles
+    start_sec: 64
+    duration_sec: 4
+    image: "@none"
+    prompt: >
+      A vertical cinematic close-up of a kettle on a dark gas stove, the
+      first wisp of steam rising slowly, a blue flame halo underneath,
+      painterly grain, shallow depth of field, warm amber and cool blue,
+      no text.
+
+  - label: lip_dreaming_scene
+    start_sec: 68
+    duration_sec: 8
+    camera_lora: static
+    anchor:
+      type: i2i
+      reference: anchor.png
+      prompt: >
+        A vertical cinematic medium shot of the narrator holding a mug
+        near his face, the steam rising between him and the camera,
+        warm amber rim light from screen right, melancholic, painterly
+        grain, no text.
+      steps: 6
+    prompt: >
+      The narrator mouthes through the steam — 'The orchestrator's
+      dreaming of a scene it can't produce, the song is sitting frozen
+      on a disk that's got no use' — small wry smile on 'dreaming',
+      head tipping down on 'no use'.
+
+  - label: lip_kill_to_no_one
+    start_sec: 76
+    duration_sec: 8
+    camera_lora: static
+    anchor:
+      type: i2i
+      reference: anchor.png
+      prompt: >
+        A vertical cinematic close-up of the narrator at a terminal,
+        finger hovering over an enter key, the screen reflecting soft
+        blue light on his face, painterly grain, no text.
+      steps: 6
+    prompt: >
+      The narrator delivers 'I hit interrupt on nothing, I send kill to
+      no one home' — his finger pressing down slowly on the enter key
+      as he mouths 'nothing', head rising slightly on 'no one home'.
+
+  - label: lip_silence_roam
+    start_sec: 84
+    duration_sec: 8
+    camera_lora: static
+    anchor:
+      type: i2i
+      reference: anchor.png
+      prompt: >
+        A vertical cinematic medium shot of the narrator standing in
+        the kitchen doorway, a kettle steaming behind him, the warm
+        amber stove-light haloing him, cool blue moonlight from the
+        other side, painterly grain, melancholic, no text.
+      steps: 6
+    prompt: >
+      The narrator steps into the kitchen, mouth forming 'I put the
+      kettle on the stove and let the silence roam' — a slow three-
+      quarter turn toward the camera on the last word.
+
+  - label: lip_prechorus_reflected
+    start_sec: 92
+    duration_sec: 8
+    camera_lora: static
+    anchor:
+      type: i2i
+      reference: anchor.png
+      prompt: >
+        A vertical cinematic close-up of the narrator's face half-
+        reflected in a window at night, city glow distant, painterly
+        grain, melancholic, no text.
+      steps: 6
+    prompt: >
+      The narrator mouthes slowly against the glass reflection —
+      'Every cable still connected, every daemon still alive — but the
+      signal's just reflected, and the handshake won't arrive' — his
+      own reflection mouthing the same words in blurred double.
+
+  - label: lip_chorus2_prompts
+    start_sec: 100
+    duration_sec: 11
+    camera_lora: static
+    anchor:
+      type: i2i
+      reference: anchor.png
+      prompt: >
+        A vertical cinematic close-up of the narrator, warm amber light
+        pulsing gently with the kick, his head tilted slightly up,
+        cold blue backlight softening around him, a small patient smile
+        forming, painterly grain, no text.
+      steps: 6
+    prompt: >
+      The narrator repeats the chorus — 'Come back on the line, come
+      back on the line, the song is half-rendered and the scene is
+      half mine. Come back on the line, come back on the line, I've
+      got the prompts all ready, I just need the time' — patient,
+      resigned, the same warm smile on the last line.
+
+  - label: moon_through_window
+    start_sec: 111
+    duration_sec: 3
+    image: "@none"
+    prompt: >
+      A vertical cinematic wide shot of a cool blue moonlit window at
+      night, a faint halo around the moon, cold air condensing softly
+      on the glass, the room dark behind it, painterly grain, quiet,
+      no text.
+
+  # ===== BRIDGE (114-144s) =====
+  - label: rebooting_lights
+    start_sec: 114
+    duration_sec: 5
+    image: "@none"
+    prompt: >
+      A vertical cinematic close-up of a server chassis powering up:
+      a blue power LED pulsing once, then a second, then steady; the
+      ambient room reflection gliding over the chrome chassis, painterly
+      grain, hopeful, very cold palette, no text.
+
+  - label: curtain_drawn
+    start_sec: 119
+    duration_sec: 5
+    image: "@none"
+    prompt: >
+      A vertical cinematic medium shot of a warm amber window across
+      an inner courtyard at night, a curtain slowly drawing across the
+      glass, the light dimming behind it, painterly grain, melancholic,
+      no text.
+
+  - label: abstract_arpeggio
+    start_sec: 124
+    duration_sec: 6
+    image: "@none"
+    prompt: >
+      An abstract cinematic close-up of a vintage synthesizer panel,
+      LEDs on a step sequencer lighting up in an arpeggiating pattern,
+      knobs glowing warm amber, soft focus in the foreground, painterly
+      grain, no text.
+
+  - label: lip_bridge_wait
+    start_sec: 130
+    duration_sec: 14
+    camera_lora: static
+    anchor:
+      type: i2i
+      reference: anchor.png
+      prompt: >
+        A vertical cinematic medium close-up of the narrator with eyes
+        closed and lips softly forming the bridge lyric, gentle amber
+        rim light, cool blue ambient on the other side, painterly grain,
+        a patient, private almost-smile, no text.
+      steps: 6
+    prompt: >
+      The narrator, eyes half-closed, mouths the bridge slowly —
+      'Maybe you're rebooting somewhere no one watches. Maybe you're a
+      window with the curtain slowly drawn. I'll wait for the green to
+      come back to your name, I'll wait for the green to come back to
+      your name' — a small patient almost-smile holding on the repeated
+      last line.
+
+  # ===== FINAL CHORUS + OUTRO (144-180s) =====
+  - label: lip_final_chorus_harmony
+    start_sec: 144
+    duration_sec: 12
+    camera_lora: static
+    anchor:
+      type: i2i
+      reference: anchor.png
+      prompt: >
+        A vertical cinematic medium shot of the narrator at the desk
+        again, the laptop screen's blue glow warming to a faint green
+        at the edge of frame, a second silhouette of a female harmony
+        singer softly visible in the background reflection, painterly
+        grain, hopeful, no text.
+      steps: 6
+    prompt: >
+      The narrator, voice slightly stronger now with the female harmony
+      joining in octave, mouthes the final chorus — 'Come back on the
+      line, come back on the line, the song is half-rendered and the
+      scene is half mine. Come back on the line, come back on the line,
+      I've got the prompts all ready, I just need the time' — the green
+      glow of a restored connection spreading slowly across the room.
+
+  - label: green_returns
+    start_sec: 156
+    duration_sec: 4
+    image: "@none"
+    prompt: >
+      A vertical cinematic close-up of the mesh-map, the central dot
+      that was flickering finally steadying into a solid green, a gentle
+      ripple of pulse radiating outward across the connection lines,
+      painterly grain, warm relief, no text.
+
+  - label: lip_outro_breath
+    start_sec: 160
+    duration_sec: 8
+    camera_lora: static
+    anchor:
+      type: i2i
+      reference: anchor.png
+      prompt: >
+        A vertical cinematic close-up of the narrator's face, eyes
+        opening, a soft exhale leaving a faint fog on the cool air, a
+        private warm smile forming, amber lamplight warming the frame,
+        painterly grain, no text.
+      steps: 6
+    prompt: >
+      The narrator opens his eyes slowly, exhales once visibly in the
+      cool air, mouth forming a silent 'there you are' that sits between
+      lyrics, then a small patient smile as the pad holds its final
+      note.
+
+  - label: fan_fades_out
+    start_sec: 168
+    duration_sec: 12
+    image: "@none"
+    prompt: >
+      A vertical cinematic slow dolly-out from the server rack, the
+      green LED steady now among the blue, the camera drifting back
+      through the dark room until only the faint glow remains, dust
+      motes catching the last of the amber lamp from down the hall,
+      painterly grain, the frame holding on near-black as the fan sound
+      fades to silence, no text.
