@@ -1,0 +1,535 @@
+# Music-video project: "The Best Thing Ever" — 1976 Italian variety-show pastiche.
+# Source song: https://suno.com/song/8c6c32d8-5092-42df-93e2-476100edc440
+# Watch the finished video: https://youtu.be/QNU6dc4j6i4
+#
+# To render this yourself, place these files alongside this yaml first:
+#   song.mp3                          — the audio (download from the Suno link above,
+#                                       or copy from your own Suno project)
+#   operator.png                      — the protagonist's portrait (any front-facing photo;
+#                                       this is the i2i identity reference for every scene)
+#   sheets/studio_main_stage.png      — pre-rendered with `comfy_graph.py t2i`; prompt
+#                                       text lives in the show_open scene's anchor block
+#   sheets/studio_bstage.png          — pre-rendered; prompt in the bridge_a scene
+#   sheets/featured_singer.png        — pre-rendered; prompt in v2_eyecontact / final_duet
+#
+# Then run end-to-end:
+#   music_video.py anchors    the-best-thing-ever.yaml   # flux2 i2i/i2i2/i2iN anchors per scene
+#   music_video.py scenes     the-best-thing-ever.yaml   # LTX-2.3 ia2v × 26 clips (~3 hrs)
+#   music_video.py assemble   the-best-thing-ever.yaml   # ffmpeg concat + clean audio overlay
+#
+# Suno step is disabled (suno.runs: 0) — the song already exists. Set it to >=1
+# if you want suno-mcp to generate fresh variants of the song from the style + lyrics
+# below.
+
+title: "The Best Thing Ever"
+
+# Producer brief (rough — refine if you want to re-run suno).
+style: "modern indie-pop, ~110 BPM, bright clean guitar arpeggios, warm analog synth pads, melodic bass, tight pocket drums, intimate male lead vocal with airy backing harmonies and a chanted 'woo-hoo' call-and-response hook, polished radio-pop production, hopeful longing mood, late-night plea for engagement from a lover"
+
+# Lyrics (canonical version — provided by author; Whisper missed the
+# non-lexical "Woo-hoo" call-and-response hooks).
+lyrics: |
+  [Verse]
+  Don't say that you miss me
+  Just come get me (Mm-mm)
+  And don't make me wait all night
+  Just pull up outside (Ooh, ooh, ooh)
+  And don't even say that you're mine
+  It's implied
+  And don't say
+  "I love you"
+  I know you do
+
+  [Chorus]
+  Say
+  "Woo-hoo"
+  You make me wanna say
+  "Woo-hoo"
+  This could be the best thing ever
+  Oh
+  Woo-hoo
+  I wanna hear you say
+  "Woo-hoo"
+  This could be the best thing ever
+  Mm
+  Ever
+
+  [Verse 2]
+  And don't take it too slow
+  Just lose control (Mm-mm)
+  And don't keep it all inside
+  Give me all your light (Ooh, ooh, ooh)
+  And don't say it's gonna end
+  Start it all again
+  And don't even say that you want it
+  Already got it
+
+  [Chorus]
+  Say
+  "Woo-hoo"
+  You make me wanna say
+  "Woo-hoo"
+  This could be the best thing ever
+  Oh
+  Woo-hoo
+  I wanna hear you say
+  "Woo-hoo"
+  This could be the best thing ever
+  Mm
+  Ever
+  This could be the best thing ever
+
+  [Bridge]
+  I don't wanna leave
+  Wanna stay with you (Mm-mm)
+  And I don't wanna sleep
+  Wanna lay with you (Ooh, ooh, ooh)
+  And I don't wanna be without you
+  'Cause there's something about you
+  And I don't even know what you do
+  You make me wanna
+
+  [Chorus]
+  Say
+  "Woo-hoo"
+  You make me wanna say
+  "Woo-hoo"
+  This could be the best thing ever
+  Oh
+  Woo-hoo
+  I wanna hear you say
+  "Woo-hoo"
+  This could be the best thing ever
+  Mm
+  Ever
+  This could be the best thing ever
+
+# Song was hand-supplied — `music_video.py song` step is skipped.
+# Leaving suno.runs at 0 to make accidental re-generation a no-op.
+suno:
+  runs: 0
+
+video:
+  fps: 24
+  resolution: [832, 448]             # 16:9 LTX working res; final video upscales 2x → 1664x896
+  # anchor_scale: 2.0                # default — anchors render at 832*2 × 448*2 = 1664×896
+  negative: "modern phone, smartphone, hd flatscreen, cgi, plastic skin, distorted face, asymmetric eyes, melted glasses, missing teeth, cartoon, anime, watermark, text artifacts, still frame, modern clothing logos"
+  tail_buffer_sec: 0.5
+  camera_lora_strength: 0.7
+  transitions:
+    enabled: false
+
+# Anchor: anchor.png is the canonical character keyframe (already flux2-rendered
+# via storyboard i2i against operator.png). Every per-scene anchor below uses
+# `anchor: { type: i2i, reference: operator.png, ... }` so the protagonist's
+# face/hair/glasses/shirt stay locked to the real reference photo.
+anchor_image: anchor.png
+
+# Subjects — {operator} and {dancers} expand in every prompt.
+# Keep descriptions tight; flux2 i2i locks identity from the reference photos,
+# the token only steers the description side of the prompt.
+subjects:
+  operator: "the operator: a man with a wild jet-black afro-curl wig, dark wraparound sunglasses, dark salt-and-pepper beard and moustache, navy polka-dot button shirt, warm smile, keep face/hair/glasses/shirt locked to the reference photo"
+  dancers: "a coordinated troupe of four beautiful 1970s variety-show backup dancers, diverse women in shimmering gold-and-silver sequin minidresses, knee-high white go-go boots, big teased hair (one blonde, one auburn, one black-bouffant, one platinum), dramatic false eyelashes, choreographed in a tight formation, glamorous and confident"
+  singer: "the featured female singer: a striking solo vocalist with long flowing copper-red auburn waves, bold dramatic eye makeup, statement gold-hoop earrings, wearing a fitted floor-length pearl-white sequined gown with a single asymmetric shoulder strap, holding a chrome handheld microphone, confident knowing half-smile — distinct from the four backup dancers, clearly the featured guest"
+
+# Quality-check gates — `all` pauses for human review before/after these phases.
+gate_confirm_song: false             # song already chosen
+gate_confirm_anchors: true
+
+# ─────────────────────────────────────────────────────────────────────
+# THE BEST THING EVER — variety-show storyboard
+#
+# Concept: a faux 1976 Italian late-night variety show. The Operator hosts;
+# the studio audience is the "partner" he's begging for engagement from.
+# Three set zones — stool/perch (verses), main stage with mic + tinsel
+# curtain + audience silhouettes (choruses), and an armchair b-stage with
+# a rotary phone (bridge). Visual aesthetic: warm 16mm grain, slight
+# halation, amber/mustard/cream/brown palette, occasional turquoise pop.
+#
+# Every scene's anchor is a flux2 i2i against operator.png so identity
+# (wig, sunglasses, beard, polka-dot shirt) stays locked across shots.
+# ─────────────────────────────────────────────────────────────────────
+
+# Reusable style tail injected into every anchor prompt by hand for now.
+# (The yaml schema doesn't auto-tail; we just bake it into each prompt.)
+# Tail: "16:9 widescreen, 1976 Italian late-night variety TV broadcast,
+#        warm 16mm film grain, slight halation, amber stage lighting"
+
+scenes:
+  # ── Intro (0-10.76) — curtain opens, empty stage reveal, NO operator yet.
+  # Cut to v1a lands exactly when drums first hit (drums MIDI starts 10.755s)
+  - label: show_open
+    start_sec: 0.0
+    duration_sec: 10.76
+    camera_lora: dolly-in
+    anchor:
+      type: i2i
+      reference: sheets/studio_main_stage.png
+      prompt: "1976 Italian late-night variety TV stage at curtain-up: a heavy red-velvet stage curtain in the foreground caught mid-parting, drawing apart from centre to reveal a brightly lit empty stage beyond it — gold tinsel backdrop catching warm amber and mustard stage lights, a single chrome standing microphone centred on the empty stage, a glowing orange lava lamp on a low pedestal at left frame edge, a hanging chunky orange-and-cream display-type sign overhead reading 'THE BEST THING EVER', silhouetted studio-audience heads visible across the bottom of frame in the foreground, no people on the stage, dust haze, 16:9 widescreen, warm 16mm film grain, slight halation, vintage broadcast aesthetic"
+      steps: 6
+      keep_identity: false
+    prompt: "Cold-open title sequence. The heavy red-velvet stage curtain parts slowly outward from centre, revealing the brightly lit empty 1976 variety stage beyond: gold tinsel curtain backdrop shimmering, the 'THE BEST THING EVER' sign glowing overhead, the chrome standing microphone alone centre-stage, lava lamp pulsing orange at frame edge, silhouetted studio audience heads waiting in the foreground rows. The stage stays empty — anticipation builds toward the first verse. Slow push-in through the parted curtain, dust hanging in the amber light."
+    image: "@anchor"
+
+  # ── Verse 1 (13-37) — intimate stool, no dancers visible ─
+  - label: v1a
+    start_sec: 10.76
+    duration_sec: 14.24         # starts at drums-in, includes ~2.2s of beat before vocals at 13.02s
+    camera_lora: dolly-in
+    anchor:
+      type: i2i2
+      references:
+        - operator.png
+        - sheets/studio_main_stage.png
+      prompt: "{operator} seated on a tall wooden stool against a wood-paneled wall, holding a chrome handheld microphone close to his mouth, single warm amber key light, intimate medium close-up, confessional variety-show framing, 16:9 widescreen, warm 16mm film grain, slight halation, 1976 Italian late-night TV broadcast"
+      steps: 6
+    prompt: "Slow push-in on {operator} seated on a stool, mouthing the lyrics close to a chrome handheld mic, a small sly smile flickering as he sings: 'Don't say that you miss me, just come get me, don't make me wait all night, just pull up outside'. Subtle head tilt on the (woo-hoo) backing vocal hits. Warm amber spotlight on his face, wood-paneled wall behind, 16mm grain."
+    image: "@anchor"
+
+  - label: v1b
+    start_sec: 25.0
+    duration_sec: 13.0
+    camera_lora: static
+    anchor:
+      type: i2i2
+      references:
+        - operator.png
+        - sheets/studio_main_stage.png
+      prompt: "{operator} leaning forward off the stool, chrome handheld microphone close to his lips, sly grin behind the dark wraparound sunglasses, wood-paneled wall behind, warm amber spotlight, intimate confessional 70s TV framing, 16:9 widescreen, 16mm grain, slight halation"
+      steps: 6
+    prompt: "Static medium shot — {operator} leans toward the camera, mic against his lips, mouthing: 'And don't even say that you're mine, it's implied; and don't say I love you, I know you do'. A knowing half-smile builds across his face on the last line, beard catches the warm key light."
+    image: "@last"
+
+  # ── Pre-Chorus 1 (37-43) — mic to camera ─────────────────
+  - label: pc1
+    start_sec: 38.0
+    duration_sec: 5.0
+    camera_lora: dolly-out
+    anchor:
+      type: i2i2
+      references:
+        - operator.png
+        - sheets/studio_main_stage.png
+      prompt: "{operator} on the main variety-show stage with his right hand thrusting a chrome handheld microphone forward toward camera in a 'your turn' gesture, his left hand at his side relaxed, gold tinsel curtain behind him, {dancers} clustered behind him in tight choreographed formation each with both arms straight up in symmetric V-shape above their heads, silhouetted studio audience visible in foreground raising hands, lava lamp at frame edge, anatomically correct hands, 16:9 widescreen, 1976 Italian late-night TV, warm 16mm grain, slight halation, amber spotlight"
+      steps: 6
+    prompt: "Slow pull-back: {operator} thrusts the chrome mic forward toward camera with his right hand in a call-and-response gesture, his left hand staying at his side. He mouths 'Say… you make me wanna say'; behind him {dancers} raise both arms straight above their heads in unison on the (woo-hoo) beat; silhouetted audience in the foreground raise hands too. Gold tinsel shimmers behind, lava lamp pulses orange."
+    image: "@anchor"
+
+  # ── Chorus 1 (43-61) — wide, dancer woo-hoo close-up, push-in
+  - label: c1_wide
+    start_sec: 43.0
+    duration_sec: 7.0
+    camera_lora: static
+    anchor:
+      type: i2i2
+      references:
+        - operator.png
+        - sheets/studio_main_stage.png
+      prompt: "Wide stage shot of {operator} centered under a glowing 'THE BEST THING EVER' tinsel sign, chrome handheld mic raised, {dancers} flanking him in a four-piece formation in coordinated mid-step dance pose, hips angled in unison, silhouetted studio audience cheering across the foreground, lava lamps glowing orange, amber stage wash, 16:9 widescreen, warm 16mm grain, slight halation, 1976 Italian variety TV"
+      steps: 6
+    prompt: "Wide stage shot, static camera. {operator} bounces gently on the beat under the sign, mic high, mouthing the chorus 'This could be the best thing ever, oh'; {dancers} step in choreographed unison around him, hips snapping on the snare. Audience claps along the bottom of frame. Lava lamps pulse with each kick drum."
+    image: "@anchor"
+
+  - label: c1_dancer_woo
+    start_sec: 50.0
+    duration_sec: 6.0
+    camera_lora: dolly-in
+    anchor:
+      type: i2i
+      reference: sheets/studio_main_stage.png
+      prompt: "Tight 16:9 close-up of one of the variety-show backup dancers — the platinum-blonde one — mid-sing, lips forming a confident 'woo-hoo' shape, big false eyelashes batting, gold-and-silver sequin minidress catching amber stage light, gold tinsel curtain blurred behind her, audience silhouettes blurred at the very bottom of frame, 1976 Italian variety TV broadcast, warm 16mm grain, slight halation"
+      steps: 6
+      keep_identity: false
+    prompt: "Tight close-up — the platinum-blonde dancer of {dancers} mouths 'woo-hoo, woo-hoo' straight at camera with full conviction, eyelashes batting on each beat, gold sequin shimmer pulsing with the music, sly knowing smile after the second 'woo-hoo'."
+    image: "@anchor"
+
+  - label: c1_push
+    start_sec: 56.0
+    duration_sec: 5.0
+    camera_lora: dolly-in
+    anchor:
+      type: i2i2
+      references:
+        - operator.png
+        - sheets/studio_main_stage.png
+      prompt: "Medium close-up of {operator} grinning broadly on the variety stage, chrome mic at his chest, gold tinsel curtain behind, {dancers} out of focus in glittering bokeh behind him, amber rim light, 16:9 widescreen, warm 16mm grain, slight halation"
+      steps: 6
+    prompt: "Slow push-in on {operator}'s face as he mouths 'this could be the best thing ever — ever'. Huge unguarded grin breaks across his face on the final 'ever'. {dancers} blurred behind in glittering bokeh of gold sequins."
+    image: "@last"
+
+  # ── Instrumental break (61-67) — dancers center stage ────
+  - label: break_dancers
+    start_sec: 61.0
+    duration_sec: 6.0
+    camera_lora: static
+    anchor:
+      type: i2i2
+      references:
+        - operator.png
+        - sheets/studio_main_stage.png
+      prompt: "{operator} stepping aside to the wing of the variety stage, mic lowered, smiling at camera, {dancers} taking the centre of frame in a coordinated 70s shimmy with sequins flashing, gold tinsel curtain behind, lava lamp glowing, amber light, 16:9 widescreen, warm 16mm grain, slight halation"
+      steps: 6
+    prompt: "Instrumental break — {operator} steps to the side of the stage smiling, mic lowered; {dancers} take centre stage doing a coordinated 70s shimmy together, sequins catching the amber light. Lava lamp pulses bright orange."
+    image: "@last"
+
+  # ── Verse 2 (67-96) — building energy + EYE CONTACT beat ─
+  - label: v2a
+    start_sec: 67.0
+    duration_sec: 7.13         # → ends 74.13 at vocal-phrase end
+    camera_lora: dolly-left
+    anchor:
+      type: i2i2
+      references:
+        - operator.png
+        - sheets/studio_main_stage.png
+      prompt: "{operator} standing on the variety stage holding the chrome handheld mic loosely at chest height, wood-paneled wall + retro show-logo behind, two of {dancers} just visible swaying in the wings in soft focus, orange-mustard stage lighting, 16:9 widescreen, warm 16mm grain, slight halation, 1976 Italian TV"
+      steps: 6
+    prompt: "Slow lateral track left. {operator} stands, mic at chest, head bobbing on the beat, mouthing: 'And don't take it too slow, just lose control; and don't keep it all inside, give me all your light.' Two of {dancers} sway gently in soft focus in the wings. Lighting warmer, energy building."
+    image: "@anchor"
+
+  - label: v2_eyecontact
+    start_sec: 74.13
+    duration_sec: 5.85         # → ends 79.98 at vocal-phrase end
+    camera_lora: static
+    anchor:
+      type: i2iN
+      references:
+        - operator.png
+        - sheets/studio_main_stage.png
+        - sheets/featured_singer.png
+      prompt: "Tight medium two-shot — {operator} and {singer} standing face-to-face at centre-stage of a 1976 Italian variety TV stage, foreheads tilted slightly toward each other, locked in mutual eye contact with sly mutual smiles building, his chrome handheld microphone held between them at chest height (his hand and hers both on the mic), warm amber spotlight isolating the two of them, gold tinsel curtain backdrop in soft focus, the four backup dancers visible only as out-of-focus glittering shapes far in the deeper background, dust-haze around the pair, 16:9 widescreen, warm 16mm grain, slight halation, 1976 Italian variety TV"
+      steps: 6
+    prompt: "Static medium two-shot. {operator} has turned toward {singer} who steps in from the wings; they face each other holding the chrome mic between them, gazes locked, mutual sly smile building. He mouths 'just lose control… give me all your light' while she answers softly on the woo-hoo. The rest of the stage falls into soft focus — only the two of them in amber spotlight."
+    image: "@last"
+
+  - label: v2b
+    start_sec: 79.98
+    duration_sec: 7.81         # → ends 87.79 at vocal-phrase end
+    camera_lora: dolly-right
+    anchor:
+      type: i2i2
+      references:
+        - operator.png
+        - sheets/studio_main_stage.png
+      prompt: "{operator} walking slowly back to centre-stage from the dancers' side, chrome handheld mic at his lips, gesturing freely with his other hand, gold tinsel curtain rippling behind, {dancers} swaying in coordinated quarter-time motion in the deeper background, warm amber-and-mustard stage lighting, 16:9 widescreen, warm 16mm grain, slight halation, 1976 Italian variety TV"
+      steps: 6
+    prompt: "Smooth track right as {operator} walks back to centre-stage, mic at his mouth, gesturing with his free hand, mouthing: 'And don't say it's gonna end, start it all again.' {dancers} sway in coordinated quarter-time in the soft-focused background, recharged from the eye contact."
+    image: "@last"
+
+  - label: v2c
+    start_sec: 87.79
+    duration_sec: 7.79         # → ends 95.58 at vocal-phrase end
+    camera_lora: dolly-in
+    anchor:
+      type: i2i2
+      references:
+        - operator.png
+        - sheets/studio_main_stage.png
+      prompt: "Medium shot of {operator} centre-stage, chrome handheld mic at his lips, looking knowingly at camera, sly half-smile, gold tinsel curtain behind, {dancers} in soft-focus formation in the background, warm amber-and-mustard light, 16:9 widescreen, warm 16mm grain, slight halation"
+      steps: 6
+    prompt: "Slow push-in. {operator} mouths 'And don't even say that you want it, already got it', sly half-smile on the last words, glance straight at camera. {dancers} in soft formation behind. Verse two lands."
+    image: "@last"
+
+  # ── Pre-Chorus 2 (96-101.5) ──────────────────────────────
+  - label: pc2
+    start_sec: 95.58
+    duration_sec: 5.92         # → ends 101.50 (same as before; slice shifts back to phrase start)
+    camera_lora: dolly-out
+    anchor:
+      type: i2i2
+      references:
+        - operator.png
+        - sheets/studio_main_stage.png
+      prompt: "{operator} with his right hand thrusting the chrome microphone forward toward camera in a 'your turn' gesture, left hand at his side, beard catching amber rim-light, gold tinsel curtain behind, {dancers} clustered behind him with both arms raised straight overhead in a symmetric V on the woo-hoo beat, anatomically correct hands, silhouetted studio audience raising hands too, lava lamps glowing, 16:9 widescreen, warm 16mm grain, slight halation, 1976 Italian variety TV"
+      steps: 6
+    prompt: "Pull-back reveals the full stage: {operator} thrusts the chrome mic forward with his right hand toward camera, mouthing 'Say… you make me wanna say'; {dancers} behind him raise both arms straight overhead in unison on the woo-hoo beat; audience silhouettes throw hands up too."
+    image: "@anchor"
+
+  # ── Chorus 2 (101.5-121) — wider, dancer close, push ─────
+  - label: c2_wide
+    start_sec: 101.5
+    duration_sec: 6.5
+    camera_lora: static
+    anchor:
+      type: i2i2
+      references:
+        - operator.png
+        - sheets/studio_main_stage.png
+      prompt: "Wide stage shot of {operator} under the 'THE BEST THING EVER' sign, chrome mic high, {dancers} flanking him in a four-piece formation doing a coordinated step-touch routine, first specks of gold foil confetti drifting through amber stage light, silhouetted audience clapping, lava lamps pulsing, 16:9 widescreen, warm 16mm grain, slight halation, 1976 Italian variety TV"
+      steps: 6
+    prompt: "Static wide. {operator} dances small on the spot under the sign, mic high, mouthing the chorus; {dancers} flank him doing a coordinated step-touch. First specks of gold foil confetti drift down. Audience claps on the offbeat."
+    image: "@anchor"
+
+  - label: c2_dancer_woo
+    start_sec: 108.0
+    duration_sec: 4.0
+    camera_lora: dolly-in
+    anchor:
+      type: i2i
+      reference: sheets/studio_main_stage.png
+      prompt: "Tight 16:9 close-up of one of the variety-show backup dancers — the black-bouffant one — mid-sing, lips forming a wide 'woo-hoo' shape, big false eyelashes, gold-and-silver sequin minidress catching amber stage light, gold tinsel curtain blurred behind her, occasional gold confetti drifting in foreground, 1976 Italian variety TV broadcast, warm 16mm grain, slight halation"
+      steps: 6
+      keep_identity: false
+    prompt: "Tight close-up — the black-bouffant dancer of {dancers} mouths 'woo-hoo' straight at camera, big false eyelashes batting on the beat, gold sequins shimmering, confetti drifting past her. Confident, knowing smile."
+    image: "@anchor"
+
+  - label: c2_push
+    start_sec: 112.0
+    duration_sec: 6.99         # → ends 118.99 at vocal-phrase end (before "Ever" hold)
+    camera_lora: dolly-in
+    anchor:
+      type: i2i2
+      references:
+        - operator.png
+        - sheets/studio_main_stage.png
+      prompt: "Medium close-up of {operator}, slight sheen of sweat on his brow, big committed smile, gold-foil confetti falling thickly around him, gold tinsel curtain rippling behind, {dancers} in soft-focus glittering bokeh on either side, amber rim light, 16:9 widescreen, warm 16mm grain, slight halation"
+      steps: 6
+    prompt: "Slow push-in on {operator}'s face. Slight sheen of sweat on his brow, jaw set, mouthing 'this could be the best thing ever' twice, second time bigger. {dancers} glitter in soft-focus bokeh on either side. Confetti thick."
+    image: "@last"
+
+  # ── Break to Bridge (121-128) — operator walks to b-stage
+  - label: bstage_shift
+    start_sec: 118.99
+    duration_sec: 9.01         # → ends 128.00 (same boundary; just absorbs the "Ever" tail before bridge)
+    camera_lora: dolly-left
+    anchor:
+      type: i2i2
+      references:
+        - operator.png
+        - sheets/studio_bstage.png
+      prompt: "Wide shot of {operator} mid-stride walking from the bright main variety stage toward the dim b-stage corner, mic at his side, light fading on him as he crosses from the amber stage flood into the warm tungsten lamp pool of the corduroy armchair area, audience and dancers receding into soft focus behind, 16:9 widescreen, warm 16mm grain, slight halation, 1976 Italian TV"
+      steps: 6
+    prompt: "Slow track left. {operator} walks slowly from the main stage area into the b-stage corner, light shifting from amber spot to warm tungsten as he approaches the corduroy armchair, mic at his side, posture softening. The party recedes behind him."
+    image: "@anchor"
+
+  # ── Bridge (128-156) — armchair, alone, vulnerable ───────
+  - label: bridge_a
+    start_sec: 128.0
+    duration_sec: 14.0
+    camera_lora: dolly-in
+    anchor:
+      type: i2i2
+      references:
+        - operator.png
+        - sheets/studio_bstage.png
+      prompt: "{operator} seated in a tan corduroy 1970s armchair on a quiet b-stage, a small side table beside him holding a beige rotary phone with the receiver lifted and a low warm table lamp, a half-empty rocks glass, wood-panelled wall behind, no audience or dancers visible, single warm-amber lamp light on him only, the main stage faded out behind him, 16:9 widescreen, warm 16mm grain, slight halation"
+      steps: 6
+    prompt: "Slow push-in. {operator} sits in the corduroy armchair holding the beige rotary phone receiver to his ear, mic forgotten on his lap. He mouths to the phone: 'I don't wanna leave, wanna stay with you; I don't wanna sleep, wanna lay with you.' Warmer, smaller, more vulnerable than anything before."
+    image: "@anchor"
+
+  - label: bridge_b
+    start_sec: 142.0
+    duration_sec: 14.0
+    camera_lora: dolly-in
+    anchor:
+      type: i2i2
+      references:
+        - operator.png
+        - sheets/studio_bstage.png
+      prompt: "Tight close-up of {operator} in the corduroy armchair, rotary phone receiver against his cheek, a soft almost sad smile, low warm lamp lighting only one side of his face, dark stage faded out behind, 16:9 widescreen, warm 16mm grain, slight halation"
+      steps: 6
+    prompt: "Tighter push-in. Receiver at his cheek. The smile is small, almost sad. He mouths: 'And I don't wanna be without you, 'cause there's something about you; and I don't even know what you do.' On the last line his eyes (behind the shades) drop briefly. Stands up at the very end, picks up the chrome mic from the chair seat, turns toward the brightening main stage."
+    image: "@last"
+
+  # ── Pre-Chorus stack (156-165) — energy returns + EYE CONTACT
+  - label: pc3_a
+    start_sec: 156.0
+    duration_sec: 3.30         # → ends 159.30 at vocal-phrase end
+    camera_lora: static
+    anchor:
+      type: i2i2
+      references:
+        - operator.png
+        - sheets/studio_main_stage.png
+      prompt: "{operator} back at centre-stage with his right hand thrusting the chrome mic straight at camera, gold tinsel curtain behind, {dancers} re-emerging in formation behind him with both arms straight overhead in symmetric V, anatomically correct hands, audience silhouettes raising hands across the foreground, lava lamps pulsing, 16:9 widescreen, warm 16mm grain, slight halation, 1976 Italian variety TV"
+      steps: 6
+    prompt: "Static head-on. {operator} thrusts the chrome mic at camera as he mouths 'you make me wanna say', twice in quick succession; {dancers} synchronize arms-up behind him; lava lamps pulse on every beat."
+    image: "@anchor"
+
+  - label: pc3_eyecontact
+    start_sec: 159.30
+    duration_sec: 4.49         # → ends 163.79 at vocal-phrase end (before final chorus)
+    camera_lora: dolly-in
+    anchor:
+      type: i2iN
+      references:
+        - operator.png
+        - sheets/studio_main_stage.png
+        - sheets/featured_singer.png
+      prompt: "Medium two-shot of {operator} and {singer} side-by-side at centre-stage facing camera, both mouthing 'you make me wanna say' in unison, his arm draped lightly across her shoulder, sharing a chrome handheld microphone held between them, both leaning slightly toward each other, big committed mutual smiles, gold tinsel curtain behind, the four backup dancers in soft-focus glittering bokeh in the deeper background, audience silhouettes raising hands in the foreground, amber stage light, 16:9 widescreen, warm 16mm grain, slight halation, 1976 Italian variety TV"
+      steps: 6
+    prompt: "Push-in on the two-shot. {operator} and {singer} face camera side-by-side, his arm lightly around her, both mouthing 'you make me wanna say, you make me wanna say' in unison, smiles building. The partner finally answers — call and response complete. Backup dancers blurred behind them in glittering motion."
+    image: "@last"
+
+  # ── Final Chorus (165-188) — wide, dancer close, duet, push
+  - label: final_a
+    start_sec: 163.79
+    duration_sec: 8.21         # → ends 172.0 (same boundary; just earlier start to match pc3 end)
+    camera_lora: jib-up
+    anchor:
+      type: i2i2
+      references:
+        - operator.png
+        - sheets/studio_main_stage.png
+      prompt: "Wide full-stage shot of {operator} arms-out under the glowing 'THE BEST THING EVER' sign, gold tinsel curtain behind, {dancers} flanking him in full choreographed pose with arms thrown up in symmetric V, anatomically correct hands, gold-foil confetti thick in the air, silhouetted studio audience standing and cheering, lava lamps blazing orange, amber stage flood at full brightness, 16:9 widescreen, warm 16mm grain, slight halation, 1976 Italian variety TV finale"
+      steps: 6
+    prompt: "Camera cranes upward over the audience. {operator} centred under the sign arms out, big committed smile, mouthing the chorus; {dancers} flank him with arms up in unison. Audience standing and cheering. Confetti fills the air. Stage at full brightness."
+    image: "@anchor"
+
+  - label: final_dancer_woo
+    start_sec: 172.0
+    duration_sec: 4.0
+    camera_lora: dolly-in
+    anchor:
+      type: i2i
+      reference: sheets/studio_main_stage.png
+      prompt: "Tight 16:9 close-up of one of the variety-show backup dancers — the auburn-haired one — mid-sing, biggest smile of the whole show, mouth shaping 'this could be the best thing ever', big false eyelashes, gold-and-silver sequin minidress shimmering, gold tinsel curtain blurred behind her, gold confetti falling thickly around her, 1976 Italian variety TV broadcast, warm 16mm grain, slight halation"
+      steps: 6
+      keep_identity: false
+    prompt: "Tight close-up of the auburn-haired dancer of {dancers}, biggest smile of the whole video, mouthing 'this could be the best thing ever' straight at camera, eyelashes wide, sequins blazing in the amber light, confetti raining around her."
+    image: "@anchor"
+
+  - label: final_duet
+    start_sec: 176.0
+    duration_sec: 8.0
+    camera_lora: dolly-in
+    anchor:
+      type: i2iN
+      references:
+        - operator.png
+        - sheets/studio_main_stage.png
+        - sheets/featured_singer.png
+      prompt: "Tight medium two-shot of {operator} and {singer} at centre-stage sharing the chrome handheld microphone held between them, foreheads almost touching, both mid-sing mouthing 'this could be the best thing ever' together in unison, mutual big committed smiles, gazes locked, gold tinsel curtain behind them, the four backup dancers visible in soft-focus glittering bokeh on either side, gold-foil confetti thick in the air around them, amber stage flood bathing both, 16:9 widescreen, warm 16mm grain, slight halation, 1976 Italian variety TV finale"
+      steps: 6
+    prompt: "Slow push-in on the duet two-shot. {operator} and {singer} share the chrome mic between them, foreheads close, both mouthing 'this could be the best thing ever' in unison; big committed smiles, eyes locked. Emotional payoff: the partner finally engages, joins the song completely. Confetti rains around them. The four backup dancers visible only as soft-focus glittering bokeh on either side."
+    image: "@last"
+
+  - label: final_c
+    start_sec: 184.0
+    duration_sec: 4.0
+    camera_lora: dolly-in
+    anchor:
+      type: i2i2
+      references:
+        - operator.png
+        - sheets/studio_main_stage.png
+      prompt: "Medium close-up of {operator}'s huge unguarded smile, gold-foil confetti falling thickly around his head, gold tinsel curtain shimmering directly behind, {dancers} in glittering bokeh-blur on either side, soft warm halation around his hair, 16:9 widescreen, warm 16mm grain, slight halation"
+      steps: 6
+    prompt: "Final push-in on {operator}'s face. Biggest most unguarded smile of the whole video, eyes (behind the shades) crinkled at the corners, confetti raining. {dancers} glitter in bokeh-blur on either side. He mouths the final 'ever' clean."
+    image: "@last"
+
+  # ── Outro (188-202.16) — group portrait freeze + TV degrade
+  - label: outro
+    start_sec: 188.0
+    duration_sec: 14.16
+    camera_lora: static
+    anchor:
+      type: i2i2
+      references:
+        - operator.png
+        - sheets/studio_main_stage.png
+      prompt: "Frozen 'end-of-show portrait' frame of {operator} smiling with the chrome microphone at his chest, gold tinsel curtain behind, {dancers} in soft-focus formation behind him also holding their final pose with hands at hips, a chyron-style lower-third title card reading 'THE BEST THING EVER — starring THE OPERATOR' in chunky orange-and-cream 70s display type, heavy CRT scan lines and color halation across the frame, slight vignette darkening the corners, 16:9 widescreen, vintage broadcast TV signal-degradation aesthetic"
+      steps: 6
+    prompt: "The frame slowly freezes on {operator}'s smile, {dancers} behind him also holding their final pose in soft focus, then visibly degrades into a vintage broadcast TV signal: heavy CRT scan lines roll up the frame, color halation bleeds around his curls, soft vignette darkens the corners; a chunky orange-and-cream lower-third title card fades in reading 'THE BEST THING EVER — starring THE OPERATOR'; over the looping 'ever, ever, ever, ever' the picture quietly fades through static to black."
+    image: "@last"

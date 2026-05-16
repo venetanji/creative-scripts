@@ -15,6 +15,12 @@ stitch_check/
 final*.mp4
 run*.log
 vram.jsonl
+# Per-project render directories — when you render a yaml next to it, a
+# matching folder picks up the song.mp3, anchor.png, sheets/, scenes/,
+# stems/, midi/, transcripts, final.mp4 etc. We keep ONLY the .yaml in
+# the repo; the rendered artifacts stay local.
+music-videos/*/
+
 # uv / python
 __pycache__/
 .venv/

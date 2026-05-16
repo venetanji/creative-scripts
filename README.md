@@ -17,6 +17,7 @@ Self-contained recipes for generative creative pipelines driven by [`creative-sk
 | [`peripheral.yaml`](music-videos/peripheral.yaml) | ~3:15 | dreampop ambient, dream logic imagery | 9:16 portrait, 17 scenes, mostly `t2i` |
 | [`glitter-down.yaml`](music-videos/glitter-down.yaml) | ~3:15 | classic 70s disco, female singer, lipsync | 9:16 portrait (448×832), 35 scenes w/ transitions, `i2i` per-scene flux2 anchors |
 | [`tail-scale.yaml`](music-videos/tail-scale.yaml) | ~3:00 | ambient synth-pop, waiting for a silent server to come back | 9:16 portrait (448×832), 20 scenes w/ transitions, `i2i` per-scene flux2 anchors |
+| [`the-best-thing-ever.yaml`](music-videos/the-best-thing-ever.yaml) | ~3:22 | 1976 Italian variety-show pastiche, call-and-response engagement song. [Watch →](https://youtu.be/QNU6dc4j6i4) | 16:9 landscape (832×448 → 1664×896), 26 scenes, `i2i` / `i2i2` / `i2iN` per-scene anchors. Three canonical settings pre-rendered; featured guest singer via `i2iN`. Bar-aligned cuts @ 123 BPM. |
 
 ## How to run one
 
@@ -52,6 +53,35 @@ Some scripts reference **additional images** that you either supply or pre-gener
     --width 576 --height 1024 --prefix setting_shore \
     --output-dir ./ --steps 4
   mv setting_shore_00001_.png setting_shore.png
+  ```
+
+- `the-best-thing-ever.yaml` references three canonical setting PNGs under `sheets/` plus the protagonist's portrait `operator.png`. Pre-render all three before `music_video.py anchors`:
+  ```bash
+  mkdir -p sheets
+
+  # Main stage with 4 backup dancers in formation
+  python3 /path/to/comfyui/scripts/comfy_graph.py t2i \
+    --prompt "Empty 1976 Italian late-night variety TV stage shot in 16:9 widescreen: gold tinsel curtain backdrop shimmering across the back wall, dark wood-paneled side wings, a single chrome standing microphone center-stage, on the back curtain four 1970s variety-show backup dancers stand in tight choreographed formation — diverse beautiful women in shimmering gold-and-silver sequin minidresses, knee-high white go-go boots, big teased hair (one blonde, one auburn, one black-bouffant, one platinum), dramatic false eyelashes — they hold a static glamorous opening pose with hands on hips, a glowing orange lava lamp on a low pedestal at the left frame edge, a hanging chunky orange-and-cream display-type sign overhead reading 'THE BEST THING EVER', silhouetted rows of studio-audience head shapes across the bottom of frame, warm amber and mustard stage flood lighting bathing the stage, very slight haze, no people on the mic, no text or watermark, warm 16mm film grain, slight halation, RAI 1976 broadcast aesthetic" \
+    --width 1664 --height 896 --steps 8 \
+    --prefix studio_main_stage --output-dir sheets/
+
+  # B-stage corner for the bridge (armchair + rotary phone, no people)
+  python3 /path/to/comfyui/scripts/comfy_graph.py t2i \
+    --prompt "Empty quiet b-stage corner of a 1976 Italian late-night variety TV set, shot in 16:9 widescreen: a tan corduroy 1970s armchair facing slightly toward camera, beside it a small dark-wood side table with a beige rotary telephone (receiver resting in cradle) and a low warm-shaded brass table lamp glowing softly, a half-empty rocks glass on the table, dark wood-paneled wall behind, the main variety stage just visible far in the background dimly lit and out of focus, single warm amber tungsten lamp light pooling on the armchair and table, no people, no text or watermark, warm 16mm film grain, slight halation, RAI 1976 broadcast aesthetic, intimate confessional mood" \
+    --width 1664 --height 896 --steps 8 \
+    --prefix studio_bstage --output-dir sheets/
+
+  # Featured guest singer — distinct from the chorus dancers, used as the duet partner
+  python3 /path/to/comfyui/scripts/comfy_graph.py t2i \
+    --prompt "Portrait of a striking 1976 variety-show featured female singer, shot in 16:9 widescreen on a 1976 Italian TV stage: long flowing copper-red auburn waves, bold dramatic kohl-rimmed makeup, statement gold-hoop earrings, fitted floor-length pearl-white sequined gown with single asymmetric shoulder strap, chrome handheld microphone, confident knowing half-smile, gold tinsel curtain backdrop, the four backup dancers visible far in the background in soft blur but NOT in formation around her — she is the featured solo performer at centre, warm amber stage spotlight, 16:9 widescreen, warm 16mm film grain, slight halation" \
+    --width 1664 --height 896 --steps 8 \
+    --prefix featured_singer --output-dir sheets/
+
+  # Rename auto-numbered outputs (NN_00001_.png → NN.png)
+  for f in sheets/*_00001_.png; do mv "$f" "${f%_00001_.png}.png"; done
+
+  # Place your protagonist's portrait alongside the yaml as operator.png
+  cp /path/to/your_portrait.png operator.png
   ```
 
 All other references in the YAMLs are self-contained.
