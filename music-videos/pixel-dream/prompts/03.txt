@@ -1,0 +1,7 @@
+For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.
+
+integrated_multimodal_description: [Shot 1] 3D CG abstract sculpture, a single continuous 7.2917-second shot. The faceted, block-built volume in <Picture 1> floats against a deep cobalt-blue background. Milky opal cuboids alternate with brushed-silver faces; blue-white reflections skim the separate edges while warm light glows faintly through the thicker pieces. The camera makes a slow, medium arc around the complete sculpture. Its broad angular faces soften into a more rounded arrangement as individual blocks slide along the surface and settle at different depths. Across the middle of the shot the outline becomes nearly spherical, with a dense granular surface and dark pinholes between the blocks. By the end, the turning opal sphere fills the central portion of the view, surrounded by open blue space and a few distant points of light.
+
+overall_soundscape: The suspended blocks move soundlessly in the still chamber.
+
+non_diegetic_music: Guitar continues above a stronger repeating synthesizer line and quieter keyboard tones, with light drums and a low bass layer beneath them.

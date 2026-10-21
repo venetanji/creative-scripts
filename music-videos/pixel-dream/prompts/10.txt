@@ -1,0 +1,7 @@
+For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.
+
+integrated_multimodal_description: [Shot 1] 3D CG abstract sculpture, a single continuous 7.2917-second shot. The low salt-and-chalk landscape in <Picture 1> stretches from the foreground to a dim ochre horizon. The camera tracks forward slowly for the first three seconds as narrow channels pass beneath it. Rows then lift from the plane and curve upward around an opening, bringing thick cuboids close to the lens. Pale matte faces gradually acquire polished-silver reflections, with cool cyan light along their edges and warm amber on their deeper sides. The camera turns and glides toward the curved opening while the rows gather into the hollow passage of a large ring. By the end, near silver blocks fill the sides of the image, with staggered dark gaps leading into the curved interior and a remote silver-blue glow beyond.
+
+overall_soundscape: The block terrain shifts soundlessly through still air.
+
+non_diegetic_music: Guitar and low bass repeat above a steady drum pulse, with quieter synthesizer tones behind them. The rhythmic pattern continues through the passage.

@@ -1,0 +1,7 @@
+For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.
+
+integrated_multimodal_description: [Shot 1] 3D CG abstract sculpture, a single continuous 7.2917-second shot. A small open amber-and-brass cube framework floats centrally in the wide charcoal-blue space of <Picture 1>. Slender rails of smoked-glass blocks join the outer corners to a smaller inner square. During the first two seconds, the framework turns gently as the camera arcs toward a frontal three-quarter angle. Across the middle three seconds, the rails fold inward and separate into short angular clusters; the clusters move toward the center and gather into a compact irregular knot. During the final two seconds, the pieces draw tightly together and their broad faces align into one solid smoked amber-glass cube with a warm brass interior. The camera pushes closer with medium amplitude at slow speed and settles into a centered three-quarter view, with a bright amber front face, a darker side and crisp thin illuminated edges against the dark chamber.
+
+overall_soundscape: The suspended blocks move soundlessly in the still chamber.
+
+non_diegetic_music: The instrumental guitar, bass, synthesizer and keyboard phrase decreases in level while drum energy falls away markedly. The final musical notes decay into a quiet tail.

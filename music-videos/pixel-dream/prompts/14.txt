@@ -1,0 +1,7 @@
+For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.
+
+integrated_multimodal_description: [Shot 1] 3D CG abstract sculpture, a single continuous 7.2917-second shot. Tightly spaced rows of glossy black-enamel cuboids frame the curved opening in <Picture 1>. Thin teal edge reflections and muted vermilion side light pick out each separately offset block. The camera tracks along the tight bend at moderate speed with small lateral movement. Near square faces pass the image edges while alternating rows ahead reveal their tops and undersides. The interior stays open and dark, with broad distant red illumination behind the gaps. Across the last second, selected near faces brighten into satin pearl and champagne metal, the brushed reflections spreading from block to block. The shot ends within the same close curved flow, with distinct dark separations between the now lighter near pieces.
+
+overall_soundscape: The suspended blocks move soundlessly in the still chamber.
+
+non_diegetic_music: Low bass and drums remain prominent beneath the repeating guitar phrase. A quieter synthesizer figure continues behind the rhythm.

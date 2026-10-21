@@ -1,0 +1,7 @@
+For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.
+
+integrated_multimodal_description: [Shot 1] 3D CG abstract sculpture, a single continuous 7.2917-second shot. Satin-pearl and champagne-metal cuboids form the close curving passage in <Picture 1>. Fine brushed reflections slide across each sharp face independently, while darker sides and staggered gaps reveal the thickness of the rows. The camera tracks smoothly around the inside bend at moderate speed, with small lateral motion as near blocks move past the lens. Successive openings recede across the image; individual pieces turn gently, changing a warm glint into a cool pearly sheen. A remote warm-gray glow appears through the gaps, crossed by a dim dark horizontal band. The final view remains inside the articulated ring passage, its block rows filling the sides and its open center curving away ahead.
+
+overall_soundscape: The suspended blocks move soundlessly in the still chamber.
+
+non_diegetic_music: Guitar, bass and drums sustain a repeating instrumental pattern, with synthesizer notes and a quieter keyboard layer above the low rhythm.

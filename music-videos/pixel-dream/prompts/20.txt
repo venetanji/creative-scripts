@@ -1,0 +1,7 @@
+For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.
+
+integrated_multimodal_description: [Shot 1] 3D CG abstract sculpture, a single continuous 7.2917-second shot. A slender diagonal run of frosted pale-blue glass steps occupies the lower-right edge of the wide dark-blue space in <Picture 1>. Most of the image is open indigo, with a few tiny remote points of light. The camera rises and arcs slowly along the stair's broad spiral, so the short visible run glides gently along the bottom edge while the next steps enter from the right. Each solid step has a frosted upper face, a silver-lit edge and a darker transparent side, separated from its neighbor by open air. During the last two seconds, the glass gradually acquires a moonstone-white translucence and a faint blush-peach interior. The ending remains sparse, with the stairs low in the image beneath the extensive dark void.
+
+overall_soundscape: The suspended blocks move soundlessly in the still chamber.
+
+non_diegetic_music: Guitar, synthesizer and keyboard carry the instrumental phrase over light continuing drums. The low bass part is absent in this passage.

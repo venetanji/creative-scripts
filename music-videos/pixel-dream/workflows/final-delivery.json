@@ -1,0 +1,109 @@
+{
+  "schema": "pixel-dream-archival-edl-v1",
+  "kind": "archival_edl_and_validation_contract",
+  "not_a_comfyui_import_graph": true,
+  "execution": "Read-only offline validation only; no rendering or submission.",
+  "status": "technically_verified_repair_candidate_not_creative_acceptance",
+  "public_viewing_reference": {
+    "url": "https://www.youtube.com/watch?v=2aDa_EmED8g",
+    "local_upload_identity_verified": false,
+    "note": "Supplied public viewing reference, not a byte-hash match to an uploaded file."
+  },
+  "timeline": {
+    "indexing": "zero_based_half_open",
+    "frames": 9268,
+    "fps": "48/1",
+    "duration": "9268/48",
+    "pts": "n/48"
+  },
+  "assets": {
+    "master": {
+      "file": "master48.mp4",
+      "dimensions": [1280, 720],
+      "frames": 9268,
+      "sha256": "ed692a54164b3348d70fa265e5022398dbd5f640c299dca32ea6b30dffa1b64f"
+    },
+    "repair": {
+      "file": "selected-patch157-lossless48.mkv",
+      "dimensions": [1280, 720],
+      "frames": 157,
+      "sha256": "d4665364c1935675524c0177baf8a12bd3d65e9abf3cfe4e544529be24a76c26"
+    }
+  },
+  "edits": [
+    {"output": [0, 6065], "asset": "master", "source": [0, 6065]},
+    {"output": [6065, 6222], "asset": "repair", "source": [0, 157]},
+    {"output": [6222, 9268], "asset": "master", "source": [6222, 9268]}
+  ],
+  "repair": {
+    "changed_source_24": [3033, 3111],
+    "selected_native_24": [23, 101],
+    "native_crop_xywh": [0, 24, 1280, 720],
+    "changed_final_48": [6065, 6222],
+    "review_final_48": [6048, 6240],
+    "left_odd_bridge": [3032, 3033],
+    "right_odd_bridge": [3110, 3111],
+    "detail_resynthesis_on_selected_repair": false
+  },
+  "stages": [
+    {"stage": "native_h3", "fps": "24/1"},
+    {"stage": "selected_ltx_detail", "applies_to": "selected original shots, not the new repair"},
+    {"stage": "film_2x", "input_window_frames": 17, "source_advance_frames": 16, "output_window_frames": 33, "retained_per_window": 32, "even_roles": "restore cropped native source", "odd_roles": "retain FILM interpolation"},
+    {"stage": "local_patch", "edits_field": "edits"},
+    {"stage": "selected_licensed_upscale", "dependency": "NVIDIA VFX SDK 0.2.0.0", "effect": "VideoSuperRes", "quality": "HIGHBITRATE_ULTRA", "strength": 1.0, "encoding": "RGB8", "scale": 3, "sequence": "one sequential effect, no arbitrary resets"},
+    {"stage": "delivery_encode", "encoder": "libx264", "crf": 17, "preset": "medium", "audio": "copy original AAC"},
+    {"stage": "lossless_timescale_remux", "video": "copy", "audio": "copy original AAC", "movie_timescale": 48000}
+  ],
+  "delivery": {
+    "video": {
+      "codec_name": "h264",
+      "pix_fmt": "yuv420p",
+      "color_range": "tv",
+      "color_space": "bt709",
+      "color_transfer": "bt709",
+      "color_primaries": "bt709",
+      "sample_aspect_ratio": "1:1",
+      "time_base": "1/12288"
+    },
+    "audio": {
+      "codec_name": "aac",
+      "sample_rate": 48000,
+      "channels": 2,
+      "channel_layout": "stereo",
+      "time_base": "1/48000",
+      "duration_samples": 9268000,
+      "packet_count": 9052,
+      "terminal_timeline_zero_samples": 160,
+      "identity": "payload, order, PTS, DTS, duration, extradata and skip/discard padding against supplied source"
+    },
+    "movie_timescale": 48000,
+    "faststart": true,
+    "profiles": {
+      "candidate_4k": {
+        "file": "repaired-candidate4k48.mp4",
+        "dimensions": [3840, 2160],
+        "sha256": "08af4f279bfbdda9aae9419c4317c77a8689223bfc7cf932b1bbc2146aaf3a70"
+      },
+      "review_720p": {
+        "file": "review720p48.mp4",
+        "dimensions": [1280, 720],
+        "sha256": "7c73171240f16a2f64635c0d80beac850218137aa953b5eae2e791ff3a787902"
+      }
+    }
+  },
+  "retained_input_proof": {
+    "scope": "upscale input RGB24 frame streams, not output pixel identity",
+    "independent_master_decode": true,
+    "outside_frames": 9111,
+    "outside_rgb_sha256": "1a973f2776ea4370358cc56535cf5e8cc6b669dce58f39513a3a3da606f0cb27",
+    "patch_frames": 157,
+    "patch_rgb_sha256": "7cd1bbdc8bdf0916985bd647789a9dae8c56f185310a7977da2508119f6da0e8"
+  },
+  "creative_caveats": [
+    "Original severe tear is present in native H3, before detail, FILM or upscale.",
+    "Ivory material shift, earlier cool sky, detectable repair entrance and compressed turn remain.",
+    "Existing cone entry pop around 28.583333 seconds is retained.",
+    "Preferred restored staircase around 151 seconds is retained as master input.",
+    "No seamlessness, creative acceptance or YouTube byte-identity claim."
+  ]
+}

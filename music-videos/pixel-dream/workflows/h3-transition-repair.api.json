@@ -1,0 +1,305 @@
+{
+  "0": {
+    "class_type": "UNETLoader",
+    "inputs": {
+      "unet_name": "minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+      "weight_dtype": "default"
+    }
+  },
+  "1": {
+    "class_type": "LoraLoaderModelOnly",
+    "inputs": {
+      "lora_name": "minimax_h3_fl2v_turbo_8step_v1.0_comfyui_bf16.safetensors",
+      "model": [
+        "0",
+        0
+      ],
+      "strength_model": 1.0
+    }
+  },
+  "10": {
+    "class_type": "BasicScheduler",
+    "inputs": {
+      "denoise": 1.0,
+      "model": [
+        "2",
+        0
+      ],
+      "scheduler": "simple",
+      "steps": 8
+    }
+  },
+  "11": {
+    "class_type": "SamplerCustomAdvanced",
+    "inputs": {
+      "guider": [
+        "7",
+        0
+      ],
+      "latent_image": [
+        "6",
+        1
+      ],
+      "noise": [
+        "8",
+        0
+      ],
+      "sampler": [
+        "9",
+        0
+      ],
+      "sigmas": [
+        "10",
+        0
+      ]
+    }
+  },
+  "12": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "11",
+        0
+      ],
+      "vae": [
+        "4",
+        0
+      ]
+    }
+  },
+  "13": {
+    "class_type": "VAEDecodeAudio",
+    "inputs": {
+      "samples": [
+        "11",
+        0
+      ],
+      "vae": [
+        "5",
+        0
+      ]
+    }
+  },
+  "14": {
+    "class_type": "CreateVideo",
+    "inputs": {
+      "audio": [
+        "13",
+        0
+      ],
+      "bit_depth": 8,
+      "fps": 24.0,
+      "images": [
+        "12",
+        0
+      ]
+    }
+  },
+  "15": {
+    "class_type": "SaveVideo",
+    "inputs": {
+      "codec": "h264",
+      "filename_prefix": "video/pixel-dream/repair",
+      "format": "mp4",
+      "video": [
+        "14",
+        0
+      ]
+    }
+  },
+  "16": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "pixel-dream/repair/first.png"
+    }
+  },
+  "2": {
+    "class_type": "MiniMaxH3SigmaShift",
+    "inputs": {
+      "model": [
+        "1",
+        0
+      ],
+      "shift_audio": 3.0,
+      "shift_video": 12.0
+    }
+  },
+  "22": {
+    "class_type": "LoadAudio",
+    "inputs": {
+      "audio": "pixel-dream/repair/song-window.wav"
+    }
+  },
+  "23": {
+    "class_type": "MiniMaxH3AddGuide",
+    "inputs": {
+      "audio": [
+        "22",
+        0
+      ],
+      "audio_vae": [
+        "5",
+        0
+      ],
+      "frame_idx": 0,
+      "latent": [
+        "6",
+        1
+      ],
+      "positive": [
+        "6",
+        0
+      ]
+    }
+  },
+  "24": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "pixel-dream/repair/last.png"
+    }
+  },
+  "25": {
+    "class_type": "LoadVideo",
+    "inputs": {
+      "file": "pixel-dream/repair/incoming-motion.mkv"
+    }
+  },
+  "26": {
+    "class_type": "GetVideoComponents",
+    "inputs": {
+      "video": [
+        "25",
+        0
+      ]
+    }
+  },
+  "27": {
+    "class_type": "MiniMaxH3AddGuide",
+    "inputs": {
+      "frame_idx": 1,
+      "image": [
+        "26",
+        0
+      ],
+      "latent": [
+        "6",
+        1
+      ],
+      "positive": [
+        "23",
+        0
+      ],
+      "vae": [
+        "4",
+        0
+      ]
+    }
+  },
+  "28": {
+    "class_type": "LoadVideo",
+    "inputs": {
+      "file": "pixel-dream/repair/outgoing-motion.mkv"
+    }
+  },
+  "29": {
+    "class_type": "GetVideoComponents",
+    "inputs": {
+      "video": [
+        "28",
+        0
+      ]
+    }
+  },
+  "3": {
+    "class_type": "CLIPLoader",
+    "inputs": {
+      "clip_name": "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+      "device": "default",
+      "type": "minimax"
+    }
+  },
+  "30": {
+    "class_type": "MiniMaxH3AddGuide",
+    "inputs": {
+      "frame_idx": 101,
+      "image": [
+        "29",
+        0
+      ],
+      "latent": [
+        "6",
+        1
+      ],
+      "positive": [
+        "27",
+        0
+      ],
+      "vae": [
+        "4",
+        0
+      ]
+    }
+  },
+  "4": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "minimax_h3_video_vae_int8_convrot.safetensors"
+    }
+  },
+  "5": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "minimax_h3_audio_vae_fp32.safetensors"
+    }
+  },
+  "6": {
+    "class_type": "MiniMaxH3ImageToVideo",
+    "inputs": {
+      "clip": [
+        "3",
+        0
+      ],
+      "first_frame": [
+        "16",
+        0
+      ],
+      "height": 768,
+      "last_frame": [
+        "24",
+        0
+      ],
+      "length": 124,
+      "prompt": "How the reference pictures align with the target video - Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 1) aligns with the 5.17-second mark of the target video.\n\nintegrated_multimodal_description: [Shot 1] A continuous cinematic three-dimensional architectural music-video shot of warm copper and luminous ivory blocks, each with a narrow cyan top edge, in a star-filled indigo chamber. The exact oblique first-picture composition and first moving guide establish the start: three long separated parallel ranks of upright copper blocks with small pale tops fill the foreground and converge toward the left. The warm copper faces, dark gaps and thin cyan edge highlights remain visible. Continue the same modest forward camera drift and small rhythmic movements of the existing blocks throughout the opening second.\n\nFrom 0.96 seconds to 4.21 seconds, perform a single gradual spatial reconfiguration while the camera makes one unbroken shallow turn into alignment with the staircase. The long ranks curve inward very gently. Their existing blocks pivot and slide into successive broad horizontal rows, then the rows rise one after another into solid stair treads. Spread that movement and the camera turn evenly over the entire interval. Keep the nearest blocks readable and solid throughout their travel: narrow cyan edge highlights stay attached to the copper and ivory surfaces, with dark visible gaps between neighboring blocks. No surface stretches into a tall glass sheet and no block merges into a large floating panel. The pale tops are solid ivory rather than transparent glass. Adjacent treads retain distinct crisp edges and consistent widths as their angle changes.\n\nThe camera follows the emerging central flight at an even pace, gaining a little height without a sudden lateral jump or roll. Parallax, rotation and gradual occlusion explain every changing silhouette. Foreground blocks move down and outward naturally as the camera turns, revealing the same higher rows behind them; no new staircase replaces the old one. The lateral warm view becomes a centered view into the wide dark blue opening by continuous motion of the camera and the persistent blocks. The lighting cools gradually with the changing angle, never as a sudden background switch. Preserve coherent surfaces and natural depth rather than dissolving, doubling or melting the geometry.\n\nBy 4.21 seconds, the nearest horizontal treads span the lower foreground while the higher copper and ivory treads converge at the exact centered vanishing point and scale of the outgoing moving guide. Settle into its existing steady forward and upward climb before reaching that guide. Continue climbing to the exact final picture; the nearest tread edges pass down through the bottom of the image. This is one continuous shot without cuts, wipes, fades, transparent overlays or abrupt camera resets.\n\noverall_soundscape: The floating blocks and cosmic chamber are silent.\n\nnon_diegetic_music: The supplied original instrumental song continues at its exact original tempo and sample clock.\n",
+      "vae": [
+        "4",
+        0
+      ],
+      "width": 1280
+    }
+  },
+  "7": {
+    "class_type": "BasicGuider",
+    "inputs": {
+      "conditioning": [
+        "30",
+        0
+      ],
+      "model": [
+        "2",
+        0
+      ]
+    }
+  },
+  "8": {
+    "class_type": "RandomNoise",
+    "inputs": {
+      "noise_seed": 202610181036
+    }
+  },
+  "9": {
+    "class_type": "KSamplerSelect",
+    "inputs": {
+      "sampler_name": "euler"
+    }
+  }
+}

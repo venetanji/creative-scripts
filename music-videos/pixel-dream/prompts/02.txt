@@ -1,0 +1,7 @@
+For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.
+
+integrated_multimodal_description: [Shot 1] 3D CG abstract sculpture, a single continuous 7.2917-second shot. A compact cluster of separate amber-glass and brass cuboids floats centrally in the dark space shown in <Picture 1>. The camera arcs around it with medium amplitude at slow speed as the pieces slide into a tapering, faceted solid, then redistribute into a broader many-faced volume. The stepped surface reveals the individual square blocks, their different orientations and the dark air between them. The whole assembly turns steadily while small blocks rotate around their own axes. During the final half-second, a cool milky reflection begins spreading over the outer faces, mixing opalescent white with the remaining warm amber. A cobalt-blue gradient deepens behind the complete floating form.
+
+overall_soundscape: The suspended blocks move soundlessly in the still chamber.
+
+non_diegetic_music: Guitar carries a repeating instrumental phrase over a quiet synthesizer figure and a restrained low bass part. Drum activity stays very light.

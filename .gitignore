@@ -21,6 +21,24 @@ vram.jsonl
 # the repo; the rendered artifacts stay local.
 music-videos/*/
 
+# Pixel Dream is a source/documentation package, not a render directory.
+!music-videos/pixel-dream/
+music-videos/pixel-dream/**
+!music-videos/pixel-dream/*.md
+!music-videos/pixel-dream/workflows/
+!music-videos/pixel-dream/workflows/*.md
+!music-videos/pixel-dream/workflows/*.json
+!music-videos/pixel-dream/procedural/
+!music-videos/pixel-dream/procedural/*.md
+!music-videos/pixel-dream/procedural/*.js
+!music-videos/pixel-dream/procedural/*.html
+!music-videos/pixel-dream/scripts/
+!music-videos/pixel-dream/scripts/*.py
+!music-videos/pixel-dream/tests/
+!music-videos/pixel-dream/tests/test_*.py
+!music-videos/pixel-dream/prompts/
+!music-videos/pixel-dream/prompts/*.txt
+
 # uv / python
 __pycache__/
 .venv/

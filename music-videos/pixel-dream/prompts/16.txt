@@ -1,0 +1,7 @@
+For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.
+
+integrated_multimodal_description: [Shot 1] 3D CG abstract sculpture, a single continuous 7.2917-second shot. The close champagne-metal passage in <Picture 1> turns across the image with separate pearly blocks around its dark opening. For the first two seconds, the camera travels smoothly along the inside bend. The rows then spread and flatten into several broad twisting strips as the camera pulls back with large amplitude at moderate speed. The sculpture becomes fully visible: stacked sweeping loops of rigid cuboids curl around an open center, their surfaces turning from satin metal to thick ivory paper faces with graphite-dark edges and occasional terracotta sides. Soft raking light reveals fine paper grain on each block. By the end, the complete folded ribbon floats within a wide warm-slate void, its layered bends and central openings clearly separated.
+
+overall_soundscape: The suspended blocks move soundlessly in the still chamber.
+
+non_diegetic_music: Repeating guitar and synthesizer lines continue over bass and drums. The keyboard layer stays quieter behind the higher phrase.

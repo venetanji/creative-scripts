@@ -1,0 +1,7 @@
+For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.
+
+integrated_multimodal_description: [Shot 1] 3D CG abstract sculpture, a single continuous 7.2917-second shot. The crystal-lined passage in <Picture 1> bends across the close view, with thick staggered cuboids around a dark interior opening. The camera tracks smoothly along its curve. After roughly two-and-three-quarter seconds, the circular rows begin tightening toward the center; the camera moves inward with them, bringing their block-built openings closer together. Over the next two seconds, transparent crystal faces gradually darken into glossy black enamel. Thin teal and vermilion reflections define each sharp edge, and the exposed side faces remain separately readable between black slits. Broad remote red light glows through the deep navy gaps. The final view looks through several tightly spaced curved rows as their individual blocks turn and stream past the lens.
+
+overall_soundscape: The suspended blocks move soundlessly in the still chamber.
+
+non_diegetic_music: A repeating guitar phrase sits over bass and a more forceful drum pattern, with quieter synthesizer and keyboard layers.

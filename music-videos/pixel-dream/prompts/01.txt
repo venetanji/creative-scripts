@@ -1,0 +1,5 @@
+integrated_multimodal_description: [Shot 1] 3D CG abstract sculpture, a single continuous 7.2917-second shot. A solitary cube of smoked optical glass floats at the center of a deep charcoal-blue chamber. Its amber front face reveals a warm brass interior, while the darker side carries a thin cool reflection. The camera holds a still three-quarter close view for the opening three seconds. Fine straight seams then divide the cube into smaller cuboids; the pieces separate by narrow dark gaps and begin turning independently. The camera begins a slow, small arc around the sculpture as the subdivisions become a loose, compact cluster. Amber and brass faces catch precise moving edge highlights, and a few tiny cool lights appear far behind the cluster. The shot ends with the fragmented mass still centrally framed.
+
+overall_soundscape: The suspended blocks move soundlessly in the still chamber.
+
+non_diegetic_music: A repeating synthesizer figure opens the instrumental passage. Guitar notes enter after roughly three seconds and continue over the synthesizer, with a quiet low bass layer and very little drum activity.

@@ -1,0 +1,7 @@
+For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.
+
+integrated_multimodal_description: [Shot 1] 3D CG abstract sculpture, a single continuous 7.2917-second shot. Tall ribs of separate ivory-porcelain and copper blocks rise diagonally across the close view in <Picture 1>. The ribs curve around a deep open center, each block showing a bright glazed face and a darker copper side. The camera pushes inward with medium amplitude at slow speed, moving from the oblique outer wall toward the hollow mouth. Rows of blocks sweep around the image edges as the cone turns; its central opening grows broad and dark, with distant rows visible through the gaps. During the last half-second, the ivory glaze starts taking on a warmer burnished-copper tint. Fine warm reflections run along the near edges while the petrol-blue void remains visible beyond the open structure.
+
+overall_soundscape: The suspended blocks move soundlessly in the still chamber.
+
+non_diegetic_music: A prominent low bass part and steady drums support repeating guitar notes, with quieter synthesizer and keyboard tones behind them.
