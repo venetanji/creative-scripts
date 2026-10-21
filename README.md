@@ -4,7 +4,7 @@ Self-contained recipes for generative creative pipelines driven by [`creative-sk
 
 ## Layout
 
-- [`music-videos/`](music-videos/) — YAMLs for the `music-video` orchestrator (song description for suno + per-scene video prompts + anchor config). One YAML = one music video.
+- [`music-videos/`](music-videos/) — YAMLs for the `music-video` orchestrator, plus documented production recipes where a film uses a custom pipeline.
 
 ## Music videos
 
@@ -18,6 +18,17 @@ Self-contained recipes for generative creative pipelines driven by [`creative-sk
 | [`glitter-down.yaml`](music-videos/glitter-down.yaml) | ~3:15 | classic 70s disco, female singer, lipsync | 9:16 portrait (448×832), 35 scenes w/ transitions, `i2i` per-scene flux2 anchors |
 | [`tail-scale.yaml`](music-videos/tail-scale.yaml) | ~3:00 | ambient synth-pop, waiting for a silent server to come back | 9:16 portrait (448×832), 20 scenes w/ transitions, `i2i` per-scene flux2 anchors |
 | [`the-best-thing-ever.yaml`](music-videos/the-best-thing-ever.yaml) | ~3:22 | 1976 Italian variety-show pastiche, call-and-response engagement song. [Watch →](https://youtu.be/QNU6dc4j6i4) | 16:9 landscape (832×448 → 1664×896), 26 scenes, `i2i` / `i2i2` / `i2iN` per-scene anchors. Three canonical settings pre-rendered; featured guest singer via `i2iN`. Bar-aligned cuts @ 123 BPM. |
+| [`pixel-dream/`](music-videos/pixel-dream/) | 3:13 | MIDI/stem-driven voxel geometry and dreamlike transformations. [Watch →](https://www.youtube.com/watch?v=2aDa_EmED8g) | Custom WebGL → H3 → selected detail refinement → FILM → 4K48 pipeline; production notes, normalized executed graphs, frame/audio-safe finishing. Not an orchestrator YAML. |
+
+### Pixel Dreams: Production Case Study
+
+[![Watch Pixel Dreams](https://i.ytimg.com/vi/2aDa_EmED8g/hqdefault.jpg)](https://www.youtube.com/watch?v=2aDa_EmED8g)
+
+[Read the making-of and reusable workflows](music-videos/pixel-dream/): musical
+phrase analysis, causal note-driven geometry, registered RGB/depth/edge guides,
+native H3 prompting and motion-context joins, localized repairs, interpolation,
+original-audio preservation and 4K delivery. GitHub does not render arbitrary
+YouTube iframes; this linked thumbnail opens the video.
 
 ## How to run one
 

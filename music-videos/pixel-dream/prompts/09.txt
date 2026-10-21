@@ -1,0 +1,7 @@
+For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.
+
+integrated_multimodal_description: [Shot 1] 3D CG abstract sculpture, a single continuous 7.2917-second shot. Pale salt-crystal and matte-chalk cuboids extend across the broad terrain in <Picture 1>, their bright upper faces separated by deep narrow channels. The camera tracks forward with medium amplitude at a steady slow speed, low over the repeating ridges. Small raised clusters grow larger on approach and slip beneath the image while finer rows continue toward the horizon. Cream-colored grazing light catches crystalline grains and tiny copper inclusions; soft ochre haze grades into the darker upper sky. The blocks rise and lower in shallow successive bands, producing subtle changes in the skyline. The shot ends in the same low forward view over an inhabited, continuous field of pale geometric ridges.
+
+overall_soundscape: The block terrain shifts soundlessly through still air.
+
+non_diegetic_music: The instrumental phrase layers repeating guitar with low bass, steady drums, synthesizer and quieter keyboard notes at a consistent pace.

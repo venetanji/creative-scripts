@@ -1,0 +1,7 @@
+For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.
+
+integrated_multimodal_description: [Shot 1] 3D CG abstract sculpture, a single continuous 7.2917-second shot. Crossing block-built rails form the close open cubic framework in <Picture 1>. Dark-chrome faces catch narrow white reflections and ruby-red light on their inner sides, with deep blue-black space visible between the rails. The camera continues a smooth medium arc through the structure at slow speed. Over the first two seconds, amber light spreads across the cuboids; chrome gradually becomes brushed brass and translucent smoked glass. Two tall chains of blocks pass through the foreground, revealing their stepped profiles and the distant rails behind them. During the last three seconds, the camera rounds a projecting junction and reveals a broad open corner, with several amber rails converging across the view. The background resolves toward charcoal blue with a few tiny distant lights; the complex open framework still fills the image at the end.
+
+overall_soundscape: The suspended blocks move soundlessly in the still chamber.
+
+non_diegetic_music: A repeating guitar phrase layers over prominent drums and low bass, with quieter synthesizer and keyboard tones above the pulse.

@@ -1,0 +1,7 @@
+For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.
+
+integrated_multimodal_description: [Shot 1] 3D CG abstract sculpture, a single continuous 7.2917-second shot. Two nested open cube frameworks fill the view in <Picture 1>. Their edges are chains of separate obsidian blocks with molten-orange inner faces and thin pale-metal highlights; diagonal struts connect the smaller inner corners to the outer frame. The camera arcs around the turning structure with medium amplitude at slow speed, then pushes closer through a broad opening. Near rails grow across the sides of the image while the far inner square tilts behind them. During the last two-and-a-half seconds, the black faces gradually develop dark-chrome reflections and translucent ruby-red side panels. Cold white edge light traces the crossing rails against a deep petrol-black background, and the final view is close to one open angular corner.
+
+overall_soundscape: The suspended blocks move soundlessly in the still chamber.
+
+non_diegetic_music: Guitar and a pronounced drum pattern lead the instrumental passage, with a low bass part and much quieter synthesizer and keyboard layers.

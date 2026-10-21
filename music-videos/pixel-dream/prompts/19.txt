@@ -1,0 +1,7 @@
+For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.
+
+integrated_multimodal_description: [Shot 1] 3D CG abstract sculpture, a single continuous 7.2917-second shot. Copper-and-turquoise ribbon bands stretch across the close view in <Picture 1>, with separate square faces and dark gaps along their sweeping edges. During the first two seconds, the camera travels slowly beside the fold. The bands then move out toward the image edges while the camera swings into a much wider dark-blue space. The remaining blocks spread into a slender rising chain of separate rectangular steps. Their hammered faces gradually become frosted pale-blue glass with narrow silver highlights. For a moment, almost the entire view is open space dotted with tiny distant lights. During the final two seconds, a small diagonal run of glass steps enters along the lower-right edge as the camera begins a smooth upward spiral movement.
+
+overall_soundscape: The suspended blocks move soundlessly in the still chamber.
+
+non_diegetic_music: Guitar, synthesizer and keyboard lines continue as the bass withdraws early in the passage. The stronger drum pulse thins, while lighter percussion remains.

@@ -1,0 +1,47 @@
+{
+  "1": {
+    "class_type": "FrameInterpolationModelLoader",
+    "inputs": {
+      "model_name": "film_net_fp16.safetensors"
+    }
+  },
+  "2": {
+    "class_type": "LoadVideo",
+    "inputs": {
+      "file": "pixel-dream/film/source-window.mkv"
+    }
+  },
+  "3": {
+    "class_type": "GetVideoComponents",
+    "inputs": {
+      "video": [
+        "2",
+        0
+      ]
+    }
+  },
+  "4": {
+    "class_type": "FrameInterpolate",
+    "inputs": {
+      "images": [
+        "3",
+        0
+      ],
+      "interp_model": [
+        "1",
+        0
+      ],
+      "multiplier": 2
+    }
+  },
+  "5": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "filename_prefix": "pixel-dream/film/frames",
+      "images": [
+        "4",
+        0
+      ]
+    }
+  }
+}

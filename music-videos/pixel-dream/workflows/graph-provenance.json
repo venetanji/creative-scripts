@@ -1,0 +1,112 @@
+{
+  "format": "normalized-executed-comfyui-api-graphs",
+  "description": "Node topology, prompts and sampler/model settings retained. Local input names and output prefixes replaced; not byte-identical executed files. These are API prompt dictionaries, not UI canvas exports. Inputs/weights are not distributed.",
+  "graphs": [
+    {
+      "file": "h3-edge-continuation.api.json",
+      "original_sha256": "6fb8efadf9785d2d919770ffb1826588ca950f4fac5725f3d3551a30ac3c75b9",
+      "normalized_sha256": "59f835886337211acb810bd51532a728c393ca55ed7d0c72be7be26f5f2605fb",
+      "changed_inputs": {
+        "16": {
+          "image": "pixel-dream/shot-02/previous-native174.png"
+        },
+        "17": {
+          "file": "pixel-dream/shot-02/edge-guide.mkv"
+        },
+        "22": {
+          "audio": "pixel-dream/shot-02/conditioning.wav"
+        },
+        "15": {
+          "filename_prefix": "video/pixel-dream/shot-02"
+        }
+      },
+      "terminal_success_verified": true
+    },
+    {
+      "file": "h3-transition-repair.api.json",
+      "original_sha256": "f8fc1b42d72554dafb87193815767976f64a90096fd15261b57d6c8b9d9bb9ef",
+      "normalized_sha256": "8717c5025c73b734c8738770f97b712f7cb423620f329363311aba5044699398",
+      "changed_inputs": {
+        "16": {
+          "image": "pixel-dream/repair/first.png"
+        },
+        "22": {
+          "audio": "pixel-dream/repair/song-window.wav"
+        },
+        "24": {
+          "image": "pixel-dream/repair/last.png"
+        },
+        "25": {
+          "file": "pixel-dream/repair/incoming-motion.mkv"
+        },
+        "28": {
+          "file": "pixel-dream/repair/outgoing-motion.mkv"
+        },
+        "15": {
+          "filename_prefix": "video/pixel-dream/repair"
+        }
+      }
+    },
+    {
+      "file": "ltx-detail-refinement.api.json",
+      "original_sha256": "271d58f4936c9a4d90feaefef31a0e702c080ceb63ced1ba8b79b5084af4c4ad",
+      "normalized_sha256": "6a0ad4c28b0adc9e577239d86f0c96d307521f051caced19fb91edc411af8073",
+      "changed_inputs": {
+        "9": {
+          "file": "pixel-dream/detail/source-padded.mkv"
+        },
+        "11": {
+          "audio": "pixel-dream/detail/song-window.wav"
+        },
+        "22": {
+          "filename_prefix": "pixel-dream/detail/frames"
+        }
+      }
+    },
+    {
+      "file": "film-2x.api.json",
+      "original_sha256": "c85094ae44cb8923e816ee81d16d36d5e00ab499646b1fc376d1b683e9dbde75",
+      "normalized_sha256": "873f46bc922c670a972527861a2144f623dfe7bc46c52dd1a02e46b1c9e688b8",
+      "changed_inputs": {
+        "2": {
+          "file": "pixel-dream/film/source-window.mkv"
+        },
+        "5": {
+          "filename_prefix": "pixel-dream/film/frames"
+        }
+      }
+    },
+    {
+      "file": "h3-opening.api.json",
+      "original_sha256": "d6c9ebbcfd32d8662929a276b850c226ce9882d416109fee06bca24e3808e359",
+      "normalized_sha256": "5c1a6550625e2a873b9e2a10f78f35fb780678a9105da6a1f3be85b8b60eef4c",
+      "changed_inputs": {
+        "17": {
+          "file": "pixel-dream/shot-01/edge-guide.mkv"
+        },
+        "22": {
+          "audio": "pixel-dream/shot-01/conditioning.wav"
+        },
+        "15": {
+          "filename_prefix": "video/pixel-dream/shot-01"
+        }
+      }
+    },
+    {
+      "file": "ltx-detail-full-shot.api.json",
+      "original_sha256": "ff638afc9b79c462752e2f639cb1d9180fd69840dfdd98818c58113449cb7a2d",
+      "normalized_sha256": "cac2b669c3c6d3f9802e7431ad13485cdd8df5a816a4b03e69db195ff68b251e",
+      "changed_inputs": {
+        "9": {
+          "file": "pixel-dream/detail/full-shot-padded.mkv"
+        },
+        "11": {
+          "audio": "pixel-dream/detail/full-shot-song.wav"
+        },
+        "22": {
+          "filename_prefix": "pixel-dream/detail/full-shot-frames"
+        }
+      }
+    }
+  ]
+}

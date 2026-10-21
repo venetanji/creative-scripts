@@ -1,0 +1,7 @@
+For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.
+
+integrated_multimodal_description: [Shot 1] 3D CG abstract sculpture, a single continuous 7.2917-second shot. Curved copper ribs encircle the dark open center in <Picture 1>. During the first three seconds, the camera holds close to the rotating mouth while separate square faces pass around the frame. The ribs then loosen into long falling ranks of blocks. The camera eases downward and forward as those ranks spread horizontally, revealing an extensive low field of raised cuboids. Copper surfaces darken into weathered black basalt, with narrow amber-lit seams and brighter upper edges. By the last two seconds, the view travels low above the terrain: large near blocks pass beneath the image while smaller ridges repeat into a broad rust-red and amber-hazed horizon. The shot ends looking forward across the filled block landscape.
+
+overall_soundscape: The suspended blocks move soundlessly in the still chamber.
+
+non_diegetic_music: Guitar, low bass and drums maintain a repeating instrumental rhythm, with a more pronounced synthesizer figure above the low pulse.

@@ -1,0 +1,7 @@
+For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.
+
+integrated_multimodal_description: [Shot 1] 3D CG abstract sculpture, a single continuous 7.2917-second shot. Large open cubic rails cross the close view in <Picture 1>, their edges assembled from separate dark-chrome cuboids with ruby-red inner faces. A broad angular opening occupies the center, with a smaller, more distant cubic edge visible beyond it. The camera arcs smoothly through the framework with medium amplitude at slow speed. Near rails sweep diagonally across the image as successive connected corners come into view; the dark spaces between them remain broad and open. Cold white reflections slide from face to face while narrow red highlights illuminate the inner sides. In the final three seconds, the view passes close to a junction of several articulated rails, ending among crossing block-built struts against the deep petrol-blue void.
+
+overall_soundscape: The suspended blocks move soundlessly in the still chamber.
+
+non_diegetic_music: Repeating guitar and drums continue above low bass. Synthesizer and keyboard notes become more pronounced across the passage.

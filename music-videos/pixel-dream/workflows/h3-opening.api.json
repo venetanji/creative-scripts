@@ -1,0 +1,256 @@
+{
+  "0": {
+    "class_type": "UNETLoader",
+    "inputs": {
+      "unet_name": "minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+      "weight_dtype": "default"
+    }
+  },
+  "1": {
+    "class_type": "LoraLoaderModelOnly",
+    "inputs": {
+      "lora_name": "minimax_h3_fl2v_turbo_8step_v1.0_comfyui_bf16.safetensors",
+      "model": [
+        "0",
+        0
+      ],
+      "strength_model": 1.0
+    }
+  },
+  "10": {
+    "class_type": "BasicScheduler",
+    "inputs": {
+      "denoise": 1.0,
+      "model": [
+        "2",
+        0
+      ],
+      "scheduler": "simple",
+      "steps": 8
+    }
+  },
+  "11": {
+    "class_type": "SamplerCustomAdvanced",
+    "inputs": {
+      "guider": [
+        "7",
+        0
+      ],
+      "latent_image": [
+        "6",
+        1
+      ],
+      "noise": [
+        "8",
+        0
+      ],
+      "sampler": [
+        "9",
+        0
+      ],
+      "sigmas": [
+        "10",
+        0
+      ]
+    }
+  },
+  "12": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "11",
+        0
+      ],
+      "vae": [
+        "4",
+        0
+      ]
+    }
+  },
+  "13": {
+    "class_type": "VAEDecodeAudio",
+    "inputs": {
+      "samples": [
+        "11",
+        0
+      ],
+      "vae": [
+        "5",
+        0
+      ]
+    }
+  },
+  "14": {
+    "class_type": "CreateVideo",
+    "inputs": {
+      "audio": [
+        "13",
+        0
+      ],
+      "bit_depth": 8,
+      "fps": 24.0,
+      "images": [
+        "12",
+        0
+      ]
+    }
+  },
+  "15": {
+    "class_type": "SaveVideo",
+    "inputs": {
+      "codec": "h264",
+      "filename_prefix": "video/pixel-dream/shot-01",
+      "format": "mp4",
+      "video": [
+        "14",
+        0
+      ]
+    }
+  },
+  "17": {
+    "class_type": "LoadVideo",
+    "inputs": {
+      "file": "pixel-dream/shot-01/edge-guide.mkv"
+    }
+  },
+  "18": {
+    "class_type": "GetVideoComponents",
+    "inputs": {
+      "video": [
+        "17",
+        0
+      ]
+    }
+  },
+  "2": {
+    "class_type": "MiniMaxH3SigmaShift",
+    "inputs": {
+      "model": [
+        "21",
+        0
+      ],
+      "shift_audio": 3.0,
+      "shift_video": 12.0
+    }
+  },
+  "20": {
+    "class_type": "ModelPatchLoader",
+    "inputs": {
+      "name": "minimax_h3_fun_controlnet_union_2.0_pruned_int8_convrot.safetensors"
+    }
+  },
+  "21": {
+    "class_type": "MiniMaxH3FunControlNetApply",
+    "inputs": {
+      "control_video": [
+        "18",
+        0
+      ],
+      "end_percent": 1.0,
+      "model": [
+        "1",
+        0
+      ],
+      "model_patch": [
+        "20",
+        0
+      ],
+      "start_percent": 0.0,
+      "strength": 0.8,
+      "vae": [
+        "4",
+        0
+      ]
+    }
+  },
+  "22": {
+    "class_type": "LoadAudio",
+    "inputs": {
+      "audio": "pixel-dream/shot-01/conditioning.wav"
+    }
+  },
+  "23": {
+    "class_type": "MiniMaxH3AddGuide",
+    "inputs": {
+      "audio": [
+        "22",
+        0
+      ],
+      "audio_vae": [
+        "5",
+        0
+      ],
+      "frame_idx": 0,
+      "latent": [
+        "6",
+        1
+      ],
+      "positive": [
+        "6",
+        0
+      ]
+    }
+  },
+  "3": {
+    "class_type": "CLIPLoader",
+    "inputs": {
+      "clip_name": "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+      "device": "default",
+      "type": "minimax"
+    }
+  },
+  "4": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "minimax_h3_video_vae_int8_convrot.safetensors"
+    }
+  },
+  "5": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "minimax_h3_audio_vae_fp32.safetensors"
+    }
+  },
+  "6": {
+    "class_type": "MiniMaxH3ImageToVideo",
+    "inputs": {
+      "clip": [
+        "3",
+        0
+      ],
+      "height": 768,
+      "length": 175,
+      "prompt": "integrated_multimodal_description: [Shot 1] 3D CG abstract sculpture, a single continuous 7.2917-second shot. A solitary cube of smoked optical glass floats at the center of a deep charcoal-blue chamber. Its amber front face reveals a warm brass interior, while the darker side carries a thin cool reflection. The camera holds a still three-quarter close view for the opening three seconds. Fine straight seams then divide the cube into smaller cuboids; the pieces separate by narrow dark gaps and begin turning independently. The camera begins a slow, small arc around the sculpture as the subdivisions become a loose, compact cluster. Amber and brass faces catch precise moving edge highlights, and a few tiny cool lights appear far behind the cluster. The shot ends with the fragmented mass still centrally framed.\n\noverall_soundscape: The suspended blocks move soundlessly in the still chamber.\n\nnon_diegetic_music: A repeating synthesizer figure opens the instrumental passage. Guitar notes enter after roughly three seconds and continue over the synthesizer, with a quiet low bass layer and very little drum activity.\n",
+      "vae": [
+        "4",
+        0
+      ],
+      "width": 1280
+    }
+  },
+  "7": {
+    "class_type": "BasicGuider",
+    "inputs": {
+      "conditioning": [
+        "23",
+        0
+      ],
+      "model": [
+        "2",
+        0
+      ]
+    }
+  },
+  "8": {
+    "class_type": "RandomNoise",
+    "inputs": {
+      "noise_seed": 202610101001
+    }
+  },
+  "9": {
+    "class_type": "KSamplerSelect",
+    "inputs": {
+      "sampler_name": "euler"
+    }
+  }
+}

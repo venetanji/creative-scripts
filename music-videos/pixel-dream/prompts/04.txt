@@ -1,0 +1,7 @@
+For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.
+
+integrated_multimodal_description: [Shot 1] 3D CG abstract sculpture, a single continuous 7.2917-second shot. A rounded opal-and-silver aggregate floats centrally in the cobalt space of <Picture 1>. The camera continues its slow arc while small surface blocks turn and slide. About three seconds into the shot, the rounded mass bursts outward into clearly separated cuboids. Larger near blocks pass across the foreground while smaller pieces recede between them. Over the next three seconds, the cloud stretches into long converging ribs around a hollow cone. Opalescent faces gradually become glazed ivory porcelain with copper side faces, and warm illumination rises through the gaps against a dark petrol-blue background. The camera glides toward an oblique side of the new cone, ending close to its tall parallel ribs, their thickness and open spacing filling most of the image.
+
+overall_soundscape: The suspended blocks move soundlessly in the still chamber.
+
+non_diegetic_music: Guitar and synthesizer continue the repeating phrase. Bass and a more pronounced drum pulse enter around the middle of the passage and build beneath it.

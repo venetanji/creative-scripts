@@ -1,0 +1,188 @@
+{
+  "format": "source-and-prompt-archive",
+  "files": [
+    {
+      "file": "prompts/01.txt",
+      "source": "original-edge-0.8-production-prompts",
+      "sha256": "f230eef473d208a49495e9b90ff6d85ae39de546a33929dad24d09938ee6cd94"
+    },
+    {
+      "file": "prompts/02.txt",
+      "source": "original-edge-0.8-production-prompts",
+      "sha256": "ff99488550da981d89ba2d7faaeae4b43a7c43c246514247e0ebfbea29ce6a41"
+    },
+    {
+      "file": "prompts/03.txt",
+      "source": "original-edge-0.8-production-prompts",
+      "sha256": "d7d174649fb5173a7522e168d87e9d7da48515a4857aad08948dbd32655f602b"
+    },
+    {
+      "file": "prompts/04.txt",
+      "source": "original-edge-0.8-production-prompts",
+      "sha256": "62e32a89dccb88f6503c2e0de9187ae8b70471dd55ab3486ce7ad3717bb2dc44"
+    },
+    {
+      "file": "prompts/05.txt",
+      "source": "original-edge-0.8-production-prompts",
+      "sha256": "4695d17a4f3ad93bbad8249c14a6fe74209911615e49d90072ad7d639e7679c1"
+    },
+    {
+      "file": "prompts/06.txt",
+      "source": "original-edge-0.8-production-prompts",
+      "sha256": "157add6818d7244cb63e97e8c3fa2412019f595d6d9ad9c9ac7283a034d79443"
+    },
+    {
+      "file": "prompts/07.txt",
+      "source": "original-edge-0.8-production-prompts",
+      "sha256": "1f247d37dcc1cbd455ae20bae61a941774b706d857836e8175c0fdac7d417b45"
+    },
+    {
+      "file": "prompts/08.txt",
+      "source": "original-edge-0.8-production-prompts",
+      "sha256": "9dade111430d76c7ad325870d1578a6857b4716437ea0197a40edccb84b945ae"
+    },
+    {
+      "file": "prompts/09.txt",
+      "source": "original-edge-0.8-production-prompts",
+      "sha256": "804abef3ce6c7d9824f1ee8c13770c0e01f0ecd156b59d5624f35ebbc74efa6d"
+    },
+    {
+      "file": "prompts/10.txt",
+      "source": "original-edge-0.8-production-prompts",
+      "sha256": "5c37f63216402f0711d19516de3172d565398eac45270f250dd6ee24aa648b08"
+    },
+    {
+      "file": "prompts/11.txt",
+      "source": "original-edge-0.8-production-prompts",
+      "sha256": "86da4122474b054f4e71088a77abde1a31e12250ff8743958c4fbe0108efa11b"
+    },
+    {
+      "file": "prompts/12.txt",
+      "source": "original-edge-0.8-production-prompts",
+      "sha256": "1ecc719785b0d72afe8384f5c9e035c31563d17aaf6bc5fcb6605858cd508962"
+    },
+    {
+      "file": "prompts/13.txt",
+      "source": "original-edge-0.8-production-prompts",
+      "sha256": "5fc1740e4925857bec0734ccdb181e055390253b164dceb24c2b846b451283b7"
+    },
+    {
+      "file": "prompts/14.txt",
+      "source": "original-edge-0.8-production-prompts",
+      "sha256": "b789e52eadda3bd7a1f211b820a59b0f381f266045fa1b1d9db50eecf5f3d7d2"
+    },
+    {
+      "file": "prompts/15.txt",
+      "source": "original-edge-0.8-production-prompts",
+      "sha256": "659fc3c72aaa66a1c3f5057f0f353ff7e4780489eeff7a20fdd36b7effb6e17f"
+    },
+    {
+      "file": "prompts/16.txt",
+      "source": "original-edge-0.8-production-prompts",
+      "sha256": "f5ec8cdc08859be98ef3d2e96e3d0a3cb994af97d5b07bb211c4cf11fae0444c"
+    },
+    {
+      "file": "prompts/17.txt",
+      "source": "original-edge-0.8-production-prompts",
+      "sha256": "09fad8d30beb3ee941992b3235f6a4825e0ea65a2169a17a2bf4c2d9f6d573a0"
+    },
+    {
+      "file": "prompts/18.txt",
+      "source": "original-edge-0.8-production-prompts",
+      "sha256": "535da7d1cf32f8d46f68b91a150d1e6f6ec13bd6ff44ee49197f32d2255127ef"
+    },
+    {
+      "file": "prompts/19.txt",
+      "source": "original-edge-0.8-production-prompts",
+      "sha256": "8a3dd6e2462f2ab65299d8b472c8b78853f94e427b9e0ff9c206744932813c4d"
+    },
+    {
+      "file": "prompts/20.txt",
+      "source": "original-edge-0.8-production-prompts",
+      "sha256": "5f42bdc04f10f12af87d594ccde35ac24f517b6a607ab0b21a155f0eeb7816eb"
+    },
+    {
+      "file": "prompts/21.txt",
+      "source": "original-edge-0.8-production-prompts",
+      "sha256": "11b39fa5d81dfbcec7c8f0b06602a2d007699d306e865c7d02ea7a5b9c5e74d7"
+    },
+    {
+      "file": "prompts/22.txt",
+      "source": "original-edge-0.8-production-prompts",
+      "sha256": "ae717ff8d846b189f78e111dd2e6c0442247d2275b3e50742458d6a9feffedc0"
+    },
+    {
+      "file": "prompts/23.txt",
+      "source": "original-edge-0.8-production-prompts",
+      "sha256": "13d846b5be7324482931c4e6b01b8abe5634b2169b1ad07ebfe21b98fd652a07"
+    },
+    {
+      "file": "prompts/24.txt",
+      "source": "original-edge-0.8-production-prompts",
+      "sha256": "a57361d7044389cbca98302224052c579bb2d4fe2b4653394b7cd9bf07ac996d"
+    },
+    {
+      "file": "prompts/25.txt",
+      "source": "original-edge-0.8-production-prompts",
+      "sha256": "c834d64f48feeaf4d70be17bcc0beb2ff3a8fc9c36c61b47b079d7004170738c"
+    },
+    {
+      "file": "prompts/26.txt",
+      "source": "original-edge-0.8-production-prompts",
+      "sha256": "ebb6aa1e15f814341c8ed6fc8cba2e4ead4352b44ee60db8744b89bc25bbdb64"
+    },
+    {
+      "file": "prompts/27.txt",
+      "source": "original-edge-0.8-production-prompts",
+      "sha256": "4b069ee5952b8d45f3f7991f08d0bed6767be0e48377680bade605b71ae3d18d"
+    },
+    {
+      "file": "procedural/scene.js",
+      "source": "original-B-shared-webgl",
+      "sha256": "c213a59bd70fce50ff9be42700867b04ea98b98a1a8fc5eb2eb69d57e0236d38",
+      "normalization": "none; archival source fragment, external input globals required"
+    },
+    {
+      "file": "procedural/physics.js",
+      "source": "original-B-shared-webgl",
+      "sha256": "002beade29c0f28c8d45bf8e88a172593cfb66894eec06200a831b74601688a8",
+      "normalization": "none; archival source fragment, external input globals required"
+    },
+    {
+      "file": "procedural/shapes.js",
+      "source": "original-B-shared-webgl",
+      "sha256": "2f3964df205107db6d6d559683607a12f0e9b975644b6242f660c2ed5cc0c958",
+      "normalization": "none; archival source fragment, external input globals required"
+    },
+    {
+      "file": "procedural/motion.js",
+      "source": "original-B-shared-webgl",
+      "sha256": "c69b581dd9a2974209b8dbaf4c3daeaa3f8ed30a84a3d8f56e1d8118ea6b576c",
+      "normalization": "none; archival source fragment, external input globals required"
+    },
+    {
+      "file": "procedural/terrain.js",
+      "source": "original-B-shared-webgl",
+      "sha256": "49cf21773bd8ae19ac25f425968e9b2a6bc65df3ee9a21ffe456018d7f4647a0",
+      "normalization": "none; archival source fragment, external input globals required"
+    },
+    {
+      "file": "procedural/performance.js",
+      "source": "original-B-shared-webgl",
+      "sha256": "38d7299412e2f69315b5f47270aea24c3f6d6ca484533d668b3596939295936a",
+      "normalization": "none; archival source fragment, external input globals required"
+    },
+    {
+      "file": "procedural/stars.js",
+      "source": "original-B-shared-webgl",
+      "sha256": "d6eec56351e97b5202937b0a42a5df1ceccf983b5f3fd3482d3bee8cfa21c6d6",
+      "normalization": "none; archival source fragment, external input globals required"
+    },
+    {
+      "file": "procedural/story.js",
+      "source": "original-B-shared-webgl",
+      "sha256": "e86dd6d7ddae1c982f139fed78af4124868d0389c3023533818db9a7da86cbd2",
+      "normalization": "none; archival source fragment, external input globals required"
+    }
+  ]
+}

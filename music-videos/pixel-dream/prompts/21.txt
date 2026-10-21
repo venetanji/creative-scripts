@@ -1,0 +1,7 @@
+For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.
+
+integrated_multimodal_description: [Shot 1] 3D CG abstract sculpture, a single continuous 7.2917-second shot. A small diagonal sequence of moonstone steps sits low on the right side of <Picture 1>, surrounded by a vast indigo field. Cool white top faces catch a faint peach glow from within; the transparent sides and narrow dark gaps make each step distinct. The camera continues a slow upward arc with small visible compositional change. The stair run moves along the bottom of the frame as successive steps enter from the right and older steps slip away to the left. Tiny distant lights remain far above and beyond it, with a very faint remote blue haze. By the end, the short ascending run still occupies only the lower portion of the image, leaving the large quiet space above fully visible.
+
+overall_soundscape: The suspended blocks move soundlessly in the still chamber.
+
+non_diegetic_music: The guitar phrase becomes more prominent above synthesizer and keyboard notes. Drums continue with a lighter texture while the low bass part remains absent.

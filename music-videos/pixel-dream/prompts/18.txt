@@ -1,0 +1,7 @@
+For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.
+
+integrated_multimodal_description: [Shot 1] 3D CG abstract sculpture, a single continuous 7.2917-second shot. Close sweeping bands of copper and turquoise blocks cross the image in <Picture 1>, one low in the foreground and another rising behind it. Hammered-copper faces catch warm raking light; irregular oxidized edges turn blue-green in shadow. The camera tracks alongside the folded ribbon with small amplitude at slow speed, revealing the front faces, their thick sides and the dark openings between neighboring bands. Individual cuboids rotate gently within the curve as the larger ribbon turns, changing the overlap of near and far strips. The distant chamber is blue-green, with warm light well beyond the open fold. The ending remains close to the layered ribbon, whose rigid block edges extend beyond the image.
+
+overall_soundscape: The suspended blocks move soundlessly in the still chamber.
+
+non_diegetic_music: Prominent drums and low bass support guitar, synthesizer and keyboard lines. The higher repeating phrase continues across the passage.

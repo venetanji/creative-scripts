@@ -1,0 +1,7 @@
+For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.
+
+integrated_multimodal_description: [Shot 1] 3D CG abstract sculpture, a single continuous 7.2917-second shot. Amber-glass and brushed-brass rails cross around the open cubic space in <Picture 1>. Each rail consists of separate square blocks with warm lit faces and darker bronze sides. The camera arcs slowly past a projecting corner, then travels between the crossing struts during the first four seconds. Near rails pass beyond the image edges while more distant corners remain visible through the openings. Over the last three seconds, the camera pulls back with large amplitude at an increasing speed. The close angular construction resolves into a complete small nested cube framework suspended centrally. Its outer square corners connect to a smaller inner square through slender articulated rails, surrounded by a broad charcoal-blue field with a few remote points of light.
+
+overall_soundscape: The suspended blocks move soundlessly in the still chamber.
+
+non_diegetic_music: Guitar, bass and drums sustain a repeating instrumental rhythm, with synthesizer and keyboard tones above it. The percussion and low pulse become less forceful toward the end.

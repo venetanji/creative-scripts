@@ -1,0 +1,7 @@
+For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.
+
+integrated_multimodal_description: [Shot 1] 3D CG abstract sculpture, a single continuous 7.2917-second shot. The complete ivory block-built ribbon in <Picture 1> floats in a wide warm-slate space. Its broad loop twists through several stacked arcs, exposing paper-grained upper faces, graphite edges and terracotta inner sides. The camera arcs inward with large amplitude at slow speed, approaching the lower bend and then traveling alongside its thickness. The full silhouette gradually leaves the edges of the image as the view becomes a close passage between two sweeping bands. Separate rigid cuboids turn subtly along the bends, each divided by a narrow dark slit. During the final second-and-a-half, copper reflections begin spreading across the near faces, and turquoise patina develops along their edges. Warm light remains visible beyond the fold.
+
+overall_soundscape: The suspended blocks move soundlessly in the still chamber.
+
+non_diegetic_music: Guitar and synthesizer repeat above steady bass and drums, with a quieter keyboard part filling the spaces between the higher notes.

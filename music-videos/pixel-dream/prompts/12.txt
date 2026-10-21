@@ -1,0 +1,7 @@
+For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.
+
+integrated_multimodal_description: [Shot 1] 3D CG abstract sculpture, a single continuous 7.2917-second shot. Thick faceted-crystal blocks form the close curved passage shown in <Picture 1>. Their square faces have slightly different sizes, offsets and orientations, with dark air gaps between the pieces. The camera tracks smoothly around the inside curve with small lateral change at moderate speed; the near row slides past the left edge as successive angular hoops become visible ahead. Amber light catches front facets, while cyan and faint red reflections travel through the crystal thickness. Individual cuboids rotate around their own axes without losing the open curved arrangement. Navy space and remote diffuse light are visible through the gaps. The shot ends inside the same densely articulated passage, looking around its bend rather than looking at a complete ring from outside.
+
+overall_soundscape: The suspended blocks move soundlessly in the still chamber.
+
+non_diegetic_music: Guitar, bass and drums continue their repeating instrumental pattern, with a distinct synthesizer layer above the low pulse and quieter keyboard notes behind it.

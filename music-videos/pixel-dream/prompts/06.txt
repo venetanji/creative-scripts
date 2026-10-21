@@ -1,0 +1,7 @@
+For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.
+
+integrated_multimodal_description: [Shot 1] 3D CG abstract sculpture, a single continuous 7.2917-second shot. The hollow cone in <Picture 1> surrounds a large dark opening, its curved ribs built from individual burnished-copper cuboids. Dark oxidized edges separate the orange-lit front faces. The camera holds a close, steady position looking into the mouth as the rows rotate past it, producing broad curved bands that travel around the edges of the image. Individual blocks turn slightly within those bands, alternately exposing warm copper and cooler shadowed sides. The opening shifts gently across the center as near ribs pass in front of more distant ones. A deep midnight-blue chamber and a few tiny remote lights are visible through the gaps; the final view still looks through the articulated copper cone.
+
+overall_soundscape: The suspended blocks move soundlessly in the still chamber.
+
+non_diegetic_music: Repeating guitar notes continue over low bass and a steady drum pattern. The synthesizer layer is quieter than the guitar and rhythm section.

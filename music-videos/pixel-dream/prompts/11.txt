@@ -1,0 +1,7 @@
+For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.
+
+integrated_multimodal_description: [Shot 1] 3D CG abstract sculpture, a single continuous 7.2917-second shot. The close opening in <Picture 1> is lined with thick, separate polished-silver cuboids at staggered depths. The camera tracks forward along the curved hollow passage at a smooth moderate speed. Large near faces slip past the sides of the image while successive block-built hoops recede around a bend; black air gaps reveal space between neighboring pieces. Cyan edge light and off-axis amber reflections slide across the metal as individual blocks turn. During the final three-quarters of a second, the nearest silver faces begin becoming thick translucent crystal, carrying restrained cyan, amber and red glints. The passage curves onward into deep navy space, with its far side visible through the articulated inner rows.
+
+overall_soundscape: The suspended blocks move soundlessly in the still chamber.
+
+non_diegetic_music: Repeating guitar notes and low bass ride over a steady drum pattern. Synthesizer and quiet keyboard tones add a higher repeating layer.

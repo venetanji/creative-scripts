@@ -1,0 +1,7 @@
+For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.
+
+integrated_multimodal_description: [Shot 1] 3D CG abstract sculpture, a single continuous 7.2917-second shot. An extensive landscape of low basalt cuboids fills the lower half of <Picture 1>, with narrow amber seams between darker faces. The camera tracks forward with medium amplitude at a steady slow speed, just above the changing ridge tops. Near blocks pass below the frame as raised rows and shallow channels emerge farther ahead, extending across the image toward a hazy rust-colored horizon. Warm grazing light reveals weathered surface grain and dark crevices. During the final half-second, the nearest upper faces begin becoming pale chalk and crystalline salt, their tiny copper inclusions catching the light. The distant terrain stays densely populated as the sky lightens toward warm ochre.
+
+overall_soundscape: The block terrain shifts soundlessly through still air.
+
+non_diegetic_music: Guitar notes repeat over steady bass and drums. A synthesizer line and quieter keyboard tones continue behind the rhythmic layers.

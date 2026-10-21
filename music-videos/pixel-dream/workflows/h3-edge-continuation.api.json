@@ -1,0 +1,266 @@
+{
+  "0": {
+    "class_type": "UNETLoader",
+    "inputs": {
+      "unet_name": "minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+      "weight_dtype": "default"
+    }
+  },
+  "1": {
+    "class_type": "LoraLoaderModelOnly",
+    "inputs": {
+      "lora_name": "minimax_h3_fl2v_turbo_8step_v1.0_comfyui_bf16.safetensors",
+      "model": [
+        "0",
+        0
+      ],
+      "strength_model": 1.0
+    }
+  },
+  "10": {
+    "class_type": "BasicScheduler",
+    "inputs": {
+      "denoise": 1.0,
+      "model": [
+        "2",
+        0
+      ],
+      "scheduler": "simple",
+      "steps": 8
+    }
+  },
+  "11": {
+    "class_type": "SamplerCustomAdvanced",
+    "inputs": {
+      "guider": [
+        "7",
+        0
+      ],
+      "latent_image": [
+        "6",
+        1
+      ],
+      "noise": [
+        "8",
+        0
+      ],
+      "sampler": [
+        "9",
+        0
+      ],
+      "sigmas": [
+        "10",
+        0
+      ]
+    }
+  },
+  "12": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "11",
+        0
+      ],
+      "vae": [
+        "4",
+        0
+      ]
+    }
+  },
+  "13": {
+    "class_type": "VAEDecodeAudio",
+    "inputs": {
+      "samples": [
+        "11",
+        0
+      ],
+      "vae": [
+        "5",
+        0
+      ]
+    }
+  },
+  "14": {
+    "class_type": "CreateVideo",
+    "inputs": {
+      "audio": [
+        "13",
+        0
+      ],
+      "bit_depth": 8,
+      "fps": 24.0,
+      "images": [
+        "12",
+        0
+      ]
+    }
+  },
+  "15": {
+    "class_type": "SaveVideo",
+    "inputs": {
+      "codec": "h264",
+      "filename_prefix": "video/pixel-dream/shot-02",
+      "format": "mp4",
+      "video": [
+        "14",
+        0
+      ]
+    }
+  },
+  "16": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "pixel-dream/shot-02/previous-native174.png"
+    }
+  },
+  "17": {
+    "class_type": "LoadVideo",
+    "inputs": {
+      "file": "pixel-dream/shot-02/edge-guide.mkv"
+    }
+  },
+  "18": {
+    "class_type": "GetVideoComponents",
+    "inputs": {
+      "video": [
+        "17",
+        0
+      ]
+    }
+  },
+  "2": {
+    "class_type": "MiniMaxH3SigmaShift",
+    "inputs": {
+      "model": [
+        "21",
+        0
+      ],
+      "shift_audio": 3.0,
+      "shift_video": 12.0
+    }
+  },
+  "20": {
+    "class_type": "ModelPatchLoader",
+    "inputs": {
+      "name": "minimax_h3_fun_controlnet_union_2.0_pruned_int8_convrot.safetensors"
+    }
+  },
+  "21": {
+    "class_type": "MiniMaxH3FunControlNetApply",
+    "inputs": {
+      "control_video": [
+        "18",
+        0
+      ],
+      "end_percent": 1.0,
+      "model": [
+        "1",
+        0
+      ],
+      "model_patch": [
+        "20",
+        0
+      ],
+      "start_percent": 0.0,
+      "strength": 0.8,
+      "vae": [
+        "4",
+        0
+      ]
+    }
+  },
+  "22": {
+    "class_type": "LoadAudio",
+    "inputs": {
+      "audio": "pixel-dream/shot-02/conditioning.wav"
+    }
+  },
+  "23": {
+    "class_type": "MiniMaxH3AddGuide",
+    "inputs": {
+      "audio": [
+        "22",
+        0
+      ],
+      "audio_vae": [
+        "5",
+        0
+      ],
+      "frame_idx": 0,
+      "latent": [
+        "6",
+        1
+      ],
+      "positive": [
+        "6",
+        0
+      ]
+    }
+  },
+  "3": {
+    "class_type": "CLIPLoader",
+    "inputs": {
+      "clip_name": "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+      "device": "default",
+      "type": "minimax"
+    }
+  },
+  "4": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "minimax_h3_video_vae_int8_convrot.safetensors"
+    }
+  },
+  "5": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "minimax_h3_audio_vae_fp32.safetensors"
+    }
+  },
+  "6": {
+    "class_type": "MiniMaxH3ImageToVideo",
+    "inputs": {
+      "clip": [
+        "3",
+        0
+      ],
+      "first_frame": [
+        "16",
+        0
+      ],
+      "height": 768,
+      "length": 175,
+      "prompt": "For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.\n\nintegrated_multimodal_description: [Shot 1] 3D CG abstract sculpture, a single continuous 7.2917-second shot. A compact cluster of separate amber-glass and brass cuboids floats centrally in the dark space shown in <Picture 1>. The camera arcs around it with medium amplitude at slow speed as the pieces slide into a tapering, faceted solid, then redistribute into a broader many-faced volume. The stepped surface reveals the individual square blocks, their different orientations and the dark air between them. The whole assembly turns steadily while small blocks rotate around their own axes. During the final half-second, a cool milky reflection begins spreading over the outer faces, mixing opalescent white with the remaining warm amber. A cobalt-blue gradient deepens behind the complete floating form.\n\noverall_soundscape: The suspended blocks move soundlessly in the still chamber.\n\nnon_diegetic_music: Guitar carries a repeating instrumental phrase over a quiet synthesizer figure and a restrained low bass part. Drum activity stays very light.\n",
+      "vae": [
+        "4",
+        0
+      ],
+      "width": 1280
+    }
+  },
+  "7": {
+    "class_type": "BasicGuider",
+    "inputs": {
+      "conditioning": [
+        "23",
+        0
+      ],
+      "model": [
+        "2",
+        0
+      ]
+    }
+  },
+  "8": {
+    "class_type": "RandomNoise",
+    "inputs": {
+      "noise_seed": 202610101101
+    }
+  },
+  "9": {
+    "class_type": "KSamplerSelect",
+    "inputs": {
+      "sampler_name": "euler"
+    }
+  }
+}
